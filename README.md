@@ -11,5 +11,5 @@ Here are some ideas to get you started:
 - 💬 Ask me about Web Design Projects, performing reconnaisance on systems using different tools, C++ file handling and applications
 - 📫 How to reach me: alsongard@gmail.com
 - 😄 Pronouns: Male
-- ⚡ Fun fact: We only live once
+- ⚡ Fun fact: Never Give Up
 
