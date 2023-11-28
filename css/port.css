@@ -1,0 +1,45 @@
+*{
+    margin: 0px;
+    padding:0px;
+}
+header
+{
+    width: 100vw;
+    height: 100px;
+}
+.main
+{
+    color: aliceblue;
+    display: flex;
+    padding:40px 50px ;
+    text-align: center;
+    justify-content: space-between; 
+}
+.nav-bar
+{
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+
+}
+.nav-bar li a
+{
+    padding:10px;
+    text-decoration: none;
+    color: #f0f8ff;
+    font-size:20px;
+}
+body
+{
+    background: url(../images/landscape_257156.jpg);
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vh;
+}
+.home
+{
+    margin: 100px 100px;
+    color:aliceblue;
+}
