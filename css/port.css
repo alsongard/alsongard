@@ -4,14 +4,13 @@
 }
 header
 {
-    width: 100vw;
     height: 100px;
 }
 .main
 {
     color: aliceblue;
     display: flex;
-    padding:40px 50px ;
+    padding:40px 50px;
     text-align: center;
     justify-content: space-between; 
 }
@@ -29,6 +28,19 @@ header
     color: #f0f8ff;
     font-size:20px;
 }
+.nav-bar li a:hover
+{
+    color: rgb(169, 169, 228);
+}
+.levels ul
+{
+    text-align: justify;
+    list-style: none;
+}
+.about
+{
+    padding: 80px;
+}
 body
 {
     background: url(../images/landscape_257156.jpg);
@@ -36,10 +48,68 @@ body
     background-position: center;
     background-repeat: no-repeat;
     height: 100vh;
-    width: 100vh;
+    width: 100vw;
 }
 .home
 {
-    margin: 100px 100px;
+    margin: 200px 100px;
     color:aliceblue;
+}
+
+footer
+{
+    width: 100vw;
+    margin-top: 200px;
+    background: rgb(226, 183, 183);
+}
+.footer-container
+{
+    justify-content: space-evenly;
+    display: flex;
+    padding: 50px;
+
+}
+
+.footer-text ul
+{
+    list-style: none;
+    text-transform: capitalize;
+}
+.footer-text ul li a:hover
+{
+    transition: ease-in-out 0.70s;
+    padding-left: 10px;
+    color:#ffff
+}
+.inTouch ul
+{
+    list-style: none;
+}
+.footer-text li a 
+{
+    text-transform: capitalize;
+    color: rgb(10, 10, 10);
+    font-size:23px;
+
+    text-decoration: none;
+}
+.inTouch li a
+{
+    font-size: 23px;
+    text-transform: capitalize;
+    color: rgb(10, 10, 10);
+    text-decoration: none;
+}
+.inTouch li :hover
+{
+    padding-left: 10px;
+    color:#ffff;
+
+    transition: ease-in-out 0.70s;
+
+}   
+.lastElement
+{
+    text-align: center;
+    padding-bottom: 30px;
 }
