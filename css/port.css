@@ -69,7 +69,21 @@ footer
     padding: 50px;
 
 }
-
+.footer-text::after
+{
+    position: absolute;
+    content: '';
+    width:0;
+    background:  #6e2c00 ;
+    bottom: -3px;
+    height: 5px;
+    box-sizing: border-box;
+    left: 0;
+}
+.footer-text:hover::after
+{
+    width: 100%;
+}
 .footer-text ul
 {
     list-style: none;
