@@ -3,36 +3,63 @@
     padding:0px;
     list-style:none;
     text-decoration: none;
+    box-sizing: border-box;
+    transition: ease-in 1s;
 }
 header
 {
-    height: 100px;
+    height: 80px;
+    /* background: red; */
+    line-height: 50%;
+    padding: 35px 50px;
 }
 .main
 {
     color: aliceblue;
     display: flex;
-    padding:40px 50px;
-    text-align: center;
     justify-content: space-between; 
 }
+.logo
+{
+    font-size:30px;
+    font-style: italic;
+}
+
 .nav-bar
 {
     display: flex;
     list-style: none;
-    justify-content: space-between;
-
+    gap: 2rem;
+    /* u coudl use gap:cm/px/rem*/
 }
 .nav-bar li a
 {
-    padding:10px;
+    font-weight: 900;
     text-decoration: none;
     color: #f0f8ff;
     font-size:20px;
 }
+.nav-bar li a::after
+{
+    position: relative;
+    content:"";
+    display: block;
+    background: rgb(169, 169, 228);
+    width: 0;
+    bottom:-5px;
+    height: 3px;
+    transition:ease-in 0.70s;
+}
+.nav-bar li a:hover::after
+{
+    width: 80%;
+    color: rgb(169, 169, 228);
+}
 .nav-bar li a:hover
 {
     color: rgb(169, 169, 228);
+    transition:ease-in-out 0.70s;
+
 }
 .levels ul
 {
@@ -41,8 +68,13 @@ header
 }
 .about
 {
-    padding: 80px;
+    border:solid black;
+    margin:250px 50px;
+    border-radius: 30px; 
+    padding: 40px 50px;
+    position: relative;
 }
+
 body
 {
     background: url(../images/landscape_257156.jpg);
@@ -50,7 +82,7 @@ body
     background-position: center;
     background-repeat: no-repeat;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
 }
 .home
 {
@@ -60,10 +92,16 @@ body
 
 footer{
     background:  rgb(226, 115, 115);
-    padding: 70px 0px;
+    padding: 50px 0px 30px 0px;
+}
+.lastElement
+{
+    margin-top: 30px;
+    margin-bottom: 0px;
+    text-align: center;
 }
 .container{
-    max-width: 1170px;
+    max-width: 1300px;
     margin: auto;
 }
 .row{
@@ -74,9 +112,12 @@ footer{
         display: flex;
         flex-direction: column;
     }
-    
-
+    .about
+    {
+        border-style:none
+    }
 }
+
 .footer-col{
     width: 25%;
     padding: 0 15px;
@@ -91,20 +132,20 @@ footer{
     position: absolute;
     content: '';
     width:0;
-    background:  #6e2c00 ;
+    background:  rgba(236, 20, 20, 0.527) ;
     bottom: -3px;
     height: 5px;
     box-sizing: border-box;
     left: 0;
 }
 .footer-col h4:hover::after{
-    width: 60px;
+    width: 80px;
     cursor: pointer;
     transition: ease .40s;
 }
 .footer-col li a{
     color:black;
-    font-size: 15px;
+    font-size: 18px;
     display: block;
     padding-bottom: 6px;
 }
