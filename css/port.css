@@ -74,7 +74,10 @@ header
     padding: 40px 50px;
     position: relative;
 }
-
+#menu
+{
+    display: none;
+}
 body
 {
     background: url(../images/landscape_257156.jpg);
@@ -107,6 +110,24 @@ footer{
 .row{
     display: flex;
 }
+.dropDown
+{
+    display: none;
+
+}
+.dropDown li a 
+{
+    line-height: 30px;
+    color: white;
+    font-size: 15px;
+}
+@media(max-width:990px)
+{
+    .nav-bar li a
+    {
+        font-size:18px;
+    }
+}
 @media(max-width:770px){
     .row{
         display: flex;
@@ -117,7 +138,33 @@ footer{
         border-style:none
     }
 }
-
+@media(max-width:690px)
+{
+    .nav-bar
+    {
+        display: none;
+    }
+    .home  
+    {
+        margin:50px;
+    }
+    .home h1,h2,p
+    {
+        font-size: 20px;
+    }
+    #menu 
+    {
+        display: block;
+        font-size: 30px;
+    }
+    /* .dropDown 
+    {
+        padding:8px;
+        border-radius: 10px;
+        display:grid
+    }
+    */
+} 
 .footer-col{
     width: 25%;
     padding: 0 15px;
