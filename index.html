@@ -23,12 +23,15 @@
                 <li><a href="#">SERVICES</a></li>
                 <li><a href="#">CONTACT</a></li>
             </ul>
-            <ul class="dropDown">
-                <li><a href="#">HOME</a></li>
-                <li><a href="#">ABOUT</a></li>
-                <li><a href="#">SERVICES</a></li>
-                <li><a href="#">CONTACT</a></li>
-            </ul>
+            <div class="dropDown">
+                <ul class="dropDownMenu">
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="#">SERVICES</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                </ul>
+
+            </div>
         </div>
        
     </header>
@@ -102,8 +105,39 @@
             </div>
         </div>
         <div class="lastElement">
-            <p>Made with <span><i class='bx bx-laugh'></i></span> by Gard Alson </p>
+            <p>Made with <span><i class='bx bx-laugh'></i></span> by Alson Gard </p>
         </div>
     </footer>
+    <script type="text/javascript">
+        let toggleBtn = document.querySelector("#menu")
+        let dropDownMenu = document.querySelector(".dropDown")
+        let toggleBtnIcon = document.querySelector("#menu i")
+        toggleBtn.onclick = function()
+        {
+            toggleBtn.style.backgroundColor = "red";
+            dropDownMenu.classList.toggle("open")
+            let isOpen = dropDownMenu.classList.contains('open')
+            toggleBtnIcon.classList = isOpen
+            ?'bx bx-x'
+            :'bx bx-menu'
+        };
+        // document.querySelector("#menu").style.backgroundColor = "red";
+        // let toggleBtn = document.getElementById('menu')
+        // let toggleBtnIcon = document.getElementById('#menu .i')
+        // let dropDownMenu = document.getElementById('dropDown')
+        // toggleBtn.onclick = function()
+        // {
+        //     dropDownMenu.classList.toggle("open")
+        //     let isOpen = dropDownMenu.classList.contains('open')
+        //     toggleBtnIcon.classList = isOpen()
+        //     ?'bx bx-x'
+        //     :'bx bx-menu'
+        // }
+
+
+
+    </script>
+
+
 </body>
 </html>
