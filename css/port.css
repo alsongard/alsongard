@@ -8,10 +8,20 @@
 }
 header
 {
+    position:fixed;
+    width: 100%;
+    top:0px;
     height: 80px;
-    /* background: red; */
+    z-index: 1001;
     line-height: 50%;
     padding: 35px 50px;
+}
+header.sticky
+{
+    transition: ease-in 0.70s;
+    backdrop-filter:blur(11px) ;
+    background: rgb(17, 85, 97, 0.5);
+	box-shadow: 0px 0px 10px rgba(102, 76, 76, 0.1);
 }
 .main
 {
@@ -24,7 +34,11 @@ header
     font-size:30px;
     font-style: italic;
 }
-
+#menu
+{
+    display: none;
+    cursor: pointer;
+}
 .nav-bar
 {
     display: flex;
@@ -61,6 +75,39 @@ header
     transition:ease-in-out 0.70s;
 
 }
+/* 
+.dropDownMenu
+{
+    position: absolute;
+    right: 50px;
+    top:70px;
+    background: rgb(118, 224, 238, 0.2);
+    padding: 12px;
+    width: 200px;
+    border-radius: 10px;
+    text-align: center;
+    backdrop-filter:blur(11px) ;
+    height: 0;
+    display:none; 
+}
+.dropDownMenu li 
+{
+    margin: 22px 0px;
+    
+}
+.dropDownMenu li a
+{
+    color:white;
+}
+.dropDownMenu li a:hover
+{
+    color: rgb(226, 115, 115);
+    padding-left: 10px;
+}
+.dropDownMenu.open
+{
+    height: 150px;
+} */
 .levels ul
 {
     text-align: justify;
@@ -69,15 +116,20 @@ header
 .about
 {
     border:solid rgb(12, 135, 139);
-    margin:350px 50px;
+    margin:550px 50px 100px 50px;
     border-radius: 30px; 
     padding: 40px 50px;
     position: relative;
 }
-#menu
+.about h1
 {
-    display: none;
-    cursor: pointer;
+    text-align: center;
+    margin-bottom: 20px;
+}
+#about-text
+{
+    text-align: center;
+    margin-bottom: 20px;
 }
 body
 {
@@ -90,61 +142,14 @@ body
 }
 .home
 {
-    margin: 200px 100px;
+    /* background: red; */
+    margin: 300px 100px;
     color:aliceblue;
 }
 
 footer{
     background:  rgb(226, 115, 115);
     padding: 50px 0px 30px 0px;
-}
-.dropDown
-{
-    position: absolute;
-    top:30px;
-    right:70px;
-    background: rgb(205, 255, 255, 0.2);
-    backdrop-filter:blur(11px);
-    text-align: left;
-    padding:15px 50px;
-    border-radius: 10px;
-    display: none;
-    text-align: left;
-}
-.dropDown li
-{
-    margin-bottom: 20px;
-}
-.dropDown li a
-{
-    line-height: 12px;
-    color:white;
-}
-.dropDown li a::after
-{
-    display: block;
-    position:relative;
-    content: "";
-    left:0px;
-    top: 3px;
-    background: #64a2db;
-    height: 3px;
-    width: 0;
-}
-.dropDown li a:hover::after
-{
-    width: 80%;
-    transition: ease-in 0.50s;
-}
-.dropDown li a:hover
-{
-    transition: ease-out 0.30s;
-    padding-left:10px;
-}
-
-.dropDown.open
-{
-    height:150px;
 }
 .lastElement
 {
@@ -167,9 +172,14 @@ footer{
 }
 @media(max-width:990px)
 {
+    
+    .nav-bar 
+    {
+        gap:1rem;
+    }
     .nav-bar li a
     {
-        font-size:18px;
+        font-size:15px;
     }
 }
 @media(max-width:770px){
@@ -201,10 +211,6 @@ footer{
         display: block;
         font-size: 30px;
         /* color:black; */
-    }
-    .dropDown
-    {
-        display: block;
     }
 
 
