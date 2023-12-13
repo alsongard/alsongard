@@ -75,6 +75,23 @@ header.sticky
     transition:ease-in-out 0.70s;
 
 }
+.dropHolder
+{
+    display: none;
+    background: rgba(17, 85, 97, 0.904);
+    backdrop-filter:blur(20px);
+    padding: 15px;
+    border-radius: 20px;
+}
+.dropDownMenu li
+{
+    margin: 15px;
+}
+.dropDownMenu li a
+{
+    color:white;
+    font-size: 20px;
+}
 /* 
 .dropDownMenu
 {
@@ -205,6 +222,11 @@ footer{
     .home h1,h2,p
     {
         font-size: 20px;
+    }
+    .home
+    {
+        text-align: center;
+        margin-top: 200px;
     }
     #menu 
     {
