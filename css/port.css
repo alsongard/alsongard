@@ -37,6 +37,9 @@ header.sticky
 #menu
 {
     display: none;
+    position: absolute;
+    top:23px;
+    right:18px;
     cursor: pointer;
 }
 .nav-bar
@@ -77,20 +80,48 @@ header.sticky
 }
 .dropHolder
 {
+    width: 170px;
     display: none;
-    background: rgba(17, 85, 97, 0.904);
-    backdrop-filter:blur(20px);
+    backdrop-filter:blur(11px) ;
+    background: rgb(17, 85, 97, 0.5);
+	box-shadow: 0px 0px 10px rgba(102, 76, 76, 0.1);
     padding: 15px;
     border-radius: 20px;
 }
 .dropDownMenu li
 {
+    transition:ease-in 0.70s;
     margin: 15px;
 }
 .dropDownMenu li a
 {
+    text-align: center;
     color:white;
-    font-size: 20px;
+    font-size: 16px;
+    font-weight: 200px;
+}
+.dropDownMenu li::after
+{
+    position: relative;
+    content:"";
+    display: block;
+    background: rgb(169, 169, 228);
+    width: 0;
+    bottom:-5px;
+    height: 3px;
+    transition:ease-in 0.70s;
+}
+.dropDownMenu li:hover::after
+{
+    width: 80%;
+}
+.dropDownMenu li a:hover
+{
+    padding-left: 10px;
+}
+.dropHolder.open
+{
+    display: block;
 }
 /* 
 .dropDownMenu
