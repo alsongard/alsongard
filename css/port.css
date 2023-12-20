@@ -1,7 +1,6 @@
 *{
     margin: 0px;
     padding:0px;
-    list-style:none;
     text-decoration: none;
     box-sizing: border-box;
     transition: ease-in 1s;
@@ -181,9 +180,27 @@ footer{
 .container{
     max-width: 1300px;
     margin: auto;
+
 }
 .row{
     display: flex;
+}
+.cerification
+{
+    border:solid rgb(12, 135, 139);
+    margin:100px 50px 100px 50px;
+    border-radius: 30px; 
+    padding: 40px 50px;
+    position: relative;
+}
+.cerification h1
+{
+
+    text-align: center;
+}
+.cerification-container ul li
+{
+    list-style:circle;
 }
 .projects
 {
@@ -208,8 +225,7 @@ footer{
 }
 
 @media(max-width:990px)
-{
-    
+{   
     .nav-bar 
     {
         gap:1rem;
@@ -220,14 +236,20 @@ footer{
     }
 }
 @media(max-width:770px){
+    .project-container
+    {
+        flex-direction: column;
+        gap:1rem;
+    }
+    .about
+    {
+        margin-top: 230px;
+    }
     .row{
         display: flex;
         flex-direction: column;
     }
-    .about
-    {
-        border-style:none
-    }
+
 }
 @media(max-width:690px)
 {
@@ -260,6 +282,11 @@ footer{
 .footer-col{
     width: 25%;
     padding: 0 15px;
+}
+.footer-col ul
+{
+    list-style: none;
+
 }
 .footer-col h4{
     font-size: 30px;
