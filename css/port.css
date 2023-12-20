@@ -5,6 +5,10 @@
     box-sizing: border-box;
     transition: ease-in 1s;
 }
+html
+{
+    scroll-behavior: smooth;
+}
 header
 {
     position:fixed;
