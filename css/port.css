@@ -126,10 +126,47 @@ header.sticky
 {
     display: block;
 }
+.title-sections
+{
+    text-align: center;
+    margin-bottom:10px;
+    font-size:28px;
+    font-family: 'Montserrat';
+    font-weight: 600;
+
+}
+.levels
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
 .levels ul
 {
     text-align: justify;
     list-style: none;
+}
+hr
+{
+    height: 5px;
+    background-color: rgb(12, 135, 139);
+    border: rgb(12, 135, 139);
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+.field
+{
+    margin:20px 10px;
+}
+.inspace
+{
+    margin: 0 0 5px 0;
+    height:3px;
+    background-color: black;
+}
+.about p
+{
+    font-size:17px;
 }
 .about
 {
@@ -138,11 +175,6 @@ header.sticky
     border-radius: 30px; 
     padding: 40px 50px;
     position: relative;
-}
-.about h1
-{
-    text-align: center;
-    margin-bottom: 20px;
 }
 #about-text
 {
@@ -164,6 +196,10 @@ body
     margin: 300px 100px;
     color:aliceblue;
 }
+.home h1
+{
+    margin-bottom:0;
+}
 
 footer{
     color: rgb( black ) ;
@@ -172,7 +208,6 @@ footer{
 }
 .lastElement
 {
-
     margin-top: 30px;
     margin-bottom: 0px;
     font-size: 20px;
@@ -198,11 +233,6 @@ footer{
     padding: 40px 50px;
     position: relative;
 }
-.cerification h1
-{
-
-    text-align: center;
-}
 .cerification-container ul li
 {
     list-style:circle;
@@ -215,20 +245,27 @@ footer{
     padding: 40px 50px;
     position: relative;
 }
-.projects h1
-{
-    text-align: center;
-}
+
 .project-container
 {
     display: flex;
     gap:5rem;
 }
-.project-container ul li a
+.field ul li a
 {
     color:black;
 }
-
+.data-lists
+{
+    margin-left: 25px;
+}
+.data-lists li a
+{
+    color: black;
+}
+.data-lists li a:hover{
+    color:blue;
+}
 @media(max-width:990px)
 {   
     .nav-bar 
