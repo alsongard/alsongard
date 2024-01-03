@@ -23,7 +23,7 @@ header.sticky
 {
     transition: ease-in 0.70s;
     backdrop-filter:blur(11px) ;
-    background: rgb(17, 85, 97, 0.5);
+    background: rgba(17, 85, 97, 0.5);
 	box-shadow: 0px 0px 10px rgba(102, 76, 76, 0.1);
 }
 .main
@@ -166,7 +166,8 @@ body
 }
 
 footer{
-    background:  rgb(226, 115, 115);
+    color: rgb( black ) ;
+    background:  rgba( 17, 85, 97, 0.5  );/*189, 195, 199 */
     padding: 50px 0px 30px 0px;
 }
 .lastElement
@@ -297,21 +298,24 @@ footer{
     margin-bottom: 20px;
     position: relative;
     cursor: pointer;
+    transition: ease-in-out 0.90s;
 }
 .footer-col h4::after{
     position: absolute;
-    content: '';
+    content: ' ';
     width:0;
-    background:  rgba(236, 20, 20, 0.527) ;
+    background:white ;
     bottom: -3px;
     height: 5px;
-    box-sizing: border-box;
     left: 0;
+    transition: ease-in-out;
 }
 .footer-col h4:hover::after{
-    width: 80px;
+    width: 50%;
     cursor: pointer;
-    transition: ease .40s;
+}
+.footer-col h4:hover{
+    color:white;
 }
 .footer-col li a{
     color:black;
