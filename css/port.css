@@ -93,6 +93,7 @@ header.sticky
 }
 .dropDownMenu li
 {
+    list-style: none;
     transition:ease-in 0.70s;
     margin: 15px;
 }
@@ -188,13 +189,25 @@ body
     background-position: center;
     background-repeat: no-repeat;
     height: 100vh;
-    width: 100%;
+    width: 100vw;
 }
 .home
 {
-    /* background: red; */
     margin: 300px 100px;
     color:aliceblue;
+    /* width:1300px;
+    max-width: 1100px;
+    min-width:200px;
+    /* background: red; */
+    /*position: absolute;
+    margin:300px auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;*/
 }
 .home h1
 {
@@ -319,7 +332,11 @@ footer{
         /* color:black; */
     }
 
-
+@media(max-width:430px){
+    .home{
+        margin-bottom:600px;
+    }
+}
 }
 .footer-col{
     width: 25%;
