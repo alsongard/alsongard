@@ -1,0 +1,72 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+header{
+    background-color: red;
+    position: absolute;
+    width:100vw;
+    top:0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+.header.sticky{
+    transition: ease-in 0.70s;
+    backdrop-filter:blur(11px) ;
+    background: rgba(17, 85, 97, 0.5);
+	box-shadow: 0px 0px 10px rgba(102, 76, 76, 0.1);
+}
+.logo
+{
+    font-size:30px;
+    font-style: italic;
+    margin-left:20px;
+}
+#menu{
+    display: none;
+    position: absolute;
+    top:23px;
+    right:18px;
+    cursor: pointer;
+}
+.nav-bar{
+    list-style: none;
+    display: flex;
+    width:400px;
+    margin-right: 0;
+    /* background-color: yellow; */
+    justify-content:space-between;
+}
+.nav-bar li a{
+    font-weight: 900;
+    text-decoration: none;
+    color: #f0f8ff;
+    font-size:20px;
+}
+.dropDownMenu{
+    display:none;
+}
+.nav-bar li a::after
+{
+    position: relative;
+    content:"";
+    display: block;
+    background: rgba(123, 247, 218, 0.459);
+    width: 0;
+    bottom:-5px;
+    height: 3px;
+    transition:ease-in 0.70s;
+}
+.nav-bar li a:hover::after
+{
+    width: 80%;
+    /* color: rgb(49,82,75) */
+}
+.nav-bar li a:hover
+{
+    color: rgba(123, 247, 218, 0.459);
+    transition:ease-in-out 0.70s;
+}
