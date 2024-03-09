@@ -187,7 +187,8 @@ body
     background-repeat: no-repeat;
     height: 80vh;
     width: 100vw;
-
+    animation:fade;
+    animation-duration: 1.5s;
 }
 .home
 {

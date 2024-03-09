@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 header{
-    background-color: red;
+    /* background-color: red; */
     position: absolute;
     width:100%;
     top:0;
@@ -26,7 +26,7 @@ header{
     margin-left:20px;
 }
 #menu{
-    /* display: none; */
+    display: none;
     display: none;
     top:23px;
     cursor: pointer;
@@ -45,7 +45,7 @@ header{
 .nav-bar li a{
     font-weight: 900;
     text-decoration: none;
-    color: #f0f8ff;
+    color: black;
     font-size:20px;
 }
 .nav-bar li a::after
@@ -103,4 +103,7 @@ header{
 }
 .dropDownMenu li a:hover::after{
     width:75%;
+}
+.home{
+    margin-top: 100px;
 }
