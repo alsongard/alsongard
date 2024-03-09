@@ -25,19 +25,22 @@ header{
     font-style: italic;
     margin-left:20px;
 }
-/* #menu{
+#menu{
+    /* display: none; */
     display: none;
-    position: absolute;
     top:23px;
-    right:18px;
     cursor: pointer;
-} */
+    font-size:30px;
+} 
 .nav-bar{
+    margin-right: 20px;
     list-style: none;
     display: flex;
     width:400px;
     /* background-color: yellow; */
-    justify-content:space-between;
+    justify-content:space-evenly;
+    position: absolute;
+    right:10px;
 }
 .nav-bar li a{
     font-weight: 900;
@@ -76,7 +79,6 @@ header{
     background-color: aquamarine;
     border-radius: 5px;
     display: none;
-    position: absolute;
 }
 .dropDownMenu li{
     margin-bottom: 5px;
