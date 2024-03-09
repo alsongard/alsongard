@@ -25,13 +25,13 @@ header{
     font-style: italic;
     margin-left:20px;
 }
-#menu{
+/* #menu{
     display: none;
     position: absolute;
     top:23px;
     right:18px;
     cursor: pointer;
-}
+} */
 .nav-bar{
     list-style: none;
     display: flex;
