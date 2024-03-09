@@ -6,7 +6,7 @@
 header{
     background-color: red;
     position: absolute;
-    width:100vw;
+    width:100%;
     top:0;
     display: flex;
     justify-content: space-between;
@@ -36,7 +36,6 @@ header{
     list-style: none;
     display: flex;
     width:400px;
-    margin-right: 0;
     /* background-color: yellow; */
     justify-content:space-between;
 }
@@ -45,9 +44,6 @@ header{
     text-decoration: none;
     color: #f0f8ff;
     font-size:20px;
-}
-.dropDownMenu{
-    display:none;
 }
 .nav-bar li a::after
 {
@@ -63,10 +59,46 @@ header{
 .nav-bar li a:hover::after
 {
     width: 80%;
-    /* color: rgb(49,82,75) */
+    color: rgb(49,82,75)
 }
 .nav-bar li a:hover
 {
     color: rgba(123, 247, 218, 0.459);
     transition:ease-in-out 0.70s;
+}
+.dropDownMenu{
+    margin:30px 30px 0 0;
+    padding:10px;
+    list-style:none;
+    align-items: center;
+    height:90px;
+    width:110px;
+    background-color: aquamarine;
+    border-radius: 5px;
+    display: none;
+    position: absolute;
+}
+.dropDownMenu li{
+    margin-bottom: 5px;
+}
+.dropDownMenu li a{
+    text-decoration: none;
+    color:black;
+}
+.dropDownMenu li a::after{
+    content: " ";
+    bottom:-1px;
+    display: block;
+    position: relative;
+    background: rgba(8, 8, 8, 0.459);
+    width:0;
+    height:3px;
+    transition: ease-in 0.70s;
+}
+.dropDownMenu li a:hover{
+    color: rgb(123, 131, 247);
+    transition:ease-in-out 0.70s;
+}
+.dropDownMenu li a:hover::after{
+    width:75%;
 }
