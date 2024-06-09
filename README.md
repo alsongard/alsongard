@@ -7,7 +7,7 @@ Here are some ideas to get you started:
 ## About Me
 Fullstack Developer, Software Developer, Data Analyst and Cyber Security Enthusiast  
 Studying Computer Science in Zetech University in Kenya  
-Currently learning React, PHP, Network Scans and Data Analsis and Building Prediction Models  
+Currently learning React, PHP, Network, Port and Protocol Scans and Data Analsis and Building Prediction Models  
 I’m looking to collaborate on web design projects, ctf, c++ applications  
 Ask me about Web Design Projects, performing reconnaisance on systems using different tools, C++ file handling and applications  
 How to reach me: alsongard@gmail.com  
@@ -20,6 +20,9 @@ PortFolio : - https://alsongard.github.io/alsongard/
 ![](https://github-readme-stats.vercel.app/api?username=alsongard&theme=dark&hide_border=false&include_all_commits=false&count_private=false)<br/>
 ![](https://github-readme-streak-stats.herokuapp.com/?user=alsongard&theme=dark&hide_border=false)<br/>
 ![](https://github-readme-stats.vercel.app/api/top-langs/?username=alsongard&theme=dark&hide_border=false&include_all_commits=false&count_private=false&layout=compact)
+
+## 🏆 GitHub Trophies
+![](https://github-profile-trophy.vercel.app/?username=alsongard&theme=radical&no-frame=false&no-bg=true&margin-w=4)
 
 
 <!-- ---
