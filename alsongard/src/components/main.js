@@ -32,10 +32,11 @@ function Header(){
 
 function HomePage(){
     const [darkMode, headerElement] = Header();
+    let answer = darkMode ? "dark" : ""
     return (
-        <div>
+        <div className={`{answer}`}>
             {headerElement}
-            <section  class="home">
+            <section  className="">
                 <h1>Gard Alson</h1>
                 <h2>Web Developer, C++ & Python Programmer, Networking Administrator and Aspiring Penetration Tester</h2>
                 <p>I am a web developer both back-end and front-end, a programmer and well advanced in C++, Python, network security administrator and an upcoming cyber security analyst</p>
