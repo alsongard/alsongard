@@ -1,6 +1,8 @@
 function About(){
     return (
-        <section id="aboutme" class="about">
+    
+        // <section className=" rounded-[30px] mt-[40px] py-[10px] px-[50px]  border-spacing-5 border-[rgb(12, 135, 139)]">
+        <section id="aboutme" className="about dark:bg-slate-800 dark:text-white">
             <h2 class="title-sections">About Me</h2>
             <hr/>
             <p id="about-text">I am a passionate in web development, programming, and network administration. My journey in the tech world began with a fascination for creating seamless digital experiences, evolving into a multi-faceted skill set that spans both front-end and back-end development, proficiency in C++ and Python, and a solid foundation in networking. My ultimate goal is to delve deeper into cybersecurity, aspiring to become a trusted penetration tester.</p>
@@ -57,3 +59,4 @@ function About(){
         </section>
     )
 }
+export default About;

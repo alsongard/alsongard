@@ -1,49 +1,27 @@
 import React from "react"
-function Header(){
-    const [darkMode, setDarkMode] = React.useState(false);
-    const headerElement = (
-        <header className="flex flex-row ">
-                <div class="logo">
-                    <p>Alsongard</p>
-                </div>
-            <div id="menu">
-                <i class='bx bx-menu'></i>
-            </div>
-            <ul class="nav-bar">
-                <li><a href="#home">HOME</a></li>
-                <li><a href="#aboutme">ABOUT</a></li>
-                <li><a href="#services">SERVICES</a></li>
-                <li><a href="#contact">CONTACT</a></li>
-                <li><a href="#projects">PROJECTS</a></li>
-            </ul>
-            <div class="dropHolder">
-                <ul className=" hidden">
-                    <li><a href="#home">HOME</a></li>
-                    <li><a href="#aboutme">ABOUT</a></li>
-                    <li><a href="#services">SERVICES</a></li>
-                    <li><a href="#contact">CONTACT</a></li>
-                    <li><a href="#projects">PROJECTS</a></li>
-                </ul>
-            </div>
-        </header>
-    )
-    return [darkMode, headerElement];
-}
+import Header from "./header";
+import HomePage from "./homePage";
+import About from "./about";
+import Projects from "./projects";
+import Certification from "./certifications";
+import Footer from "./footer";
 
-function HomePage(){
-    const [darkMode, headerElement] = Header();
-    let answer = darkMode ? "dark" : ""
+function Page(){
+    const [darkMode, setDarkMode] = React.useState(false);
+
+    const answer = darkMode ? "dark" : ""
+    console.log(answer);
     return (
         <div className={`{answer}`}>
-            {headerElement}
-            <section  className="">
-                <h1>Gard Alson</h1>
-                <h2>Web Developer, C++ & Python Programmer, Networking Administrator and Aspiring Penetration Tester</h2>
-                <p>I am a web developer both back-end and front-end, a programmer and well advanced in C++, Python, network security administrator and an upcoming cyber security analyst</p>
-                <p>I love coding and designing new websites, indulging in ctfs and designing networks</p>
-            </section>
+        {/* <div className={`{answer}`}> */}
+            <Header darkMode={darkMode} setDarkMode={setDarkMode}/>
+            <HomePage/>
+            <About/>
+            <Projects/>
+            <Certification/>
+            <Footer/>
         </div>
     )
 }
 
-export default HomePage;
+export default Page;
