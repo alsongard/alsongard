@@ -1,0 +1,3 @@
+In the realm of technology, two icons stand out: a software developer and a hacker. The software developer icon is meticulously crafted, featuring a figure in hood or casual attire surrounded by lines of 
+code and digital interfaces. The hacker icon, on the other hand, is edgier - a shadowy silhouette against a backdrop of neon-hued circuitry 
+and binary code, hinting at a sense of mystery and intrigue. and with no labels.
