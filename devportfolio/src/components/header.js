@@ -11,23 +11,38 @@ function Header({darkModeNew, setDarkModeNew})
         })
     }
     return (
-        <header className="flex flex-row justify-between bg-slate-600 h-[70px] items-center pl-[50px] pr-[70px]">
+        <header className="myshadow flex flex-row justify-between  bg-slate-600 h-[70px] items-center pl-[50px] pr-[70px]">
             <h1>ETERNITY</h1>
 
             <div className="flex  justify-between w-[500px] items-center">
                 <ul className=" flex flex-row justify-between w-[75%] ">
                     <li>
-                        <NavLink to="">
+                        <NavLink 
+                            to="/"
+                            className={({isActive})=>
+                                isActive ? "text-white" : "text-blac"
+                            }
+                        >
                             Portfolio
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to="">
+                        <NavLink 
+                            to="/projects"
+                            className={({isActive})=>
+                                isActive ? "text-white" : "text-blac"
+                            }
+                        >
                             Projects
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to="">
+                        <NavLink 
+                            className={({isActive})=>
+                                isActive ? "text-white" : "text-blac"
+                            }
+                            to="/contact"
+                        >
                             Contact
                         </NavLink>
                     </li>
