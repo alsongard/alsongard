@@ -1,12 +1,12 @@
 import { FaTwitter } from "react-icons/fa";
-import { FaGit, FaLinkedin } from "react-icons/fa6";
+import {  FaLinkedin } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
 import user_1 from "../images/user_1.jpg"
 
 function Home()
 {
     return (
-        <section className="bg-gradient-to-tl from-[rgb(93,109,126)] to-[rgb(33,47,60)] h-[95vh] ">
+        <section className="dark:bg-gradient-to-tl from-[rgb(93,109,126)] to-[rgb(33,47,60)] h-[95vh] ">
             <div className="pt-[30px]">
                 <h1 className="text-center text-[33px] font-bold">Gard Alson</h1>
                 <p className="text-center font-semibold">Full Stack Developper & PenTester</p>
