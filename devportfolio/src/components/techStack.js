@@ -2,12 +2,12 @@ import { Link } from "react-router-dom";
 function TechStack()
 {
     return (
-        <section className="bg-[#232323]">
+        <section className="dark:bg-slate-600 pt-[20px] pb-[50px]">
             <h1 className="text-white text-center text-[40px] font-semibold">Techstack</h1>
 
             {/* techstack container */}
             <div className=" mx-auto w-[100%] grid grid-cols-3 gap-x-4 px-[20px]  ">
-                <div className="techstack-container  text-center mt-[30px] bg-white py-[10px] px-[10px] rounded-md ">
+                <div className="techstack-container  dark:border-none border-2 border-black text-center mt-[30px] bg-white py-[10px] px-[10px] rounded-md ">
                     <h1 className="text-[23px]">Front-End Developer</h1>
                     <p className="">Crafting visually appealing and responsive landing pages and user interfaces to enhance user experience.</p>
                     
@@ -26,7 +26,7 @@ function TechStack()
 
                 </div>
 
-                <div className="techstack-container  text-center mt-[30px] bg-white py-[10px] px-[10px] rounded-md ">
+                <div className="techstack-container border-2 border-black text-center mt-[30px] bg-white py-[10px] px-[10px] rounded-md ">
                     <h1 className="text-[23px]" >Back-End Developer</h1>
                     <p>Building and maintaining robust server-side applications and databases to ensure smooth data flow and secure storage.</p>
 
@@ -43,7 +43,7 @@ function TechStack()
                     </ul>
                 </div>  
 
-                <div className="techstack-container  text-center mt-[30px] bg-white py-[10px] px-[10px] rounded-md ">
+                <div className="techstack-container border-2 border-black text-center mt-[30px] bg-white py-[10px] px-[10px] rounded-md ">
                     <h1 className="text-[23px]">Data Analyst</h1>
                     <p>Transforming raw data into actionable insights to drive better decision-making through analysis and visualization.</p>
                     
@@ -61,7 +61,7 @@ function TechStack()
                         <li>Streamlit</li>
                     </ul>
                 </div>
-                <div className="techstack-container  text-center mt-[30px] bg-white py-[10px] rounded-md ">
+                <div className="techstack-container border-2 border-black text-center mt-[30px] bg-white py-[10px] rounded-md ">
                     <h1 className="text-[23px]">Software Development</h1>
                     <p>Designing and developing high-performance applications using C++ for both desktop and embedded systems</p>
 
@@ -71,7 +71,7 @@ function TechStack()
                     </ul>
                 </div>
             </div>
-            <Link to="/projects"><button className="mt-[50px] px-[10px] py-[2px] rounded-md  block  mx-auto bg-white">View Projects</button></Link>
+            <Link to="/projects"><button className="mt-[50px] px-[10px] py-[2px] border-2 border-black rounded-md  block  mx-auto bg-white">View Projects</button></Link>
         </section>
     )
 }
