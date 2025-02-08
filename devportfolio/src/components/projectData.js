@@ -6,7 +6,7 @@ const data = {
             short_description:"Lorem Ispum",
             description: "Lorem Ispum",
             img: "Lorem Ispum",
-            url: "Lorem Ispum"
+            url: "https://github.com/alsongard/movie_series_scrapper"
 
         },
         {
@@ -15,7 +15,7 @@ const data = {
             short_description:"Lorem Ispum",
             description: "Lorem Ispum",
             img: "Lorem Ispum",
-            url: "Lorem Ispum"
+            url: "https://aronarchitect.netlify.app/"
         },
         {
             id: 3,
@@ -23,15 +23,15 @@ const data = {
             short_description:"Lorem Ispum",
             description: "Lorem Ispum",
             img: "Lorem Ispum", 
-            url: "Lorem Ispum"
+            url: "https://michellekitchens.netlify.app/"
         },
         {
             id: 4,
             name : "crime report website restaurant",
-            short_description:"Lorem Ispum",
+            short_description:"This website will be used by users to report crimes and security officers can look at these data from the database",
             description: "Lorem Ispum",
             img: "Lorem Ispum",
-            url: "Lorem Ispum"
+            url: "https://github.com/alsongard/Crime-Reporting-Website"
 
         }
     ],
@@ -43,7 +43,7 @@ const data = {
             short_description:"Lorem Ispum",
             description: "Lorem Ispum",
             img: "Lorem Ispum",
-            url: "Lorem Ispum"
+            url: "https://github.com/alsongard/airpollution-data-analysis-"
 
         },
         {
@@ -52,7 +52,7 @@ const data = {
             short_description:"Lorem Ispum",
             description: "Lorem Ispum",
             img: "Lorem Ispum",
-            url: "Lorem Ispum"
+            url: "https://github.com/alsongard/movie_series_scrapper"
         }
     ]
 

@@ -1,5 +1,6 @@
 import ProjectComponentView from "./projectComponentView";
 import data from "./projectData";
+import { Link } from "react-router-dom";
 function ProjectCategoryView(props)
 {
     const {projectCategoryName, projects} = props;
@@ -7,11 +8,10 @@ function ProjectCategoryView(props)
     return (
         <div className="">
             <h1 className="font-semibold">{projectCategoryName}</h1>
-            <div className="border-2 border-sky-400 flex flex-row justify-start gap-x-[100px] flex-wrap px-[20px]">
+            <div className="border-2 border-[rgba(105,47,47,0.3)] dark:border-black  rounded-md pt-3 flex flex-row justify-between  items-center gap-y-4 flex-wrap px-[10px]">
                 {projects.map(project => (
                         <ProjectComponentView key={project.id} item={project}/>
                     ))}
-
             </div>
         </div>
     )
