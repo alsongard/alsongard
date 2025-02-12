@@ -25,4 +25,10 @@ code {
   .myImage{
     border-radius: 100%;
   }
+  .preloader{
+    background-image: url("./images/kali_desktop.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }
