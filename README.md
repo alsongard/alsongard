@@ -1,5 +1,6 @@
 ## Hi, I'm Gard Alson
 
+[![wakatime](https://wakatime.com/badge/user/ca37100b-7f0f-4ae1-947c-ff595165e688/project/08ce1bb1-8e14-4eda-830c-a0dbd259b83b.svg)](https://wakatime.com/badge/user/ca37100b-7f0f-4ae1-947c-ff595165e688/project/08ce1bb1-8e14-4eda-830c-a0dbd259b83b)
 <!--**alsongard/alsongard** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
 Here are some ideas to get you started:

@@ -26,7 +26,6 @@ function Footer()
                         <Link className="bg-slate-500 p-[10px] rounded-md hover:bg-white hover:border-2 hover:border-slate-950" to="/"><FaXTwitter/></Link>
                         <Link className="bg-slate-500 p-[10px] rounded-md hover:bg-white hover:border-2 hover:border-slate-950" to="/"><FaGithub/></Link>
                         <Link className="bg-slate-500 p-[10px] rounded-md hover:bg-white hover:border-2 hover:border-slate-950" to="/"><BiLogoGmail/></Link>
-
                     </div>
                 </div>
             </div>        
