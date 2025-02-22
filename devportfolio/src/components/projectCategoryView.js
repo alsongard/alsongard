@@ -1,6 +1,4 @@
 import ProjectComponentView from "./projectComponentView";
-import data from "./projectData";
-import { Link } from "react-router-dom";
 function ProjectCategoryView(props)
 {
     const {projectCategoryName, projects} = props;
