@@ -1,101 +1,123 @@
-import Image from "next/image";
+import user_1 from "../public/images/user_1.jpg"
+import Link from "next/link";
+
+export const metadata = {
+  title: "AlsonGard",
+  description: "home page"
+}
+
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div>
+      <section className="dark:bg-gradient-to-tl from-[rgb(93,109,126)] to-[rgb(33,47,60)] h-[95vh] ">
+        <div className="pt-[30px]">
+          <h1 className="text-center text-[33px] font-bold">Gard Alson</h1>
+          <p className="text-center font-semibold">Full Stack Developer & PenTester</p>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          {/* short text for introduction */}
+          <p className="text-center w-[70%] mx-auto">I am a versatile Full Stack Developer and PenTester with a passion for building robust web applications and ensuring their security. With expertise in both front-end and back-end technologies, I strive to deliver seamless user experiences while safeguarding systems against vulnerabilities.</p>
+          
+          {/* icons for getting in touch */}
+          {/* <div className="flex  flex-row justify-between w-[250px] h-[45px] my-[20px] mx-auto">
+              <div className="bg-slate-500 p-[10px] rounded-md hover:bg-white hover:border-2 hover:border-slate-950 "><FaGithub className="text-[23px]"/></div>
+              <div className="bg-slate-500 p-[10px] rounded-md hover:bg-white hover:border-2 hover:border-slate-950"><FaLinkedin className="text-[23px]"/></div>
+              <div className="bg-slate-500 p-[10px] rounded-md hover:bg-white hover:border-2 hover:border-slate-950"><FaTwitter className="text-[23px]"/></div>
+          </div> */}
+
+          <div className="w-[330px] myImage mx-auto mt-[20px] h-[330px]">
+              <img  className=" w-[100%] h-[100%] rounded-full " src="images/user_1.jpg" alt="fullstack/hacker"/>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+      <section className="dark:bg-slate-600 pt-[10px] ">
+
+        {/* <div className=" w-[80%] text-white p-[50px] mx-auto dark:bg-slate-500" > */}
+        <div className=" w-[80%] dark:text-white p-[50px] mx-auto " >
+          <h1>Serivces I Offer</h1>
+          <ul className="list-disc text-left pl-[20px]">
+            <li>Web Develoliment and design both front-end and back-end</li>
+            <li>Data analyst</li>
+            <li>Web Scraping</li>
+            <li>Software Development using C++ and Python</li>
+            <li>Building Prediction Models</li>
+          </ul>
+        </div>
+      </section>
+      <section className="dark:bg-slate-600 pt-[20px] pb-[50px]">
+        <h1 className="text-white text-center text-[40px] font-semibold">Techstack</h1>
+
+        {/* techstack container */}
+        <div className=" mx-auto w-[100%] grid grid-cols-3 gap-x-4 px-[20px]">
+          <div className="techstack-container  dark:border-none border-2 border-black text-center mt-[30px] bg-white py-[10px] px-[10px] rounded-md ">
+            <h1 className="text-[23px]">Front-End Developer</h1>
+            <p className="">Crafting visually appealing and responsive landing pages and user interfaces to enhance user experience.</p>
+            <h2 className="mt-[10px]">Core Technologies</h2>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript (ES6+)</li>
+            </ul>
+            <h2 className="mt-[10px]">Frameworks & Libraries</h2>
+            <ul>
+                <li>React</li>
+                <li>Tailwindcss</li>
+            </ul>
+          </div>
+
+          <div className="techstack-container border-2 border-black text-center mt-[30px] bg-white py-[10px] px-[10px] rounded-md ">
+          
+            <h1 className="text-[23px]" >Back-End Developer</h1>
+            <p>Building and maintaining robust server-side applications and databases to ensure smooth data flow and secure storage.</p>
+
+            <h2 className="mt-[10px]">Core Technologies</h2>
+            <ul>
+                <li>PHP</li>
+                <li>SQL (MySQL)</li>
+            </ul>
+            
+            <h2 className="mt-[10px]" >Frameworks & Tools</h2>
+            <ul>
+                <li>Node.js</li>
+                <li>Express.js</li>
+            </ul>
+          </div>  
+
+          <div className="techstack-container border-2 border-black text-center mt-[30px] bg-white py-[10px] px-[10px] rounded-md ">
+          
+            <h1 className="text-[23px]">Data Analyst</h1>
+            <p>Transforming raw data into actionable insights to drive better decision-making through analysis and visualization.</p>
+            
+            <h2 className="mt-[10px]">Core Technologies</h2>
+            <ul>
+                <li>Python</li>
+            </ul>
+
+            <h2 className="mt-[10px]">Libraries</h2>
+            <ul>
+                <li>Pandas</li>
+                <li>Matplotlib</li>
+                <li>Scikit learn</li>
+                <li>Numpy</li>
+                <li>Streamlit</li>
+            </ul>
+          </div>
+
+          <div className="techstack-container border-2 border-black text-center mt-[30px] bg-white py-[10px] rounded-md ">
+          
+            <h1 className="text-[23px]">Software Development</h1>
+            <p>Designing and developing high-performance applications using C++ for both desktop and embedded systems</p>
+
+            <h2>TechStack</h2>
+            <ul>
+                <li>C++</li>
+            </ul>
+          </div>
+        </div>
+
+        <Link href="/projects"><button className="mt-[50px] px-[10px] py-[2px] border-2 border-black rounded-md  block  mx-auto bg-white">View Projects</button></Link>
+        </section>
     </div>
-  );
+
+    );
 }
