@@ -25,3 +25,15 @@ body {
     text-wrap: balance;
   }
 }
+
+
+@layer base
+{
+  .projectComponent:hover
+  {
+    transition-duration: 2s;
+    transition-timing-function:cubic-bezier(0.15, 1.82, 1.16, 1);
+    /* transition-timing-function: ease-out; */
+    transform: scale(0.9, 0.9);
+  }
+}

@@ -4,9 +4,9 @@ function ProjectCategoryView(props)
     const {projectCategoryName, projects} = props;
 
     return (
-        <div className="">
+        <div className="mb-[50px]  mx-auto  rounded-md p-[10px]">
             <h1 className="font-semibold">{projectCategoryName}</h1>
-            <div className="border-2 border-[rgba(105,47,47,0.3)] dark:border-black  rounded-md py-3 flex flex-row justify-between  items-center gap-y-[20px] flex-wrap px-[10px]">
+            <div className="grid grid-cols-3 gap-x-[30px] gap-y-[50px] shadow-[0px_0px_5px_#2e4053] rounded-md p-[30px] "> {/**dark:border-black  justify-items-stretch gap-x-[30px] border-[1px] border-black  items-center gap-y-[20px] flex-wrap px-[10px]*/}
                 {projects.map(project => (
                         <ProjectComponentView key={project.id} item={project}/>
                     ))}
@@ -16,3 +16,4 @@ function ProjectCategoryView(props)
 }
 
 export default ProjectCategoryView;
+//justify-between flex-wrap gap-y-[30px]

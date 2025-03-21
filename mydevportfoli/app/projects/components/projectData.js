@@ -6,7 +6,7 @@ const data = {
             short_description:"Lorem Ispum",
             description: "Lorem Ispum",
             img: "/images/freetogame.png",
-            url: "https://github.com/alsongard/movie_series_scrapper"
+            url: "https://github.com/alsongard/RAPID-GAME-WEBAPP"
 
         },
         {
@@ -42,7 +42,7 @@ const data = {
             name: "air pollution prediction model",
             short_description:"Lorem Ispum",
             description: "Lorem Ispum",
-            img: "air_pollution_decision_tree1.png",
+            img: "/images/air_pollution_decision_tree1.png",
             url: "https://github.com/alsongard/airpollution-data-analysis-"
 
         },
