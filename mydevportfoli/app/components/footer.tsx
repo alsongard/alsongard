@@ -23,9 +23,9 @@ export default function Footer() {
             <div>
             <h1 className="text-center">Contact</h1>
                 <div className="flex justify-between w-[200px] h-[40px] flex-row">
-                    <Link className="bg-slate-500 p-[10px] rounded-md hover:bg-white hover:border-2 hover:border-slate-950" href="/"><FaXTwitter/></Link>
-                    <Link className="bg-slate-500 p-[10px] rounded-md hover:bg-white hover:border-2 hover:border-slate-950" href="/"><FaGithub/></Link>
-                    <Link className="bg-slate-500 p-[10px] rounded-md hover:bg-white hover:border-2 hover:border-slate-950" href="/"><BiLogoGmail/></Link>
+                    <a className="bg-slate-500 p-[10px] rounded-md hover:bg-white hover:border-2 hover:border-slate-950" href="https://x.com/alsongadizo"><FaXTwitter/></a>
+                    <a className="bg-slate-500 p-[10px] rounded-md hover:bg-white hover:border-2 hover:border-slate-950" href="http://github.com/alsongard"><FaGithub/></a>
+                    <a className="bg-slate-500 p-[10px] rounded-md hover:bg-white hover:border-2 hover:border-slate-950" href="mailto:alsongadizo@gmail.com"><BiLogoGmail/></a>
                 </div>
             </div>
         </div>        
