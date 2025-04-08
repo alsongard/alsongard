@@ -48,7 +48,7 @@ export default function Home() {
         <h1 className="text-white text-center text-[40px] font-semibold">Techstack</h1>
 
         {/* techstack container */}
-        <div className=" mx-auto w-[100%] grid grid-cols-3 gap-x-4 px-[20px]">
+        <div className=" mx-auto w-[100%] grid grid-cols-3 gap-x-4 px-[20px] max-[778px]:grid-cols-2 max-[500px]:grid-cols-1 text-[#5d6d7e]">
           <div className="techstack-container  dark:border-none border-2 border-black text-center mt-[30px] bg-white py-[10px] px-[10px] rounded-md ">
             <h1 className="text-[23px]">Front-End Developer</h1>
             <p className="">Crafting visually appealing and responsive landing pages and user interfaces to enhance user experience.</p>
@@ -115,7 +115,7 @@ export default function Home() {
           </div>
         </div>
 
-        <Link href="/projects"><button className="mt-[50px] px-[10px] py-[2px] border-2 border-black rounded-md  block  mx-auto bg-white">View Projects</button></Link>
+        <Link href="/projects"><button className="mt-[50px] px-[10px] py-[2px] border-2 border-black rounded-md text-[#5d6d7e] block  mx-auto bg-white">View Projects</button></Link>
         </section>
     </div>
 
