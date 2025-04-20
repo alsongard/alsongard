@@ -5,7 +5,7 @@ import React from 'react'
 import Link from "next/link";
 export default function Footer() {
   return (
-    <footer className="dark:bg-gradient-to-tl from-[rgb(93,109,126)] to-[rgb(33,47,60)] py-[100px]">
+    <footer className="bg-gradient-to-tl from-[rgb(93,109,126)] to-[rgb(33,47,60)] py-[100px] dark:bg-black dark:text-white">
         <div className="text-center  max-[740px]:px-[15px]">
             <h2 className="text-[33px]" >AlsonGard</h2>
             <p>Days become seconds, weeks become minutes, months become hours and years just days. <br className="max-[740px]:hidden"/> Pursuing every dream to become reality, building applications which aid in human activities and in a better world.</p>
@@ -22,9 +22,9 @@ export default function Footer() {
             <div>
             <h1 className="text-center">Contact</h1>
                 <div className="flex flex-row justify-between w-[200px]  items-center flex-wrap max-[510px]:h-[auto] max-[510px]:w-[50px] max-[510px]:flex-col max-[510px]:gap-y-[10px] ">
-                    <a className="bg-slate-500 p-[10px] rounded-md hover:bg-white hover:border-2 hover:border-slate-950" href="https://x.com/alsongadizo"><FaXTwitter/></a>
-                    <a className="bg-slate-500 p-[10px] rounded-md hover:bg-white hover:border-2 hover:border-slate-950" href="http://github.com/alsongard"><FaGithub/></a>
-                    <a className="bg-slate-500 p-[10px] rounded-md hover:bg-white hover:border-2 hover:border-slate-950" href="mailto:alsongadizo@gmail.com"><BiLogoGmail/></a>
+                    <a target="_blank" className="bg-slate-500 p-[10px] rounded-md hover:bg-white hover:border-2 hover:border-slate-950" href="https://x.com/alsongadizo"><FaXTwitter/></a>
+                    <a target="_blank" className="bg-slate-500 p-[10px] rounded-md hover:bg-white hover:border-2 hover:border-slate-950" href="http://github.com/alsongard"><FaGithub/></a>
+                    <a target="_blank" className="bg-slate-500 p-[10px] rounded-md hover:bg-white hover:border-2 hover:border-slate-950" href="mailto:alsongadizo@gmail.com"><BiLogoGmail/></a>
                 </div>
             </div>
         </div>        
