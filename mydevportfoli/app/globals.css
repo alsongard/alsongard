@@ -1,6 +1,7 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
+@import "tailwindcss/base";
+@import "tailwindcss/utilities";
+@import "tailwindcss/components";
 
 /*
 :root {
@@ -28,17 +29,15 @@ body {
 }
 */
 
-@layer base
+.projectComponent:hover
 {
-  .projectComponent:hover
-  {
-    transition-duration: 2s;
-    transition-timing-function:cubic-bezier(0.15, 1.82, 1.16, 1);
-    /* transition-timing-function: ease-out; */
-    transform: scale(0.9, 0.9);
-  }
-  .project-cover
+  transition-duration: 2s;
+  transition-timing-function:cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  /* cubic-bezier(0.15, 1.82, 1.16, 1) */
+  transform: scale(0.9, 0.9);
+}
+
+  /* .project-cover
   {
     background-image: linear-gradient(to right, rgba(44, 197, 159, 0.568), rgba(0, 134, 128, 0.781));
-  }
-}
+  } */

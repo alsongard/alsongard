@@ -1,12 +1,14 @@
+import Image from "next/image";
 function ProjectComponentView(prop)
 {
     return (
-        <div className="projectComponent h-[400px] shadow-[0px_0px_10px_black] px-[20px] rounded-md ">
-            <a className="cursor-pointer " target="_blank" href={prop.item.url}>
-                <div>
+        <div className="projectComponent relative h-[400px] shadow-[0px_0px_10px_black] px-[20px] z-[10] rounded-md ">
+            <a className="cursor-pointer  " target="_blank" href={prop.item.url}>
+                <div> 
                     <h2>{prop.item.name}</h2>
-                    <img className="w-[100%] rounded-md h-[300px]  " src={prop.item.img} alt="project-image"/> {/**border-2 border-black */}
-                    {/* <p>{}</p> */}
+                    <div className="relative h-[350px] rounded-md w-[100%]">
+                        <Image fill={true} className="rounded-md " src={prop.item.img} alt="project-image"/> 
+                    </div>
                 </div>
             </a>
         </div>

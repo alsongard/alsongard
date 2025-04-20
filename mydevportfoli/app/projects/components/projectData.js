@@ -30,7 +30,7 @@ const data = {
             name : "crime report website",
             short_description:"This website will be used by users to report crimes and security officers can look at these data from the database",
             description: "Lorem Ispum",
-            img: "images/crime_report_website.png",
+            img: "/images/crime_report_website.png",
             url: "https://github.com/alsongard/Crime-Reporting-Website"
 
         }
@@ -51,8 +51,19 @@ const data = {
             name: "yts.mx web scrapper", 
             short_description:"Lorem Ispum",
             description: "Lorem Ispum",
-            img: "images/movie_scrapper.png",
+            img: "/images/movie_scrapper.png",
             url: "https://github.com/alsongard/movie_series_scrapper"
+        }
+    ], 
+    "game development projects":
+    [
+        {
+            id:1,
+            name: "Monster chasing game",
+            short_description: "lorem ispum",
+            description: "Lorem ispum",
+            img:"/images/game_development.png",
+            url:"https://github.com/alsongard/monster_chasing_game"
         }
     ]
 

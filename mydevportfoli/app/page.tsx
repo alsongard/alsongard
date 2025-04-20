@@ -9,9 +9,9 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <div>
-      <section className="dark:bg-gradient-to-tl from-[rgb(93,109,126)] to-[rgb(33,47,60)] h-[95vh] ">
-        <div className="pt-[30px]">
+    <div className="">  
+      <section className="bg-gradient-to-tl from-[rgb(93,109,126)] to-[rgb(33,47,60)] h-[95vh]  ">
+        <div className="pt-[30px] text-white">
           <h1 className="text-center text-[33px] font-bold">Gard Alson</h1>
           <p className="text-center font-semibold">Full Stack Developer & PenTester</p>
 

@@ -11,9 +11,12 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-      },
+      }
     },
   },
   plugins: [],
+  darkMode: 'class'
 };
 export default config;
+
+// 702px ==> 950px
