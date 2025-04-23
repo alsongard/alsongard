@@ -38,6 +38,8 @@ PortFolio : - https://alsongard.github.io/alsongard/
 
 <figure><embed src="https://wakatime.com/share/@Alson/55129626-d5ec-403d-9238-bbb7eed1d6de.svg"></embed></figure>
 
+<figure><embed src="https://wakatime.com/share/@Alson/043db341-a3c0-4239-9193-50ca03599cf6.svg"></embed></figure>
+
 ## 🏆 GitHub Trophies
 ![](https://github-profile-trophy.vercel.app/?username=alsongard&theme=radical&no-frame=false&no-bg=true&margin-w=4)
 

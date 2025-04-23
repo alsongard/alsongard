@@ -1,5 +1,19 @@
 import ProjectComponentView from "./projectComponentView";
-function ProjectCategoryView(props)
+
+type projectData =  {
+    id: number,
+    name: string,
+    short_description: string,
+    description: string,
+    img: string,
+    url: string
+}
+
+type CategoryProps = {
+    projectCategoryName: string,
+    projects : projectData[]
+}
+function ProjectCategoryView(props: CategoryProps)
 {
     const {projectCategoryName, projects} = props;
 

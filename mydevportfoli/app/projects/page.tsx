@@ -1,6 +1,14 @@
 import ProjectCategoryView from "./components/projectCategoryView";
 import data from "./components/projectData";
 
+type projectData =  {
+  id: number,
+  name: string,
+  short_description: string,
+  description: string,
+  img: string,
+  url: string
+}
 
 function ProjectPage()
 {
@@ -14,7 +22,7 @@ function ProjectPage()
       <h2 className="text-center">Where will and intelligence is crafted beyond.</h2>
       <div className="w-[90%]  mt-[30px] mx-auto">
         {
-          Object.keys(data).map((projectType)=>(
+          Object.keys(data).map((projectType: string)=>(
               <ProjectCategoryView key={projectType} projectCategoryName={projectType} projects={data[projectType]}/>
           ))
         }
@@ -22,4 +30,4 @@ function ProjectPage()
     </section>
   )
 }
-export default ProjectPage;
+export default ProjectPage; 
