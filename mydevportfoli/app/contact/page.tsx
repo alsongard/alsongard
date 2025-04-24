@@ -29,12 +29,12 @@ function Contact()
     }
     function handleSubmit(e: React.FormEvent<HTMLFormElement>)
     {
-
+        console.log("submitted");
     }
     console.log(formData);
     return (
         <section className=" py-[100px] dark:bg-slate-600">
-            <form onSubmit={handleSubmit} className="text-black flex flex-col w-[50%] mx-auto  ">
+            <form onSubmit={e=>handleSubmit} className="text-black flex flex-col w-[50%] mx-auto  ">
                 <label>Enter Name</label>
                 <input onChange={handleChange} value={formData.name} className="border-[2px] py-[1.5px] px-[3px] border-sky-300 rounded-md " type='text' placeholder="Name..."/>
                 <label className="mt-[9px]">Enter email</label>

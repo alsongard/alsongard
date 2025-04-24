@@ -1,17 +1,17 @@
 'use client'
 import Link from "next/link";
 import { FaMoon } from "react-icons/fa6";
-import { useTheme } from "next-themes";
+// import { useTheme } from "next-themes";
 import React from "react";
 import clsx from "clsx";
 import { FiMenu } from "react-icons/fi";
 export default function Header()
 {
     
-    const {theme, setTheme, systemTheme} = useTheme();
-    const currentTheme = theme === 'system' ? systemTheme : theme ;
+    // const {theme, setTheme, systemTheme} = useTheme();
+    // const currentTheme = theme === 'system' ? systemTheme : theme ;
     // console.log(`the current theme : ${currentTheme}`);
-    function changeTheme()
+    /*function changeTheme()
     {
         if (theme == "dark")
         {
@@ -22,7 +22,7 @@ export default function Header()
             setTheme("dark")
         }
     };
-
+    */
     const [stickyVar, setStickyVar] = React.useState(false);
     React.useEffect(()=>{
         const header= document.getElementById("header");
@@ -43,10 +43,10 @@ export default function Header()
         // }
     }, []);
 
-    const smallerMenuStyles = 
-    {
-        display:"flex"
-    }
+    // const smallerMenuStyles = 
+    // {
+    //     display:"flex"
+    // }
     
     const [smallVisible, setSmallVisible] = React.useState(false);
     function dispalySmallerMenu()
@@ -86,7 +86,7 @@ export default function Header()
                         <Link 
                             href="/projects"
                         >
-                            Projects
+                            Project
                         </Link>
                     </li>
                     <li>
@@ -101,7 +101,7 @@ export default function Header()
 
                 {/* icon for moon */}
                 <div>
-                    <FaMoon className="" onClick={changeTheme}/>
+                    <FaMoon className=""/>
                 </div>
             </div>
 

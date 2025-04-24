@@ -1,12 +1,12 @@
 import Image from "next/image";
-type projectData =  {
+/*type projectData =  {
     id: number,
     name: string,
     short_description: string,
     description: string,
     img: string,
     url: string
-}
+}*/
 
 function ProjectComponentView(prop)
 {

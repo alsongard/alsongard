@@ -1,6 +1,6 @@
 import user_1 from "../public/images/user_1.jpg"
 import Link from "next/link";
-
+import Image from "next/image";
 export const metadata = {
   title: "AlsonGard",
   description: "home page"
@@ -26,7 +26,7 @@ export default function Home() {
           </div> */}
 
           <div className="w-[330px] myImage mx-auto mt-[20px] h-[330px]">
-              <img  className=" w-[100%] h-[100%] rounded-full " src="images/user_1.jpg" alt="fullstack/hacker"/>
+              <Image  width={330} height={330} className=" w-[100%] h-[100%] rounded-full " src="/images/user_1.jpg" alt="fullstack/hacker"/>
           </div>
         </div>
       </section>
