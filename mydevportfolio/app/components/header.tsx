@@ -96,6 +96,13 @@ export default function Header()
                             Contact
                         </Link>
                     </li>
+                    <li>
+                        <Link
+                            href="/about"
+                        >
+                        About
+                    </Link>
+                    </li>
 
                 </ul>
 
@@ -110,7 +117,8 @@ export default function Header()
             </div>
             
             {/* small menu  */}
-            <div className={clsx(smallVisible ? "block" : "hidden" , "smallerMenu min-[530px]:hidden  absolute right-[50px] top-[50px] bg-[#808b96] w-[150px] rounded-md flex flex-col py-[20px]  items-center" )}>
+            {/* <div className={clsx(smallVisible ? "block " : "hidden" , "smallerMenu min-[530px]:hidden  absolute right-[50px] top-[50px] bg-[#475569]  rounded-md flex flex-col py-[20px]  items-center" )}> */}
+            <div className={clsx(smallVisible ? "block " : "hidden" , "smallerMenu min-[530px]:hidden  absolute right-[50px] top-[50px] bg-[#475569] w-[150px] rounded-md flex flex-col py-[20px]  items-center" )}>
                 <ul className="list-none">
                     <li>
                         <Link
@@ -135,6 +143,13 @@ export default function Header()
                         >
                             Contact
                         </Link>
+                    </li>
+                    <li>
+                        <Link
+                            href="/about"
+                        >
+                        About
+                    </Link>
                     </li>
                 </ul>
             </div>
