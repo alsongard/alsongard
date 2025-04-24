@@ -10,9 +10,7 @@ const nextConfig = {
     eslint: {
     // Dangerously allow production builds to successfully complete even if your project has eslint errors.
     ignoreDuringBuilds: true,
-    },
-    output:"export",
-    reactStrictMode: true,
+    }
 };
 export default nextConfig;
 
