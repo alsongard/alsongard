@@ -44,7 +44,7 @@ function Contact()
                 <label className="mt-[9px]">Enter Project Information</label>
                 <textarea  value={formData.projectInfo}  className="border-[2px] py-[1.5px] px-[3px] border-sky-300 rounded-md" placeholder="Provide a description of the project..."/>
 
-                <input className="bg-gradient-to-br text-white	from-[rgb(65,122,136)] to-[#06323a] w-[20%] mx-auto py-[2.5px] rounded-md my-[20px]" type="submit" value="submit"/>
+                <input className="bg-[#75b98e] text-white w-[30%] mx-auto py-[2.5px] rounded-md my-[20px] hover:bg-green-600" type="submit" value="submit"/>
             </form>
         </section>
     )
