@@ -6,56 +6,97 @@ import { BiLogoGmail } from "react-icons/bi";
 
 export default function About() {
   return (
-    <section className="text-white bg-black">
-      <h1 className="text-center text-[35px] font-bold pt-[30px]">About Me</h1>
+    <section className="text-white bg-black w-[100vw]">
+      <h1 className="text-center text-[40px] font-bold pt-[30px]">About Me</h1>
       {/* home section */}
-
-      
-
-      <div className="flex flex-row  items-start justify-evenly gap-x-[30px] my-[50px] w-[90%] mx-auto  py-[70px]  ">
-
-        <div className="">
-          <Image className="rounded-[100%]" width={450}  height={550} src="/images/anime_2.jpg" alt=""/>
-        </div>
-
-        <div className='pt-[50px] pl-[5px] '>
-          <p className='text-[20px]  '><span className='text-[60px] pr-0'>H</span>i there <div className="dot"></div> <div className="dot"></div> <div className="dot"></div> </p>
-          <p className='text-[20px] capitalize'>am Gard Alson</p>
-          <p className="text-[20px]">Welcome to my Porfolio.  </p>
-          <p className='text-[20px]'>I love coding that is programming, pentesting, webdev and gamedev</p>
-
-          <h2 className=" text-center text-[20px] mt-[50px] mb-[5px]" >Get in Touch</h2>
-          {/* icons */}
-          <div className='flex flex-row justify-evenly border-2 mx-auto py-[10px]  w-1/2 border-white    bg-[#5d6d7e] rounded-[50px] '>
-            <div className='h-[30px] w-[30px]  rounded-[100%] hover:scale-[1.4] hover:black ease-in-out'>
-            <a href="http://github.com/alsongard" target="_blank">
-              <FaGithub className='h-[100%] w-[100%] rounded-[100%] hover:bg-black  bg-slate-400  '/>
-            </a>
-            </div>
-
-            <div className='h-[30px] w-[30px]  rounded-[100%] hover:scale-[1.4] hover:black ease-in-out'>
-              <a href="mailto:alsongadizo@gmail.com" target="_blank">
-                <BiLogoGmail className='h-[100%] w-[100%] rounded-[100%] hover:bg-black  bg-slate-400  '/>
-              </a>
-            </div>
-
-            <div className='h-[30px] w-[30px]  rounded-[100%] hover:scale-[1.4] hover:black  ease-in-out'>
-              <a href="https://x.com/alsongadizo" target="_blank">
-                <FaTwitter className='h-[100%] w-[100%] rounded-[100%] hover:bg-black  bg-slate-400   '/>
-              </a>
-            </div>
-
-          </div>
-
-        </div>
-
+      <div className='w-[80%] mx-auto text-[20px] my-[10px]'>
+        <p>👋 About Me Hey, I’m [Your Name] — a developer with a passion for building, breaking, and understanding how things work behind the screen.
+          My journey into tech didn’t start with a textbook or a tutorial — it started with curiosity.
+          I’ve always loved tinkering, whether it’s figuring out how to design a beautiful front-end, optimizing a back-end system, or diving into networks and systems as a pentester just to see what’s possible (and what shouldn't be 👀).
+          I build projects that excite me, challenge me, and push me to grow. Some days I’m deep into writing clean UI components, other days I’m solving logic-heavy backend tasks or cracking open cybersecurity challenges.
+          When inspiration hits, I even dip into game development, experimenting with Unity, blending creativity with code. And when I feel like thinking in numbers, I switch gears to explore data analysis, finding patterns that tell interesting stories.
+          I don’t claim to know everything — but I’m constantly learning, building, and improving. This site is a reflection of that journey.
+        </p>
       </div>
+      <div className="w-[100%] my-[100px]">
+        <h1 className='text-[30px] text-center font-semibold py-[10px]'>Skills</h1>
+        <div className='flex flex-col space-y-[80px] h-[400px] py-[20px] overflow-x-auto items-center  text-white w-[50%] mx-auto  border-2 border-white rounded-md'>
+          <section className='flex flex-row gap-x-[30px]  justify-center items-start w-[90%] mt-[20px]'>
+            <div className='intro  sticky top-0 w-1/4 '>
+              <h1 className='text-[22px] bg-slate-800 py-[10px] px-[5px] rounded-md'>Front-end Development</h1>
+            </div>
+            <div className='shadow-[0px_0px_5px_black] bg-slate-800 w-3/4 p-[20px] rounded-md '>
+              <ul className='grid grid-cols-2 justify-items-center   gap-y-[50px]' >
+                <li><img className='w-[100px] h-[100px] rounded-md border-2 border-white tech-icon p-[10px] hover:scale-[1.1]' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" /></li>
+                <li><img className='w-[100px] h-[100px] rounded-md border-2 border-white tech-icon p-[10px] hover:scale-[1.1]' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original-wordmark.svg" /></li>
+                <li><img className='w-[100px] h-[100px] rounded-md border-2 border-white tech-icon p-[10px] hover:scale-[1.1]' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" /></li>
+                <li><img className='w-[100px] h-[100px] rounded-md border-2 border-white tech-icon p-[10px] hover:scale-[1.1]' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original-wordmark.svg" /></li>
+                {/* <li className='text-[22px]' >React</li>
+                <li className='text-[22px]' >NextJS</li>
+                <li className='text-[22px]' >TailwindCSS5</li>
+                <li className='text-[22px]' >HTML5</li>
+                <li className='text-[22px]' >Javascript</li> */}
+              </ul>
+            </div>
+          </section>
 
-      <div>
-        <div className="techskills">
-          <h2>Skills</h2>
+          <section className='flex flex-row gap-x-[30px]  justify-center items-start w-[90%] mt-[20px]'>
+            <div className='intro sticky top-0 w-1/4'>
+              <h1 className='text-[22px] bg-slate-800 py-[10px] px-[5px] rounded-md'>Back-End Development</h1>
+            </div>
+            <div className='shadow-[0px_0px_5px_black] w-3/4 bg-slate-800  p-[20px] rounded-md '>
+              <ul className='grid grid-cols-2 justify-items-center gap-y-[50px]'>
+                <li><img className='w-[100px] h-[100px] rounded-md border-2 border-white tech-icon p-[10px] hover:scale-[1.1]' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" /></li>
+                <li><img className='w-[100px] h-[100px] rounded-md border-2 border-white tech-icon p-[10px] hover:scale-[1.1]' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg" /></li>
+                <li><img className='w-[100px] h-[100px] rounded-md border-2 border-white tech-icon p-[10px] hover:scale-[1.1]' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" /></li>
+                <li><img className='w-[100px] h-[100px] rounded-md border-2 border-white tech-icon p-[10px] hover:scale-[1.1]' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original-wordmark.svg" /></li>
+                <li><img className='w-[100px] h-[100px] rounded-md border-2 border-white tech-icon p-[10px] hover:scale-[1.1]' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-plain-wordmark.svg" /></li>
+              </ul>
+            </div>
+          </section>
+
+          <section className='flex flex-row gap-x-[30px]  justify-center items-start w-[90%] mt-[20px]'>
+            <div className='intro sticky top-0 w-1/4'>
+              <h1 className='text-[22px] bg-slate-800 py-[10px] px-[5px] rounded-md'>Penetration Testing</h1>
+            </div>
+            <div className=' shadow-[0px_0px_5px_black] bg-slate-800 w-3/4 p-[20px] rounded-md '>
+              <ul className=' grid grid-cols-2  justify-items-center  px-[10px]  gap-y-[50px]'>
+                <img className='w-[100px] h-[100px] rounded-md border-2 border-white tech-icon p-[10px] hover:scale-[1.1]' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" />
+              </ul>
+            </div>
+          </section>
+
+          <section className='flex flex-row gap-x-[30px]  justify-center items-start w-[90%] mt-[20px]'>            
+            <div className='intro sticky top-0 w-1/4'>
+              <h1 className='text-[22px] bg-slate-800 py-[10px] px-[5px] rounded-md'>Game Development</h1>
+            </div>
+            <div className='shadow-[0px_0px_5px_black] bg-slate-800 w-3/4 p-[20px] rounded-md '>
+              <ul className='grid  grid-cols-2  justify-items-center  px-[10px]  gap-y-[50px]'>
+                <li><img className='w-[100px] h-[100px] rounded-md border-2 border-white tech-icon p-[10px] hover:scale-[1.1]' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unity/unity-plain-wordmark.svg" /></li>
+                <li><img className='w-[100px] h-[100px] rounded-md border-2 border-white tech-icon p-[10px] hover:scale-[1.1]'src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" /></li>
+              </ul>
+            </div>
+          </section>
+
+          <section className='flex flex-row gap-x-[30px]   justify-center items-start w-[90%] mt-[20px]'>
+            <div className='intro sticky top-0 w-1/4'>
+              <h1 className='text-[22px] bg-slate-800 py-[10px] px-[5px] rounded-md'>Data Analysis </h1>
+            </div>
+            <div className='shadow-[0px_0px_5px_black] bg-slate-800 w-3/4 p-[20px] rounded-md '>
+              <ul className=' grid grid-cols-2  justify-items-center  px-[10px] gap-y-[50px]'>
+                <li><img className='w-[100px] h-[100px] rounded-md border-2 border-white tech-icon p-[10px] hover:scale-[1.1]' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg" /></li>
+                <li><img className='w-[100px] h-[100px] rounded-md border-2 border-white tech-icon p-[10px] hover:scale-[1.1]' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-original.svg" /></li>
+                <li><img className='w-[100px] h-[100px] rounded-md border-2 border-white tech-icon p-[10px] hover:scale-[1.1]' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original-wordmark.svg" /></li>
+                <li><img className='w-[100px] h-[100px] rounded-md border-2 border-white tech-icon p-[10px] hover:scale-[1.1]' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/matplotlib/matplotlib-original-wordmark.svg" /></li>
+              </ul>
+            </div>
+          </section>
+
         </div>
-      </div>
+
+    </div>
+
+
 
     </section>
   )
