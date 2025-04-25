@@ -40,3 +40,7 @@ body {
 {
   @apply h-[5px] inline-block w-[5px] bg-white rounded-[100%];
 }
+.tech-icon
+{
+  box-shadow: 0px 0px 5px white ;
+}
