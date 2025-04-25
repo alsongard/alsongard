@@ -70,53 +70,49 @@ export default function Header()
 
 
     return (
-        <header id='header' className={clsx(stickyVar ?  'border-b-2 border-white ' : 'border-none',  'opacity-[1001] text-white  flex flex-row justify-between sticky top-0  z-[1001] bg-slate-600 h-[70px] items-center pl-[50px] pr-[70px] ')}>
-            
-            <h1>AlsonGard</h1>
-            <div className="flex  justify-between w-[500px] items-center max-[750px]:w-[300px]  max-[530px]:hidden ">
-                <ul className=" flex  flex-row justify-between w-[75%] max-w  ">
-                    <li>
-                        <Link 
-                            href="/"
-                        >
-                            Portfolio
-                        </Link>
-                    </li>
-                    <li>
-                        <Link 
-                            href="/projects"
-                        >
-                            Project
-                        </Link>
-                    </li>
-                    <li>
-                        <Link 
-                            href="/contact"
-                        >
-                            Contact
-                        </Link>
-                    </li>
-                    <li>
+        <header className='flex bg-sky-500 w-[90%] mx-auto mt-[80px] py-[22px] px-[20px] rounded-[25px] item-center justify-between'>
+                  <div>
+                    <h1 className="pl-[15px] text-[20px]">AlsonGard</h1>
+                  </div>
+        
+                  <div className="pr-[15px]">
+                    <ul className='flex text-[20px] justify-between  w-[500px] flex-row items-center'>
+                      <li>
                         <Link
-                            href="/about"
+                          className="hover:text-white" 
+                          href="/"
                         >
-                        About
-                    </Link>
-                    </li>
+                          Portfolio
+                        </Link>
+                      </li>
+                      <li>
+                        <Link 
+                          className="hover:text-white" 
+                          href="/projects"
+                          >
+                            Projects
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          className="hover:text-white" 
+                          href="/contact"
+                        >
+                          Contact
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          className="hover:text-white" 
+                          href="/about"
+                        >
+                          About
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
 
-                </ul>
-
-                {/* icon for moon */}
-                <div>
-                    <FaMoon className=""/>
-                </div>
-            </div>
-
-            <div className="min-[531px]:hidden absolute right-[50px]">
-                <FiMenu onClick={dispalySmallerMenu}/>
-            </div>
-            
-            {/* small menu  */}
+                  {/* small menu  */}
             {/* <div className={clsx(smallVisible ? "block " : "hidden" , "smallerMenu min-[530px]:hidden  absolute right-[50px] top-[50px] bg-[#475569]  rounded-md flex flex-col py-[20px]  items-center" )}> */}
             <div className={clsx(smallVisible ? "block " : "hidden" , "smallerMenu min-[530px]:hidden  absolute right-[50px] top-[50px] bg-[#475569] w-[150px] rounded-md flex flex-col py-[20px]  items-center" )}>
                 <ul className="list-none">
@@ -154,6 +150,6 @@ export default function Header()
                 </ul>
             </div>
 
-        </header>
+    </header>
     )
 }
