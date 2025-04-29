@@ -4,13 +4,16 @@
 
 Here are some ideas to get you started:
 -->
+![wakatime](https://wakatime.com/badge/user/ca37100b-7f0f-4ae1-947c-ff595165e688.svg)
+
+
 ## About Me
 Fullstack Developer, Software Developer, Data Analyst and Cyber Security Enthusiast  
 Studying Computer Science in Zetech University in Kenya  
 I’m looking to collaborate on web design projects, ctf, c++ applications  
 Ask me about Web Design Projects, performing reconnaisance on systems using different tools, C++ file handling and applications  
-How to reach me: alsongard@gmail.com  
-PortFolio : - https://alsongard.github.io/alsongard/
+How to reach me: alsongadizo@gmail.com  
+PortFolio : https://alsongard.vercel.app/
 
 
 
