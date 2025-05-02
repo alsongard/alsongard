@@ -1,10 +1,13 @@
 'use client'
 import Link from "next/link";
 import { FaMoon } from "react-icons/fa6";
+import { IoIosSunny } from "react-icons/io";
 // import { useTheme } from "next-themes";
 import React from "react";
 import clsx from "clsx";
 import { FiMenu } from "react-icons/fi";
+import { IoSunny } from "react-icons/io5";
+import ThemeSwitch from "./themeSwitch";
 export default function Header()
 {
     
@@ -75,7 +78,7 @@ export default function Header()
           <h1 className="pl-[15px] text-[20px]">AlsonGard</h1>
         </div>
 
-        <div className="pr-[15px]">
+        <div className="pr-[15px] flex flex-row items-center justify-between  w-[50%]">
           <ul className='flex text-[20px] justify-between  w-[500px] flex-row items-center'>
             <li>
               <Link
@@ -110,46 +113,51 @@ export default function Header()
               </Link>
             </li>
           </ul>
+
+          {/* darkmode icons */}
+          <ThemeSwitch/>
+
         </div>
+
+        <FiMenu className='hidden'/>
 
         {/* small menu  */}
         {/* <div className={clsx(smallVisible ? "block " : "hidden" , "smallerMenu min-[530px]:hidden  absolute right-[50px] top-[50px] bg-[#475569]  rounded-md flex flex-col py-[20px]  items-center" )}> */}
         <div className={clsx(smallVisible ? "block " : "hidden" , "smallerMenu min-[530px]:hidden  absolute right-[50px] top-[50px] bg-[#475569] w-[150px] rounded-md flex flex-col py-[20px]  items-center" )}>
           <ul className="list-none">
             <li>
-                <Link
-                    className="hover:text-black" 
-                    href="/"
-                >
-                    Portfolio
-                </Link>
+              <Link
+                  className="hover:text-black" 
+                  href="/"
+              >
+                Portfolio
+              </Link>
             </li>
             <li>
-                <Link 
-                    className="hover:text-black" 
-                    href="/projects"
-                >
-                    Projects
-                </Link>
+              <Link 
+                  className="hover:text-black" 
+                  href="/projects"
+              >
+                Projects
+              </Link>
             </li>
             <li>
-                <Link
-                    className="hover:text-black" 
-                    href="/contact"
-                >
-                    Contact
-                </Link>
+              <Link
+                className="hover:text-black" 
+                href="/contact"
+              >
+                Contact
+              </Link>
             </li>
             <li>
-                <Link
-                    href="/about"
-                >
+              <Link
+                href="/about"
+              >
                 About
-            </Link>
+              </Link>
             </li>
           </ul>
         </div>
-
     </header>
     )
 }

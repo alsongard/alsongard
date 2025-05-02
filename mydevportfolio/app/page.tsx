@@ -14,7 +14,7 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <div className="w-[100vw]"> 
+    <main className="w-[100vw]"> 
 
       {/* IMAGE CONTAINER */}
       <div className="flex flex-row  items-start justify-evenly gap-x-[30px] my-[50px] w-[90%] mx-auto  py-[70px]  ">
@@ -93,7 +93,7 @@ export default function Home() {
 
 
 
-    </div>
+    </main>
 
     );
 }
