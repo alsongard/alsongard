@@ -23,11 +23,11 @@ export default function ThemeSwitch() {
     />
   )
 
-  if (resolvedTheme === 'dark') {
-    return <FiSun className='text-[17px]' onClick={() => setTheme('light')} />
+  if (resolvedTheme == 'dark') {
+    return <FiSun className=' max-md:text-[18px]' onClick={() => setTheme('light')} />
   }
 
-  if (resolvedTheme === 'light') {
+  if (resolvedTheme == 'light') {
     return <FiMoon onClick={() => setTheme('dark')} />
   }
 
