@@ -1,79 +1,56 @@
 'use client'
 import Link from "next/link";
-import { FaMoon } from "react-icons/fa6";
-import { IoIosSunny } from "react-icons/io";
-// import { useTheme } from "next-themes";
 import React from "react";
 import clsx from "clsx";
 import { FiMenu } from "react-icons/fi";
-import { IoSunny } from "react-icons/io5";
 import ThemeSwitch from "./themeSwitch";
+import {throttle} from "lodash";
+
 export default function Header()
 {
-    
-    // const {theme, setTheme, systemTheme} = useTheme();
-    // const currentTheme = theme === 'system' ? systemTheme : theme ;
-    // console.log(`the current theme : ${currentTheme}`);
-    /*function changeTheme()
-    {
-        if (theme == "dark")
+  const [smallVisible, setSmallVisible] = React.useState(false);
+
+  // SMALLER MENU FUNCTION
+  function dispalySmallerMenu()
+  {
+    console.log("I got clicked");
+    console.log(`Condition: ${smallVisible}`)
+    setSmallVisible((prevValue)=>{
+        if (!prevValue)
         {
-            setTheme("light")
+            return true;
         }
         else
         {
-            setTheme("dark")
+            return false;
         }
-    };
-    */
-    const [stickyVar, setStickyVar] = React.useState(false);
-    React.useEffect(()=>{
-        const header= document.getElementById("header");
-        // console.log(`Value of stickyVar : ${stickyVar}`);
-        if (!header) return;
-        const headerPosition = header.offsetTop;
- 
-        window.addEventListener('scroll', ()=>{
-            // console.log("hello");
-            setStickyVar(window.scrollY > headerPosition); // returns true on scroll
-            // console.log(`After Value of stickyVar : ${stickyVar}`);
-        })
-        // unmount the listener when the component is unmounted
-        // return ()=>{
-        //     window.removeEventListener('scroll', ()=>{
-        //         setStickyVar(window.scrollY > headerPosition); // returns true on scroll
-        //     })
-        // }
-    }, []);
+    });
+    console.log(`Condition: ${smallVisible}`)
 
-    // const smallerMenuStyles = 
+
+  }
+
+  // STICKY HEADER
+  const [headerSticky, setHeaderSticky] = React.useState(false);
+  // set state to true if window scrolls
+  React.useEffect(()=>{
+
+    const handleScroll = throttle(()=>{
+      setHeaderSticky(()=>{
+        return window.pageYOffset > 0;
+      })
+    }, 100)
+    // function handleScroll()
     // {
-    //     display:"flex"
+    //   setHeaderSticky(()=>{
+    //     return window.pageYOffset > 0;
+    //   })
     // }
-    
-    const [smallVisible, setSmallVisible] = React.useState(false);
-    function dispalySmallerMenu()
-    {
-        console.log("I got clicked");
-        console.log(`Condition: ${smallVisible}`)
-        setSmallVisible((prevValue)=>{
-            if (!prevValue)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        });
-        console.log(`Condition: ${smallVisible}`)
-
-
-    }
-
-
+    window.addEventListener('scroll', handleScroll)
+    return ()=>{window.removeEventListener('scroll', handleScroll)}
+  }, [])
     return (
-      <header className='flex bg-sky-500 w-[90%] mx-auto mt-[80px] py-[22px] px-[20px] rounded-[25px] item-center justify-between'>
+      <header id='header' className={clsx(headerSticky ? 'w-[100vw]' : "w-[90%] rounded-[25px]", 'flex bg-sky-500  sticky top-0 mx-auto mt-[80px] py-[22px] px-[20px]  item-center justify-between')}>
         <div>
           <h1 className="pl-[15px] text-[20px]">AlsonGard</h1>
         </div>
@@ -82,7 +59,7 @@ export default function Header()
           <ul className='flex text-[20px] justify-between  w-[500px] flex-row items-center'>
             <li>
               <Link
-                className="hover:text-white" 
+                className="hover:text-black" 
                 href="/"
               >
                 Portfolio
@@ -90,7 +67,7 @@ export default function Header()
             </li>
             <li>
               <Link 
-                className="hover:text-white" 
+                className="hover:text-black" 
                 href="/projects"
                 >
                   Projects
@@ -98,7 +75,7 @@ export default function Header()
             </li>
             <li>
               <Link
-                className="hover:text-white" 
+                className="hover:text-black" 
                 href="/contact"
               >
                 Contact
@@ -106,7 +83,7 @@ export default function Header()
             </li>
             <li>
               <Link
-                className="hover:text-white" 
+                className="hover:text-black" 
                 href="/about"
               >
                 About
