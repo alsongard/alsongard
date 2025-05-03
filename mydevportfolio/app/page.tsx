@@ -16,12 +16,12 @@ export default function Home() {
   return (
     <main className="w-[100vw] bg-white dark:bg-black border-b-2 border-black">
       {/* IMAGE CONTAINER */}
-      <div className="flex flex-row sm:flex-col sm:items-center bg-white dark:bg-black items-start justify-evenly gap-x-[30px] my-[50px] w-[90%] mx-auto  py-[70px]  ">
+      <div className="flex flex-row max-sm:flex-col max-sm:items-center bg-white dark:bg-black items-start justify-evenly gap-x-[30px] my-[50px] w-[90%] mx-auto  py-[70px]  ">
         <div className="">
           <Image className="rounded-[100%]" width={450}  height={550} src="/images/anime_2.jpg" alt=""/>
         </div>
 
-        <div className='pt-[50px] sm:text-center pl-[5px] dark:text-white '>
+        <div className='pt-[50px] max-sm:text-center pl-[5px] dark:text-white '>
           <p className='text-[20px] max-md:text-[17px]'><span className='text-[60px] max-md:text-[27px] pr-0'>H</span>i there <span className="dot"></span> <span className="dot"></span> <span className="dot"></span> </p>
           <p className='text-[20px] max-md:text-[17px] capitalize'>am Gard Alson</p>
           <p className="text-[20px] max-md:text-[17px]">Welcome to my Porfolio.  </p>
@@ -30,7 +30,7 @@ export default function Home() {
           <h2 className=" text-center text-[20px] mt-[50px] mb-[5px] max-md:text-[17px]" >Get in Touch</h2>
           
           {/* icons */}
-          <div className='flex flex-row sm:flex-col sm:items-center sm:gap-y-[20px] sm:w-[100px] sm:rounded-md justify-evenly border-2 mx-auto py-[10px]  w-1/2 border-black dark:border-white rounded-[50px]'>
+          <div className='flex flex-row max-sm:flex-col max-sm:items-center max-sm:gap-y-[20px] max-sm:w-[100px] max-sm:rounded-md justify-evenly border-2 mx-auto py-[10px]  w-1/2 border-black dark:border-white rounded-[50px]'>
             <div className='h-[30px] w-[30px]  rounded-[100%] hover:scale-[1.4]  ease-in-out'>
               <a href="http://github.com/alsongard" target="_blank">
                 <FaGithub className='h-[100%] w-[100%] rounded-[100%] hover:text-black max-md:text-[17px] dark:bg-sky-500'/>
