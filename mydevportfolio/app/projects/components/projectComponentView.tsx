@@ -11,7 +11,7 @@ import Image from "next/image";
 function ProjectComponentView(prop)
 {
     return (
-        <div className="projectComponent relative h-[400px] shadow-[0px_0px_10px_black] px-[20px] z-[10] rounded-md ">
+        <div className="projectComponent relative h-[400px] shadow-[0px_0px_10px_black] px-[20px]  rounded-md ">
             <a className="cursor-pointer  " target="_blank" href={prop.item.url}>
                 <div> 
                     <h2>{prop.item.name}</h2>
