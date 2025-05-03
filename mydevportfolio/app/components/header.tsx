@@ -49,92 +49,95 @@ export default function Header()
     window.addEventListener('scroll', handleScroll)
     return ()=>{window.removeEventListener('scroll', handleScroll)}
   }, [])
-    return (
-      <header id='header' className={clsx(headerSticky ? 'w-[100vw]' : "w-[90%] rounded-[25px]", 'flex bg-sky-500  sticky top-0 mx-auto mt-[80px] py-[22px] px-[20px]  item-center justify-between')}>
-        <div>
-          <h1 className="pl-[15px] text-[20px]">AlsonGard</h1>
-        </div>
 
-        <div className="pr-[15px] flex flex-row items-center justify-between  w-[50%]">
-          <ul className='flex text-[20px] justify-between  w-[500px] flex-row items-center'>
-            <li>
-              <Link
-                className="hover:text-black" 
-                href="/"
-              >
-                Portfolio
-              </Link>
-            </li>
-            <li>
-              <Link 
-                className="hover:text-black" 
-                href="/projects"
-                >
-                  Projects
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="hover:text-black" 
-                href="/contact"
-              >
-                Contact
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="hover:text-black" 
-                href="/about"
-              >
-                About
-              </Link>
-            </li>
-          </ul>
+  return (
+    <header id='header' className={clsx(headerSticky ? 'w-[100vw]' : "w-[90%] rounded-[25px]", 'flex bg-sky-500   sticky top-0 mx-auto mt-[80px] py-[22px] px-[20px]  items-center justify-between')}>
+      <div>
+        <h1 className="pl-[15px] text-[20px] max-lg:text-[18px]">AlsonGard</h1>
+      </div>
 
-          {/* darkmode icons */}
-          <ThemeSwitch/>
-
-        </div>
-
-        <FiMenu className='hidden'/>
-
-        {/* small menu  */}
-        {/* <div className={clsx(smallVisible ? "block " : "hidden" , "smallerMenu min-[530px]:hidden  absolute right-[50px] top-[50px] bg-[#475569]  rounded-md flex flex-col py-[20px]  items-center" )}> */}
-        <div className={clsx(smallVisible ? "block " : "hidden" , "smallerMenu min-[530px]:hidden  absolute right-[50px] top-[50px] bg-[#475569] w-[150px] rounded-md flex flex-col py-[20px]  items-center" )}>
-          <ul className="list-none">
-            <li>
-              <Link
-                  className="hover:text-black" 
-                  href="/"
-              >
-                Portfolio
-              </Link>
-            </li>
-            <li>
-              <Link 
-                  className="hover:text-black" 
-                  href="/projects"
+      <div className="max-md:hidden flex flex-row items-center justify-evenly gap-x-[60px]  w-[60%]">
+        <ul className='max-lg:text-[18px] flex text-[20px] justify-between  w-[500px] flex-row items-center'>
+          <li>
+            <Link
+              className="hover:text-black " 
+              href="/"
+            >
+              Portfolio
+            </Link>
+          </li>
+          <li>
+            <Link 
+              className="hover:text-black" 
+              href="/projects"
               >
                 Projects
-              </Link>
-            </li>
-            <li>
-              <Link
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="hover:text-black" 
+              href="/contact"
+            >
+              Contact
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="hover:text-black" 
+              href="/about"
+            >
+              About
+            </Link>
+          </li>
+        </ul>
+
+        {/* darkmode icons */}
+        <ThemeSwitch/>
+
+      </div>
+
+      <FiMenu onClick={dispalySmallerMenu} className='hidden max-md:block'/>
+
+      {/* small menu  */}
+      {/*1 <div className={clsx(smallVisible ? "block " : "hidden" , "smallerMenu min-[530px]:hidden  absolute right-[50px] top-[50px] bg-[#475569]  rounded-md flex flex-col py-[20px]  items-center" )}> */}
+      {/* 2 <div className={clsx(smallVisible ? "block " : "hidden" , "smallerMenu min-[530px]:hidden  absolute right-[50px] top-[50px] bg-[#475569] w-[150px] rounded-md flex flex-col py-[20px]  items-center" )}> */}
+      <div className={clsx(smallVisible ? 'block' : 'hidden', 'smallerMenu   absolute right-[0] top-[55px] bg-[rgba(14,164,233,0.34)] w-[100%] rounded-md flex flex-col py-[20px]  items-center')}>
+        <ul className="list-none  w-[80%] text-center"> 
+          <li className="border-b-2 border-white w-[100%] mb-[10px]">
+            <Link
                 className="hover:text-black" 
-                href="/contact"
-              >
-                Contact
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/about"
-              >
-                About
-              </Link>
-            </li>
-          </ul>
-        </div>
-    </header>
-    )
+                href="/"
+            >
+              Portfolio
+            </Link>
+          </li>
+          <li className="border-b-2 border-white w-[100%] mb-[10px]">
+            <Link 
+                className="hover:text-black" 
+                href="/projects"
+            >
+              Projects
+            </Link>
+          </li>
+          <li className="border-b-2 border-white w-[100%] mb-[10px]">
+            <Link
+              className="hover:text-black" 
+              href="/contact"
+            >
+              Contact
+            </Link>
+          </li>
+          <li className="border-b-2 border-white w-[100%] mb-[10px]">
+            <Link
+              className="hover:text-black" 
+              href="/about"
+            >
+              About
+            </Link>
+          </li>
+        </ul>
+      </div>
+  </header>
+  )
 }
