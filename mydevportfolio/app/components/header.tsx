@@ -51,7 +51,7 @@ export default function Header()
   }, [])
 
   return (
-    <header id='header' className={clsx(headerSticky ? 'w-[100vw]' : "w-[90%] rounded-[25px]", 'flex bg-sky-500   sticky top-0 mx-auto mt-[80px] py-[22px] px-[20px]  items-center justify-between')}>
+    <header id='header' className={clsx(headerSticky ? 'w-[100vw]' : "w-[90%] rounded-[25px]", ' duration-[2] ease-in-out flex bg-sky-500   sticky top-0 mx-auto mt-[80px] py-[22px] px-[20px] z-[1001]  items-center justify-between')}>
       <div>
         <h1 className="pl-[15px] text-[20px] max-lg:text-[18px]">AlsonGard</h1>
       </div>
@@ -64,6 +64,14 @@ export default function Header()
               href="/"
             >
               Portfolio
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="hover:text-black" 
+              href="/about"
+            >
+              About
             </Link>
           </li>
           <li>
@@ -80,14 +88,6 @@ export default function Header()
               href="/contact"
             >
               Contact
-            </Link>
-          </li>
-          <li>
-            <Link
-              className="hover:text-black" 
-              href="/about"
-            >
-              About
             </Link>
           </li>
         </ul>
