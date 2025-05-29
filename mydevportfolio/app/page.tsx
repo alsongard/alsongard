@@ -13,6 +13,7 @@ export const metadata = {
 
 
 export default function Home() {
+
   return (
     <main className="w-[100vw] bg-white dark:bg-black border-b-2 border-black">
       {/* IMAGE CONTAINER */}
@@ -49,6 +50,12 @@ export default function Home() {
                 <FaTwitter className='h-[100%] w-[100%] rounded-[100%] max-md:text-[17px]  hover:text-black  dark:bg-sky-500'/>
               </a>
             </div>
+
+            <div className='h-[30px] w-[30px]  rounded-[100%] hover:scale-[1.4] hover:black  ease-in-out'>
+              <a href="https://www.linkedin.com/in/alsongard" target="_blank">
+                <FaLinkedin className='h-[100%] w-[100%] rounded-[100%] max-md:text-[17px]  hover:text-black  dark:bg-sky-500'/>
+              </a>
+            </div>
           </div>
 
         </div>
@@ -82,8 +89,8 @@ export default function Home() {
           </ul>
         </div>
         <div className='text-center my-[20px]'>
-          <p className='text-[20px] max-md:text-[17px]'>Click below To</p>
-          <button className='my-[10px] bg-sky-500 py-[3.5px] px-[10px] rounded-md text-[20px] hover:text-black hover:scale-[1.1] max-md:text-[17px]'><Link href='/'>Hire Me</Link></button>
+          <p className='text-[20px] max-md:text-[17px]'>Click To Download My Resume</p>
+          <button className='my-[10px] bg-sky-500 py-[3.5px] px-[10px] rounded-md text-[20px] hover:text-black hover:scale-[1.1] max-md:text-[17px]'><a href="/files/gard_resume.pdf" download="gard_resume.pdf">RESUME</a></button>
         </div>
       </section>
     </main>
