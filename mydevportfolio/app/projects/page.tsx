@@ -10,9 +10,13 @@ type projectData =  {
   url: string
 }
 
+export const metadata = {
+  title: "Project",
+  description: "Project page"
+}
+
 function ProjectPage()
 {
-
   // type projectType = string;
   const projectTypes = Object.keys(data);
   // console.log(projectTypes)

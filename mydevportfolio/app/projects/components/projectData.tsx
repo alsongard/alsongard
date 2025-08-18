@@ -1,21 +1,12 @@
 const data = {
     "web development projects": [
         {
-            id: 1,
-            name : "freetogame webapp", 
-            short_description:"Lorem Ispum",
-            description: "Lorem Ispum",
-            img: "/images/freetogame.png",
-            url: "https://github.com/alsongard/RAPID-GAME-WEBAPP"
-
-        },
-        {
             id: 2,
-            name : "architecture webapp",
+            name : "Airport Web Application",
             short_description:"Lorem Ispum",
             description: "Lorem Ispum",
-            img: "/images/aron_architect.png",
-            url: "https://aronarchitect.netlify.app/"
+            img: "/images/airport_webapp.png",
+            url: "https://air-port-web-application.vercel.app/"
         },
         {
             id: 3,
@@ -27,13 +18,21 @@ const data = {
         },
         {
             id: 4,
+            name : "Bugger Track App",
+            short_description:"Lorem Ispum",
+            description: "Lorem Ispum",
+            img: "/images/bugger_track.png",
+            url:"https://bugtrackerwebapp.vercel.app/"
+        },
+        {
+            id: 5,
             name : "crime report website",
             short_description:"This website will be used by users to report crimes and security officers can look at these data from the database",
             description: "Lorem Ispum",
             img: "/images/crime_report_website.png",
             url: "https://github.com/alsongard/Crime-Reporting-Website"
 
-        }
+        },
     ],
     "data science projects":
     [
