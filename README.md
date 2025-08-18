@@ -8,10 +8,10 @@ Here are some ideas to get you started:
 
 
 ## About Me
-Fullstack Developer, Software Developer, Data Analyst and Cyber Security Enthusiast  
+Fullstack Developer and Cyber Security Enthusiast  
 Studying Computer Science in Zetech University in Kenya  
-I’m looking to collaborate on web design projects, ctf, c++ applications  
-Ask me about Web Design Projects, performing reconnaisance on systems using different tools, C++ file handling and applications  
+I’m looking to collaborate on web development projects, ctf
+Ask me about Web Development Projects, performing reconnaisance on systems using different tools.
 How to reach me: alsongadizo@gmail.com  
 PortFolio : https://alsongard.vercel.app/
 
