@@ -1,12 +1,8 @@
 "use client"; // using use client as this form requires client(user) interaction, useState
 
-import React from "react";
+import React, {useState} from "react";
 import emailjs from '@emailjs/browser';
 import { EmailJSResponseStatus } from "@emailjs/browser";
-// export const metadata = {
-//     title: "Contact",
-//     description: "get in touch"
-// }
 
 function Contact()
 {
@@ -30,6 +26,7 @@ function Contact()
             )
         })
     }
+    const [successMsg, setSuccessMsg] = useState('');
     async function  handleSubmit(event: React.FormEvent<HTMLFormElement>)
     {
         event.preventDefault();
@@ -57,7 +54,16 @@ function Contact()
         }
         emailjs
             .send(service_id, template_id, emailParams, {publicKey: public_id})
-            .then((response)=>{console.log(`Success! response_status: ${response.status} response.text: ${response.text} `)},
+            .then((response)=>{
+                console.log(`Success! response_status: ${response.status} response.text: ${response.text} `)
+                setSuccessMsg('Project Data has been sent successfully! I Will be inTouch');
+                setTimeout(()=>{
+                    setSuccessMsg('');
+
+                }, 5000);
+
+            },
+
             (err)=>{console.log(`FAILED... : Error: ${err}`)}
         )
 
@@ -75,16 +81,19 @@ function Contact()
             <h2 className="text-center text-[30px]">Contact Me</h2>
             <form onSubmit={handleSubmit} className="text-black flex flex-col w-[50%] mx-auto  ">
                 <label>Enter Name</label>
-                <input onChange={handleChange} name='name' value={formData.name} className="border-[2px] py-[1.5px] px-[3px] border-sky-300 rounded-md " type='text' placeholder="Name..."/>
+                <input onChange={handleChange} name='name' value={formData.name} className="border-[2px] dark:text-white py-[2.5px] px-[3px] outline-none border-sky-300 rounded-md " type='text' placeholder="Name..."/>
                 <label className="mt-[9px]">Enter email</label>
-                <input  onChange={handleChange} name='email' value={formData.email} className="border-[2px] py-[1.5px] px-[3px] border-sky-300 rounded-md" type='email' placeholder="Enter email..."/>
+                <input  onChange={handleChange} name='email' value={formData.email} className="border-[2px] dark:text-white py-[2.5px] outline-none px-[3px] border-sky-300 rounded-md" type='email' placeholder="Enter email..."/>
                 <label className="mt-[9px]">Enter phone number</label>
-                <input  onChange={handleChange} name='phoneNumber' value={formData.phoneNumber} className="border-[2px] py-[1.5px] px-[3px] border-sky-300 rounded-md" type='number' placeholder="Enter phonenumber..."/>
+                <input  onChange={handleChange} name='phoneNumber' value={formData.phoneNumber} className="border-[2px] dark:text-white py-[2.5px] outline-none px-[3px] border-sky-300 rounded-md" type='number' placeholder="Enter phonenumber..."/>
                 <label className="mt-[9px]">Enter Project Information</label>
-                <textarea  onChange={handleChange} name='projectInfo' value={formData.projectInfo}  className="border-[2px] py-[1.5px] px-[3px] border-sky-300 rounded-md" placeholder="Provide a description of the project..."/>
+                <textarea  onChange={handleChange} name='projectInfo' value={formData.projectInfo}  className="border-[2px] dark:text-white py-[2.5px] outline-none px-[3px] border-sky-300 rounded-md" placeholder="Provide a description of the project..."/>
 
                 <input className="bg-[#75b98e] text-white w-[30%] mx-auto py-[2.5px] rounded-md my-[20px] hover:bg-green-600" type="submit" value="submit"/>
             </form>
+            {
+                successMsg && (<p className='bg-green-500 w-1/2 mx-auto py-[10px] px-[5px] rounded-md text-[17px] font-semi-bold'>Project Data has been sent successfully! I Will be inTouch</p>)
+            }
         </section>
     )
 }
