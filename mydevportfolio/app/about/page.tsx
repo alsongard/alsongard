@@ -4,6 +4,10 @@ import { FaTwitter, FaXTwitter } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
 import { BiLogoGmail } from "react-icons/bi";
 
+export const metadata = {
+  title:'About',
+  description:'About Page'
+}
 export default function About() {
   return (
     <section className="bg-white text-black dark:text-white dark:bg-black w-[100vw]">
