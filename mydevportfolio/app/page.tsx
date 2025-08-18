@@ -26,12 +26,12 @@ export default function Home() {
           <p className='text-[20px] max-md:text-[17px]'><span className='text-[60px] max-md:text-[27px] pr-0'>H</span>i there <span className="dot"></span> <span className="dot"></span> <span className="dot"></span> </p>
           <p className='text-[20px] max-md:text-[17px] capitalize'>am Gard Alson</p>
           <p className="text-[20px] max-md:text-[17px]">Welcome to my Porfolio.  </p>
-          <p className='text-[20px] max-md:text-[17px]'>I'm a Full Stack Developer, PenTester, Game Developer and Data Analyst </p>
+          <p className='text-[20px] max-md:text-[17px]'>I'm a Full Stack Developer.</p>
 
           <h2 className=" text-center text-[20px] mt-[50px] mb-[5px] max-md:text-[17px]" >Get in Touch</h2>
           
           {/* icons */}
-          <div className='flex flex-row max-sm:flex-col max-sm:items-center max-sm:gap-y-[20px] max-sm:w-[100px] max-sm:rounded-md justify-evenly border-2 mx-auto py-[10px]  w-1/2 border-black dark:border-white rounded-[50px]'>
+          <div className='flex flex-row max-sm:flex-col max-sm:items-center max-sm:gap-y-[20px] max-sm:w-[100px] max-sm:rounded-md justify-evenly border-2 mx-auto py-[10px]  w-[500px] border-black dark:border-white rounded-[50px]'>
             <div className='h-[30px] w-[30px]  rounded-[100%] hover:scale-[1.4]  ease-in-out'>
               <a href="http://github.com/alsongard" target="_blank">
                 <FaGithub className='h-[100%] w-[100%] rounded-[100%] hover:text-black max-md:text-[17px] dark:bg-sky-500'/>
