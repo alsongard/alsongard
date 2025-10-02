@@ -3,6 +3,8 @@
 import React, {useState} from "react";
 import emailjs from '@emailjs/browser';
 import { EmailJSResponseStatus } from "@emailjs/browser";
+import axios from "axios";
+
 
 function Contact()
 {
@@ -30,7 +32,7 @@ function Contact()
     async function  handleSubmit(event: React.FormEvent<HTMLFormElement>)
     {
         event.preventDefault();
-
+        setSuccessMsg("Waiting!!")
         // cont serviceId = process.env.
         console.log("submitted");
         console.log(formData);
@@ -54,29 +56,46 @@ function Contact()
             console.log('Error accessing keys');
             return;
         }
-        emailjs
-            .send(service_id, template_id, emailParams, {publicKey: public_id})
-            .then((response)=>{
-                console.log(`Success! response_status: ${response.status} response.text: ${response.text} `)
-                setSuccessMsg('Project Data has been sent successfully! I Will be inTouch');
-                setTimeout(()=>{
-                    setSuccessMsg('');
+        const response = await axios.post("http://localhost:5000/api/emails", {
+            message: formData.projectInfo,
+            userEmail: formData.email,
+            name: formData.name,
+            phoneNumber: formData.phoneNumber
+        });
+        console.log('this is respone');
+        console.log(response);
 
-                }, 5000);
+        if (response.data.success)
+        {
+            setSuccessMsg('Project Data has been sent successfully! I Will be inTouch');
+            setFormData(()=>{
+                    return {
+                        name: "",
+                        email: "",
+                        phoneNumber: "",
+                        projectInfo: "",
+                    }
+                })
+            setTimeout(()=>{
+                setSuccessMsg('');
+            }, 5000);
+        }
+        // emailjs
+        //     .send(service_id, template_id, emailParams, {publicKey: public_id})
+        //     .then((response)=>{
+        //         console.log(`Success! response_status: ${response.status} response.text: ${response.text} `)
+        //         setSuccessMsg('Project Data has been sent successfully! I Will be inTouch');
+        //         setTimeout(()=>{
+        //             setSuccessMsg('');
 
-            },
+        //         }, 5000);
 
-            (err)=>{console.log(`FAILED... : Error: ${err}`)}
-        )
+        //     },
 
-        setFormData(()=>{
-            return {
-                name: "",
-                email: "",
-                phoneNumber: "",
-                projectInfo: "",
-            }
-        })
+        //     (err)=>{console.log(`FAILED... : Error: ${err}`)}
+        // )
+
+        
     }
     return (
         <section className=" py-[100px] dark:bg-black dark:text-white">

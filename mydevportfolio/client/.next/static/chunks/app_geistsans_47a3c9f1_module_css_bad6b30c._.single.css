@@ -1,0 +1,26 @@
+/* [project]/app/geistsans_47a3c9f1.module.css [app-client] (css) */
+@font-face {
+  font-family: geistSans;
+  src: url("../media/GeistVF-s.p.4c3c0b96.woff") format("woff");
+  font-display: swap;
+  font-weight: 100 900;
+}
+
+@font-face {
+  font-family: geistSans Fallback;
+  src: local(Arial);
+  ascent-override: 85.83%;
+  descent-override: 20.52%;
+  line-gap-override: 9.33%;
+  size-adjust: 107.19%;
+}
+
+.geistsans_47a3c9f1-module__2HyNMa__className {
+  font-family: geistSans, geistSans Fallback;
+}
+
+.geistsans_47a3c9f1-module__2HyNMa__variable {
+  --font-geist-sans: "geistSans", "geistSans Fallback";
+}
+
+/*# sourceMappingURL=app_geistsans_47a3c9f1_module_css_bad6b30c._.single.css.map*/
