@@ -8,10 +8,35 @@ const app = express();
 
 const PORT = process.env.PORT || 5000;
 const corsOptions = {
-	origin: ["http://localhost:3000", "https://alsongard.vercel.app"],
-	methods: ['POST', 'OPTIONS'],
-	credentials: true
-}
+	origin: (origin, callback)=>
+	{
+		if (process.env.NODE_ENV !== "production") // checks the environment at which t's running
+		{
+			console.log(`[DEV] Allowing origin: ${origin}`)
+			return callback(null, true);
+		}
+		if (!origin)
+		{
+			return callback(null,true); // remember second argument: returns true(permit domain) or false(permit domain) 
+		}
+		const allowedDomains = ["http://localhost:3000", "https://alsongard.vercel.app"]
+
+		if (allowedDomains.includes(origin))// not equal the indexOf() method returns -1 if no value ns found in the array
+		{
+			return callback(null, true); // firstArgument: if we are expecting an error set this value as shown in else statemetn
+			// second argument: boolean value which indeicates if the origin is allowed(true) : on not allowed(false)
+		}
+		else
+		{
+			callback(new Error(`Origin: ${origin} not allowed by cors`));
+		}
+	},
+	methods:["POST", "OPTIONS"],
+	credentials:true,
+	allowedHeaders: ['Content-Type']
+};
+
+
 app.use(cors(corsOptions))
 app.use(express.json())
 app.use(express.urlencoded({extended:false}));
