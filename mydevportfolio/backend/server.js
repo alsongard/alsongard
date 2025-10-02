@@ -7,34 +7,58 @@ const transporter = require("./nodemailer_config.js")
 const app = express();
 
 const PORT = process.env.PORT || 5000;
-app.use(cors("*"))
+const corsOptions = {
+	origin: ["http://localhost:3000", "https://alsongard.vercel.app"],
+	methods: ['POST', 'OPTIONS'],
+	credentials: true
+}
+app.use(cors(corsOptions))
 app.use(express.json())
-app.use(express.urlencoded({extended:false}))
+app.use(express.urlencoded({extended:false}));
+
 app.get("/", (req, res) => {
-  res.send("Hello from the backend server!");
+  res.status(200).send("<h1>Hello from the backend server!</h1>");
 });
-console.log(process.env.ANOTHER_APP_PASSWORD)
 
 app.post("/api/emails", async (req, res)=>{
-    const {name, body} = req.body;
+    const {message, userEmail, name, phoneNumber} = req.body;
+    if(!message || !userEmail || !name || !phoneNumber)
+	{
+		return res.status(400).json({success:false, msg:"Invalid Input"})
+	}
     const userData = {
-        from: userEmail,
-        to: "alsongadizo@example.com",
-        subject: `Message from ${name}`,
-        text: body
+        from: "alsongadizo@gmail.com",
+        to: "alsongadizo@gmail.com", // to is to your email not the sender 
+        subject: `Subject: Project Request from ${name}`,
+        text: `phoneNumber: ${phoneNumber}\nMessage: ${message}`,
+        replyTo: userEmail
     }
-    await transporter.sendMail(userData)
+    const result = await transporter.sendMail(userData);
+    console.log(`result`);
+    console.log(result);
+    const result_array = result.response.split(" ");
+    if (result_array[0] == '250')
+    {
+      console.log('Email successfully received');
+      let my_new_email = {
+        from: "alsongadizo@gmail.com",
+        to: userEmail,
+        subject: `Subject: email recieved`,
+        text: "Your email has been received. I will get back to you."
+      }
+      const new_email_response = await transporter.sendMail(my_new_email);
+      console.log(new_email_response);
+      return res.json({status:"success", msg:"Email successfully sent."});
+    }
+    else
+    {
+      return res.status(200).json({status:"false", msg:"Email not received."})
+    }
 })
 
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
-});
+// app.listen(PORT, () => {
+//   console.log(`Server is running on http://localhost:${PORT}`);
+// });
 
-/**
- * 
- * from
- * replyTo
- * to 
- * subect
- * text
- */
+
+module.exports = app;

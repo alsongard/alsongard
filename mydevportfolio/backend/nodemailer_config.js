@@ -5,8 +5,8 @@ const transporter = nodemailer.createTransport({
 	port: 587, 
     secure:false,
 	auth: {
-		user: "alsongadizo@gmail.com",
-		pass: process.env.ANOTHER_APP_PASSWORD
+		user: "alsongadizo@gmail.com", // always set the gmail that was used to create the password for the gmail
+		pass: process.env.ANOTHER_APP_PASSWORD // the password for your app
 	}
 });
 
