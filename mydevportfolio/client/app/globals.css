@@ -56,3 +56,21 @@ body
   box-shadow: 0px 0px 5px white ;
 }
 
+.theHackContainer
+{
+  background-image: linear-gradient(to right, rgba(190, 175, 175, 0.322), rgba(50, 50, 80, 0.205)),url("../public/images/my_hackthe_box.png");
+}
+.borderContainer
+{
+  animation-duration: 10s;
+  animation-timing-function: ease-in-out;
+  animation-name: borderrMove;
+  animation-iteration-count: infinite;
+}
+@keyframes borderrMove {
+  0% {border-top:2px solid red};
+  25% {border-right:2px solid red};
+  50% {border-bottom:2px solid red};
+  100% {border-left:2px solid red};
+
+}
