@@ -56,7 +56,7 @@ function Contact()
             console.log('Error accessing keys');
             return;
         }
-        const response = await axios.post("http://localhost:5000/api/emails", {
+        const response = await axios.post("https://alsongard-k44b.vercel.app/api/emails", {
             message: formData.projectInfo,
             userEmail: formData.email,
             name: formData.name,
