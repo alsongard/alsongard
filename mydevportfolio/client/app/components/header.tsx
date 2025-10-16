@@ -5,6 +5,7 @@ import clsx from "clsx";
 import { FiMenu } from "react-icons/fi";
 import ThemeSwitch from "./themeSwitch";
 import {throttle} from "lodash";
+import { usePathname } from 'next/navigation';
 
 export default function Header()
 {
@@ -48,7 +49,8 @@ export default function Header()
     // }
     window.addEventListener('scroll', handleScroll)
     return ()=>{window.removeEventListener('scroll', handleScroll)}
-  }, [])
+  }, []);
+  const pathName = usePathname();
 
   return (
     <header id='header' className={clsx(headerSticky ? 'w-[100vw]' : "w-[90%] rounded-[25px]", ' duration-[2] ease-in-out flex bg-sky-500   sticky top-0 mx-auto mt-[80px] py-[22px] px-[20px] z-[1001]  items-center justify-between')}>
@@ -60,7 +62,7 @@ export default function Header()
         <ul className='max-lg:text-[18px] flex text-[20px] justify-between  w-[500px] flex-row items-center'>
           <li>
             <Link
-              className="hover:text-black " 
+              className={clsx(pathName === "/" ? "text-blue-800" :  "", "hover:text-black")} 
               href="/"
             >
               Portfolio
@@ -68,7 +70,7 @@ export default function Header()
           </li>
           <li>
             <Link
-              className="hover:text-black" 
+              className={clsx(pathName === "/about" ? "text-blue-800" : "", "hover:text-black")}
               href="/about"
             >
               About
@@ -76,7 +78,7 @@ export default function Header()
           </li>
           <li>
             <Link 
-              className="hover:text-black" 
+              className={clsx(pathName === "/projects" ? "text-blue-800" : "", "hover:text-black")} 
               href="/projects"
               >
                 Projects
@@ -84,17 +86,23 @@ export default function Header()
           </li>
           <li>
             <Link
-              className="hover:text-black" 
+              className={clsx(pathName === "/contact" ? "text-blue-800" : "", "hover:text-black")} 
               href="/contact"
             >
               Contact
             </Link>
           </li>
+					<li>
+            <Link
+              className={clsx(pathName === "/cybersec" ? "text-blue-800" : "", "hover:text-black")} 
+              href="/cybersec"
+            >
+              CyberSec
+            </Link>
+          </li>
         </ul>
 
         {/* darkmode icons */}
-        <ThemeSwitch/>
-
       </div>
 
       <FiMenu onClick={dispalySmallerMenu} className='hidden max-md:block'/>
