@@ -8,14 +8,12 @@ import axios from "axios";
 
 function Contact()
 {
-
     const [formData, setFormData] = React.useState({
         name: "",
         email: "",
         phoneNumber: "",
         projectInfo: "",
     })
-
     type formInput  = HTMLInputElement | HTMLTextAreaElement
     function handleChange(event: React.ChangeEvent<formInput>)
     {
@@ -33,17 +31,11 @@ function Contact()
     {
         event.preventDefault();
         setSuccessMsg("Waiting!!")
-        // cont serviceId = process.env.
-        console.log("submitted");
-        console.log(formData);
 
         const public_id: string | undefined = process.env.NEXT_PUBLIC_USER_PUB_KEY;
         const service_id: string | undefined = process.env.NEXT_PUBLIC_USER_SERVICE_ID;
         const template_id: string | undefined = process.env.NEXT_PUBLIC_TEMPLATE_ID;
         
-        // console.log(`public_id: ${public_id}\n service_id: ${service_id}\n template_id: ${template_id} `);
-        
-
         const emailParams = {
             userEmail: formData.email,
             userName:formData.name,
@@ -53,17 +45,14 @@ function Contact()
 
         if (!public_id || !service_id || !template_id)
         {
-            console.log('Error accessing keys');
             return;
         }
-        const response = await axios.post("https://alsongard-k44b.vercel.app/api/emails", {
+        const response = await axios.post("process.env.NEXT_PUBLIC_API_URL", {
             message: formData.projectInfo,
             userEmail: formData.email,
             name: formData.name,
             phoneNumber: formData.phoneNumber
         });
-        console.log('this is respone');
-        console.log(response);
 
         if (response.data.success)
         {
@@ -79,23 +68,7 @@ function Contact()
             setTimeout(()=>{
                 setSuccessMsg('');
             }, 5000);
-        }
-        // emailjs
-        //     .send(service_id, template_id, emailParams, {publicKey: public_id})
-        //     .then((response)=>{
-        //         console.log(`Success! response_status: ${response.status} response.text: ${response.text} `)
-        //         setSuccessMsg('Project Data has been sent successfully! I Will be inTouch');
-        //         setTimeout(()=>{
-        //             setSuccessMsg('');
-
-        //         }, 5000);
-
-        //     },
-
-        //     (err)=>{console.log(`FAILED... : Error: ${err}`)}
-        // )
-
-        
+        }        
     }
     return (
         <section className=" py-[100px] dark:bg-black dark:text-white">
