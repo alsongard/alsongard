@@ -52,27 +52,24 @@ app.post("/api/emails", async (req, res)=>{
 		return res.status(400).json({success:false, msg:"Invalid Input"})
 	}
     const userData = {
-        from: "alsongadizo@gmail.com",
-        to: "alsongadizo@gmail.com", // to is to your email not the sender 
+        from: process.env.GMAIL_APP_USER,
+        to: process.env.GMAIL_APP_USER, // to is to your email not the sender 
         subject: `Subject: Project Request from ${name}`,
         text: `phoneNumber: ${phoneNumber}\nMessage: ${message}`,
         replyTo: userEmail
     }
     const result = await transporter.sendMail(userData);
-    console.log(`result`);
-    console.log(result);
+
     const result_array = result.response.split(" ");
     if (result_array[0] == '250')
     {
-      console.log('Email successfully received');
       let my_new_email = {
-        from: "alsongadizo@gmail.com",
+        from: process.env.GMAIL_APP_USER,
         to: userEmail,
         subject: `Subject: email recieved`,
         text: "Your email has been received. I will get back to you."
       }
       const new_email_response = await transporter.sendMail(my_new_email);
-      console.log(new_email_response);
       return res.json({status:"success", msg:"Email successfully sent."});
     }
     else
