@@ -26,9 +26,7 @@ export default function Header()
             return false;
         }
     });
-    console.log(`Condition: ${smallVisible}`)
-
-
+    // console.log(`Condition: ${smallVisible}`)
   }
 
   // STICKY HEADER
