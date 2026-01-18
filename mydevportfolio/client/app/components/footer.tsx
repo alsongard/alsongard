@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="text-center  max-[740px]:px-[15px]">
             <h2 className="text-[33px]" >AlsonGard</h2>
             <p className="text-[20px] max-md:text-[17px] ">Days become seconds, weeks become minutes, months become hours and years just days. </p>
-            <p className="text-[20px] max-md:text-[17px] ">Pursuing every dream to become reality, building applications which aid in human activities and in a better world.</p>
+            <p className="text-[20px] max-md:text-[17px] ">Pursuing every dream to become reality.</p>
         </div>
         <div className="flex mt-[40px]  items-start justify-center gap-x-[200px] flex-row">
             <div>
