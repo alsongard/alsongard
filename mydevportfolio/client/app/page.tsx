@@ -17,9 +17,12 @@ export default function Home() {
   return (
     <main className="w-[100vw] bg-white dark:bg-black border-b-2 border-black">
       {/* IMAGE CONTAINER */}
-      <div className="flex flex-row max-sm:flex-col max-sm:items-center bg-white dark:bg-black items-start justify-evenly gap-x-[30px] my-[50px] w-[90%] mx-auto  py-[70px]  ">
-        <div className="">
-          <Image className="rounded-[100%]" width={450}  height={550} src="/images/anime_2.jpg" alt=""/>
+      <div className="flex  flex-row max-sm:flex-col max-sm:items-center bg-white dark:bg-black items-start justify-evenly gap-x-[30px] my-[50px] w-[90%] mx-auto  py-[70px]  ">
+        <div className="w-[450px] relative h-[450px] p-[5px]">
+			<div className="borderStyle border-[4px] border-dashed border-sky-600 inset-0 rounded-full absolute  h-full w-full"></div>
+          <div className="relative ">
+            <Image  preload={true} className="rounded-[100%]" width={450} height={450} src="/images/anime_2.jpg" alt=""/>
+          </div>
         </div>
 
         <div className='pt-[50px] max-sm:text-center pl-[5px] dark:text-white '>
