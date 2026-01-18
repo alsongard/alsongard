@@ -94,8 +94,8 @@ export default function Home() {
         <div className='text-center my-[20px]'>
 			<p className='text-[20px] max-md:text-[17px]'>Click To Download My Resume || CV</p>
 			<div className='flex flex-row  justify-center space-x-3'>
-				<button className='my-[10px] bg-sky-500 py-[3.5px] px-[10px] rounded-md text-[20px] hover:text-black hover:scale-[1.1] max-md:text-[17px]'><a href="/files/gard_resume.pdf" download="gard_resume.pdf">RESUME</a></button>
-				<button className='my-[10px] bg-sky-500 py-[3.5px] px-[10px] rounded-md text-[20px] hover:text-black hover:scale-[1.1] max-md:text-[17px]'><a href="/files/gard_resume.pdf" download="gard_resume.pdf">CV</a></button>
+				<button className='my-[10px] bg-sky-500 py-[3.5px] px-[10px] rounded-md text-[20px] hover:text-black hover:scale-[1.1] max-md:text-[17px]'><a href="https://github.com/alsongard/alsongard/blob/main/gard_resume.pdf" download="gard_resume.pdf">RESUME</a></button>
+				<button className='my-[10px] bg-sky-500 py-[3.5px] px-[10px] rounded-md text-[20px] hover:text-black hover:scale-[1.1] max-md:text-[17px]'><a href="https://github.com/alsongard/alsongard/blob/main/gard_cv.pdf" download="gard_resume.pdf">CV</a></button>
 			</div>
         </div>
       </section>
