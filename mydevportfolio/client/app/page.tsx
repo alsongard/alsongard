@@ -84,7 +84,7 @@ export default function Home() {
         <div className=" w-[80%] dark:text-white p-[50px] mx-auto">
           <h1 className='text-[20px] max-md:text-[17px] '>Serivces I Offer</h1>
           <ul className="list-disc text-left pl-[20px]">
-            <li className='text-[20px] max-md:text-[17px]'>Web Development and design both front-end and back-end</li>
+            <li className='text-[20px] max-md:text-[17px]'>Web Development both front-end and back-end</li>
             <li className='text-[20px] max-md:text-[17px]'>Data analyst</li>
             <li className='text-[20px] max-md:text-[17px]'>Web Scraping</li>
             <li className='text-[20px] max-md:text-[17px]'>Software Development using C++ and Python</li>
@@ -92,8 +92,11 @@ export default function Home() {
           </ul>
         </div>
         <div className='text-center my-[20px]'>
-          <p className='text-[20px] max-md:text-[17px]'>Click To Download My Resume</p>
-          <button className='my-[10px] bg-sky-500 py-[3.5px] px-[10px] rounded-md text-[20px] hover:text-black hover:scale-[1.1] max-md:text-[17px]'><a href="/files/gard_resume.pdf" download="gard_resume.pdf">RESUME</a></button>
+			<p className='text-[20px] max-md:text-[17px]'>Click To Download My Resume || CV</p>
+			<div className='flex flex-row  justify-center space-x-3'>
+				<button className='my-[10px] bg-sky-500 py-[3.5px] px-[10px] rounded-md text-[20px] hover:text-black hover:scale-[1.1] max-md:text-[17px]'><a href="/files/gard_resume.pdf" download="gard_resume.pdf">RESUME</a></button>
+				<button className='my-[10px] bg-sky-500 py-[3.5px] px-[10px] rounded-md text-[20px] hover:text-black hover:scale-[1.1] max-md:text-[17px]'><a href="/files/gard_resume.pdf" download="gard_resume.pdf">CV</a></button>
+			</div>
         </div>
       </section>
     </main>
