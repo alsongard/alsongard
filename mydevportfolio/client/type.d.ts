@@ -1,4 +1,3 @@
-
 export type Data =  {
    [key:string]:ProjectData[]
 }
