@@ -1,15 +1,20 @@
 import { Link } from 'lucide-react';
 import Image from "next/image";
-/*type projectData =  {
+
+type ProjectData =  {
     id: number,
     name: string,
     short_description: string,
     description: string,
     img: string,
-    url: string
-}*/
+    url: string,
+    techStack: Array<String>
+}
+interface PropTypes {
+    item: ProjectData
+}
 
-function ProjectComponentView(prop:any)
+function ProjectComponentView(prop:PropTypes)
 {
     return (
         <div className=" py-[10px] flex flex-row  space-x-[30px] border-white relative h-[300px] shadow-[0px_0px_10px_black] px-[20px]  rounded-md ">
@@ -25,7 +30,7 @@ function ProjectComponentView(prop:any)
                 <p>{prop.item.description}</p>
                 <div className='flex flex-row space-x-[10px] py-[10px] '>
                     {
-                        prop.item.techStack.map((item:string, index:number)=>
+                        prop.item.techStack.map((item, index:number)=>
                         
                             <p key={index} className="py-[5px] px-[10px] bg-[#291263] rounded-md">{item}</p>
                         )

@@ -1,5 +1,16 @@
-const data = {
+import type {Data} from "@/type"
+const data:Data = {
     "web development projects": [
+        {
+            id: 1,
+            name: "MindBridge Mental Web Platform",
+            short_description: "A mental health platform for University Students",
+            date: "",
+            description: "A full-stack web application designed to bridge the gap between university students and mental health counseling services. The platform facilitates secure booking, communication, and support within an educational environment",
+            img: "/images/mindbridge.png",
+            url: "https://universitystudentmentalhealth.vercel.app/",
+            techStack: ["react", "redux", "nodejs", "express","mongodb", "tailwindcss", "socket.io"]
+        },
         {
             id: 2,
             name : "SkyLux Airport Booking System",
@@ -10,16 +21,6 @@ const data = {
             url: "https://air-port-web-application.vercel.app/",
             techStack: ["react", "redux", "nodejs", "express","mongodb", "tailwindcss"]
         },
-        // {
-        //     id: 3,
-        //     name : "michelles restaurant",
-        //     short_description:"Lorem Ispum",
-        //     date: "",
-        //     description: "Lorem Ispum",
-        //     img: "/images/michelle.png",
-        //     url: "https://michellekitchens.netlify.app/",
-        //     techStack: ["python", "PySide6", "MongoDB"]
-        // },
         {
             id: 4,
             name : "Bugger Track App",
@@ -78,7 +79,7 @@ const data = {
             techStack: ["csharp", "Unity2D"]
         }
     ],
-    "deskotp application":
+    "desktop applications":
     [
         {
             id: 1,
