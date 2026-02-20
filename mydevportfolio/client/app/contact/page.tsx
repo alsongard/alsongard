@@ -1,8 +1,6 @@
 "use client"; // using use client as this form requires client(user) interaction, useState
 
 import React, {useState} from "react";
-import emailjs from '@emailjs/browser';
-import { EmailJSResponseStatus } from "@emailjs/browser";
 import axios from "axios";
 
 
