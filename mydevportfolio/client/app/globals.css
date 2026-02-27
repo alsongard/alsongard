@@ -1,40 +1,19 @@
-
-@import "tailwindcss/base";
-@import "tailwindcss/utilities";
-@import "tailwindcss/components";
-
-/*
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@import "tailwindcss";
+@theme {
+  --breakpoint-sm: 40rem; /*640px*/
+  --breakpoint-md: 48.375rem; /*774px*/
+  --breakpoint-slg: 65.375rem;/*1046px*/
+  --breakpoint-lg: 68.688rem; /*1099.008px*/
+  --breakpoint-xl: 78.125rem; /*1250px*/
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* body { these are given already by tailwind preflight check docs on:https://github.com/tailwindlabs/tailwindcss/blob/main/packages/tailwindcss/preflight.css
+  margin:0; 
+  padding:0; 
+  box-sizing: border-box; 
+} */
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
-*/
-
-*
-{
-  margin:0;
-  padding:0;
-  box-sizing: border-box;
-}
 body
 {
   background-color: white;
