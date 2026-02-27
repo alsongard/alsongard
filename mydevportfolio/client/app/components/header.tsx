@@ -14,8 +14,8 @@ export default function Header()
 	// SMALLER MENU FUNCTION
 	function dispalySmallerMenu()
 	{
-		console.log("I got clicked");
-		console.log(`Condition: ${smallVisible}`)
+		// console.log("I got clicked");
+		// console.log(`Condition: ${smallVisible}`)
 		setSmallVisible((prevValue)=>{
 			if (!prevValue)
 			{
@@ -51,9 +51,10 @@ export default function Header()
 	const pathName = usePathname();
 
 	return (
-		<header id='header' className={clsx(headerSticky ? 'w-[100vw]' : "w-[90%] rounded-[25px]", ' duration-[2] ease-in-out flex bg-sky-500   sticky top-0 mx-auto mt-[80px] py-[22px] px-[20px] z-[1001]  items-center justify-between')}>
+		<header id='header' className={clsx(headerSticky ? 'w-screen ' : "w-[90%] mx-auto rounded-[25px]", 'duration-[2] ease-in-out flex bg-sky-500   sticky top-0  mt-20 py-[22px] px-[20px] z-[1001]  items-center justify-between')}>
+		{/* // <header id='header' className='bg-blue-500 '> */}
 			<div>
-				<h1 className="pl-[15px] text-[20px] max-lg:text-[18px]">AlsonGard</h1>
+				<h1 className="pl-3.75 text-[20px] max-lg:text-[18px]">AlsonGard</h1>
 			</div>
 
 			<div className="max-md:hidden flex flex-row items-center justify-evenly gap-x-[60px]  w-[60%]">
