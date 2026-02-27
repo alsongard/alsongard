@@ -1,0 +1,11 @@
+**/node_modules/
+/**/.env
+
+mydevportfolio/backend/node_modules/
+/mydevportfolio/backend/.env/
+mydevportfolio/client/node_modules
+mydevportfolio/client/next/
+mydevportfolio/client/.env.local
+/mydevportfolio/client/.env
+devportfolio/node_modules/
+mydevportfolio/client/.next/
