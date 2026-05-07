@@ -9,7 +9,6 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@types/pg": "^8.16.0",
     "@vercel/analytics": "^1.6.1",
     "axios": "^1.13.6",
     "bcryptjs": "^3.0.3",
@@ -17,10 +16,10 @@
     "dotenv": "^17.3.1",
     "lodash": "^4.17.23",
     "lucide-react": "^0.575.0",
-    "next": "16.1.6",
+    "next": "^16.2.5",
     "next-auth": "^5.0.0-beta.30",
     "next-themes": "^0.4.6",
-    "pg": "^8.19.0",
+    "pg": "^8.20.0",
     "postcss": "^8.5.6",
     "react": "19.2.3",
     "react-dom": "19.2.3",
@@ -30,6 +29,7 @@
     "@tailwindcss/postcss": "^4.2.1",
     "@types/lodash": "^4.17.24",
     "@types/node": "^20",
+    "@types/pg": "^8.20.0",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9.39.3",
