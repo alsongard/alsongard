@@ -1,18 +1,9 @@
 import ProjectComponentView from "./projectComponentView";
-
-type projectData =  {
-    id: number,
-    name: string,
-    short_description: string,
-    description: string,
-    img: string,
-    url: string,
-    techStack: Array<String>
-}
+import type { DBProjectData } from "@/type";
 
 type CategoryProps = {
     projectCategoryName: string,
-    projects : projectData[]
+    projects : DBProjectData[]
 }
 // max-[936px]:grid-cols-2  max-[732px]:grid-cols-1
 function ProjectCategoryView(props: CategoryProps)
