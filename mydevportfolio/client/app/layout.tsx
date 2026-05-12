@@ -21,24 +21,17 @@ export const metadata: Metadata = {
   description: "my portfolio",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>)
-
+export default function RootLayout({children,}:Readonly<{children: React.ReactNode;}>)
 {
-  return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-      >
-        <Providers>
-          <Header/>
-          {children}
-          <Footer/>
-        </Providers>
-        <Analytics/>
-      </body>
-    </html>
-  );
+	return (
+
+		<html lang="en" suppressHydrationWarning>
+			<body>
+				<Providers>
+					{children}
+				</Providers>
+				<Analytics/>
+			</body>
+		</html>
+	);
 }
