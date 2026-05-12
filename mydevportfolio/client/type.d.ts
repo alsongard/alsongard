@@ -1,14 +1,23 @@
 export type Data =  {
    [key:string]:ProjectData[]
 }
-export interface ProjectData {
+
+
+export interface DBProjectData {
     id: number,
-    name: string,
-    short_description: string,
-    date: string,
-    description: string,
-    img: string,
-    url: string,
-    techStack: string[],
+    projectname: string,
+    shortdescription: string,
+    startDate: string,
+    endDate: string,
+    projectdescription: string,
+    projectimage: string,
+    projecturl: string,
+    githuburl: string,
+    techstack: string[],
+    projecttype: string
 }
 
+
+export type GroupedData = {
+    [key:string] : DBProjectData[]
+}
