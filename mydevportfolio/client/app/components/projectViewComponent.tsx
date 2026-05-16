@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Plus, Pencil, Trash2, ExternalLink, Github,X, Save, ChevronDown, LayoutGrid, List,FolderOpen, Search, ImageIcon, Link2, } from "lucide-react";
+import { Plus, Pencil, Trash2, CheckCircle2, XCircle, ExternalLink, Github,X, Save, ChevronDown, LayoutGrid, List,FolderOpen, Search, ImageIcon, Link2, } from "lucide-react";
 import type { DBProjectData } from "@/type";
+import { method } from "lodash";
 /* ─── Types ──────────────────────────────────────────────────────────────── */
 export type Project = {
   id: number;
@@ -19,24 +20,6 @@ export type Project = {
 };
 
 
-// fetch data
-/* ─── Seed data ──────────────────────────────────────────────────────────── */
-const seedProjects: DBProjectData[] = 
-[
-    {
-        id: 1,
-        projectname: "Mindbridge Mental Health Platform",
-        projectdescription: "A full-stack web application designed to bridge the gap between university students and mental health counseling services. The platform facilitates secure booking, chat communication, and support within an educational environment.",
-        techstack: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Tailwind CSS"],
-        projecturl: "https://universitystudentmentalhealth.vercel.app/",
-        githuburl: "https://github.com/alsongard/University_Student_Mental_Health_WebApp_Platform",
-        projecttype: "web development projects",
-        projectimage: "https://res.cloudinary.com/dzth2gguw/image/upload/v1778615420/mindbridge_rc0bhb.png",
-        shortdescription: null,
-        startdate: null,
-        enddate: null,
-    },
-];
 // Omit is  built in type in typescrit that is used to remove  property from type and returns a new property type
 
 const emptyProject = (): Omit<Project, "id"> => ({ // from the Project data type remove id and set the new type and set the return type for the implicit function. Note in javascript we have ()=>({}) using paranthesis around the object means that the object will be returned implicitly
@@ -106,11 +89,16 @@ function TagInput({tags,onChange,}: {tags: string[];onChange: (tags: string[]) =
 }
 
 /* ─── Modal Form ─────────────────────────────────────────────────────────── */
-function ProjectModal({project,onSave,onClose,}: {project: Omit<Project, "id"> & { id?: number };onSave: (p: Omit<Project, "id"> & { id?: number }) => void;onClose: () => void;}) 
-{
+interface ModalProps  {
+    project: Omit<Project, "id"> & {id? : number},
+    onSave: (p: Omit<Project, "id"> & {id? : number}) => void,
+    onClose: ()=> void,
+    isSubmit: Boolean | null
+} 
+function ProjectModal({project,onSave,onClose,isSubmit,}: {project: Omit<Project, "id"> & { id?: number }; onSave:(p: Omit<Project, "id"> & { id?: number }) => void; onClose:() => void; isSubmit:Boolean | null} ) 
+{   // the arguments given to the ProjectModal function is as follows: project: the type is set to Project but without the id and id is also set as optional: id?
     const [form, setForm] = useState(project); // this project parameter is acquired from EmptyProject which returns an object
-    const isEdit = !!project.id; // if project.id does not exist (I know it will be true) and then change true to false
-
+    const isEdit = project.id ? true : false ; // if project.id exist we are editing : if not: adding
     const set = (key: keyof typeof form, value: unknown) =>
         setForm((prev) => ({ ...prev, [key]: value })); // used to update the form stte variable : get all previous data for the given key set value
 
@@ -210,13 +198,13 @@ function ProjectModal({project,onSave,onClose,}: {project: Omit<Project, "id"> &
                     {/* Image URL */}
                     <div className="flex flex-col gap-1.5">
                         <label className="text-xs text-white/40 uppercase tracking-widest font-medium flex items-center gap-1.5">
-                        <ImageIcon size={12} /> Project Image URL
+                            <ImageIcon size={12} /> Project Image URL
                         </label>
                         <input
-                        className={inputCls}
-                        value={form.projectimage}
-                        onChange={(e) => set("projectimage", e.target.value)}
-                        placeholder="https://res.cloudinary.com/…"
+                            className={inputCls}
+                            value={form.projectimage}
+                            onChange={(e) => set("projectimage", e.target.value)}
+                            placeholder="https://res.cloudinary.com/…"
                         />
                         {form.projectimage && (
                         <img
@@ -231,52 +219,71 @@ function ProjectModal({project,onSave,onClose,}: {project: Omit<Project, "id"> &
                     <div className="flex flex-col gap-1.5">
                         <label className="text-xs text-white/40 uppercase tracking-widest font-medium">Project Type</label>
                         <div className="relative">
-                        <select
-                            className={inputCls + " appearance-none pr-8 cursor-pointer"}
-                            value={form.projecttype}
-                            onChange={(e) => set("projecttype", e.target.value)}
-                        >
-                            {PROJECT_TYPES.map((t) => (
-                            <option key={t} value={t} className="bg-[#0f0f0f]">{t}</option>
-                            ))}
-                        </select>
-                        <ChevronDown size={14} className="absolute right-3 top-1/2 -translate-y-1/2 text-white/30 pointer-events-none" />
+                            <select
+                                className={inputCls + " appearance-none pr-8 cursor-pointer"}
+                                value={form.projecttype}
+                                onChange={(e) => set("projecttype", e.target.value)}
+                            >
+                                {PROJECT_TYPES.map((t) => (
+                                <option key={t} value={t} className="bg-[#0f0f0f]">{t}</option>
+                                ))}
+                            </select>
+                            <ChevronDown size={14} className="absolute right-3 top-1/2 -translate-y-1/2 text-white/30 pointer-events-none" />
                         </div>
                     </div>
 
                     {/* Dates — 2 col */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div className="flex flex-col gap-1.5">
-                        <label className="text-xs text-white/40 uppercase tracking-widest font-medium">Start Date</label>
-                        <input
-                            type="date"
-                            className={inputCls + " [color-scheme:dark]"}
-                            value={form.startdate ?? ""}
-                            onChange={(e) => set("startdate", e.target.value || null)}
-                        />
+                            <label className="text-xs text-white/40 uppercase tracking-widest font-medium">Start Date</label>
+                            <input
+                                type="date"
+                                className={inputCls + " [color-scheme:dark]"}
+                                value={form.startdate ? new Date(form.startdate).toISOString().split("T")[0] : ""}
+                                onChange={(e) => set("startdate", e.target.value || null)}
+                            />
                         </div>
+
                         <div className="flex flex-col gap-1.5">
-                        <label className="text-xs text-white/40 uppercase tracking-widest font-medium">End Date</label>
-                        <input
-                            type="date"
-                            className={inputCls + " [color-scheme:dark]"}
-                            value={form.enddate ?? ""}
-                            onChange={(e) => set("enddate", e.target.value || null)}
-                        />
+                            <label className="text-xs text-white/40 uppercase tracking-widest font-medium">End Date</label>
+                            <input
+                                type="date"
+                                className={inputCls + " [color-scheme:dark]"}
+                                value={form.enddate ? new Date(form.enddate).toISOString().split("T")[0] : ""}
+                                onChange={(e) => set("enddate", e.target.value || null)}
+                            />
                         </div>
                     </div>
                 </div>
+                <div className="px-6 pb-2">
+                    {isSubmit === true && (
+                        <div className="flex items-center gap-2.5 px-4 py-3 rounded-lg bg-emerald-500/10 border border-emerald-500/20">
+                        <CheckCircle2 size={15} className="text-emerald-400 flex-shrink-0" />
+                        <p className="text-emerald-400 text-sm">
+                            Success! Project has been <span className="font-semibold">{isEdit ? "updated" : "added"}</span> successfully!
+                        </p>
+                        </div>
+                    )}
 
+                    {isSubmit === false && (
+                        <div className="flex items-center gap-2.5 px-4 py-3 rounded-lg bg-red-500/10 border border-red-500/20">
+                        <XCircle size={15} className="text-red-400 flex-shrink-0" />
+                        <p className="text-red-400 text-sm">
+                            Error! Project could not be <span className="font-semibold">{isEdit ? "updated" : "added"}</span>. Please try again.
+                        </p>
+                        </div>
+                    )}
+                </div>
                 {/* Footer */}
                 <div className="sticky bottom-0 flex items-center justify-end gap-3 px-6 py-4 bg-[#0f0f0f] border-t border-white/[0.06]">
                     <button
-                        onClick={onClose}
+                        onClick={onClose} // the onClose method that is given when we run: ProjectModal is : onClose={()=>setModal(null)}
                         className="px-4 py-2 text-sm text-white/40 hover:text-white rounded-lg hover:bg-white/5 transition-all"
                     >
                         Cancel
                     </button>
                     <button
-                        onClick={() => onSave(form)}
+                        onClick={() => onSave(form)} // remember that we have a function handleSave that is being passed the form object
                         disabled={!form.projectname || !form.projectdescription}
                         className="flex items-center gap-2 px-5 py-2 rounded-lg bg-violet-600 hover:bg-violet-500 disabled:opacity-40 disabled:cursor-not-allowed text-white text-sm font-medium transition-colors"
                     >
@@ -284,7 +291,10 @@ function ProjectModal({project,onSave,onClose,}: {project: Omit<Project, "id"> &
                         {isEdit ? "Save Changes" : "Add Project"}
                     </button>
                 </div>
+
+            
             </div>
+
         </div>
     );
 }
@@ -296,21 +306,27 @@ function ProjectCard({project,onEdit,onDelete,}: {project: Project; onEdit: (p: 
         <div className="group relative flex flex-col bg-[#0f0f0f] border border-white/[0.07] rounded-xl overflow-hidden hover:border-violet-500/30 transition-all duration-300">
             {/* Image */}
             <div className="relative h-44 w-full overflow-hidden bg-white/5">
-                {project.projectimage ? (
-                <img
-                    src={project.projectimage}
-                    alt={project.projectname}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                ) : (
-                <div className="flex items-center justify-center h-full text-white/10">
-                    <ImageIcon size={40} />
-                </div>
-                )}
+                {
+                    project.projectimage ? 
+                    (
+                        <img
+                            src={project.projectimage}
+                            alt={project.projectname}
+                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                    )
+                    :
+                    (
+                        <div className="flex items-center justify-center h-full text-white/10">
+                            <ImageIcon size={40} />
+                        </div>
+                    )
+                }
                 {/* type badge */}
                 <span className="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-black/60 backdrop-blur-sm text-[10px] uppercase tracking-widest text-white/50 border border-white/10">
                     {project.projecttype}
                 </span>
+
                 {/* action buttons */}
                 <div className="absolute top-3 right-3 flex gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                     <button 
@@ -334,7 +350,7 @@ function ProjectCard({project,onEdit,onDelete,}: {project: Project; onEdit: (p: 
                     {project.projectname}
                 </h3>
                 <p className="text-white/40 text-xs leading-relaxed line-clamp-3">
-                    {project.shortdescription ?? project.projectdescription}
+                    {project.projectdescription} {/** project.shortdescription ?? project.projectdescription: this was added previously */}
                 </p>
 
                 {/* Tech stack */}
@@ -365,12 +381,12 @@ function ProjectCard({project,onEdit,onDelete,}: {project: Project; onEdit: (p: 
                     )}
                     {project.githuburl && (
                         <a
-                        href={project.githuburl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-1.5 text-xs text-white/30 hover:text-white/70 transition-colors"
+                            href={project.githuburl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-1.5 text-xs text-white/30 hover:text-white/70 transition-colors"
                         >
-                        <Github size={12} /> GitHub
+                            <Github size={12} /> GitHub
                         </a>
                     )}
                 </div>
@@ -485,16 +501,23 @@ function DeleteConfirm({ name, onConfirm, onCancel }: { name: string; onConfirm:
 /* ─── Main View ──────────────────────────────────────────────────────────── */
 export default function ProjectsView() 
 {
+    const [projects, setProjects] = useState<DBProjectData[]>([]);
+    const [search, setSearch] = useState("");
+    const [layout, setLayout] = useState<"grid" | "list">("grid");
+    const [modal, setModal] = useState<null | "add" | Project>(null);
+    const [deleteTarget, setDeleteTarget] = useState<Project | null>(null);
+
+    const [isSubmit, setIsSubmit] = useState<true | false | null>(null);
+
 
     async function getMyProjects()
     {
         try
         {
-            const response = await fetch("/api/projects");
+            const response = await fetch("/api/project", {method: "GET"});
             const data = await response.json();
             setProjects(data);
-            console.log('this is data from fetch');
-            console.log(fetch)
+         
         }
         catch(err)
         {
@@ -505,6 +528,7 @@ export default function ProjectsView()
     useEffect(()=>{
         getMyProjects();
     }, []);
+
     // fetch("/api/projects")
     //     .then( (response)=>response.json())
     //     .then(response => {fetchedProjects = response})
@@ -513,11 +537,12 @@ export default function ProjectsView()
     //         alert("An error occured while fetching data!");
     //     })
 
-    const [projects, setProjects] = useState<Project[]>([]);
-    const [search, setSearch] = useState("");
-    const [layout, setLayout] = useState<"grid" | "list">("grid");
-    const [modal, setModal] = useState<null | "add" | Project>(null);
-    const [deleteTarget, setDeleteTarget] = useState<Project | null>(null);
+
+    // setTimeout(()=>{
+    //     console.log('this is projectData from state function');
+    //     console.log(projects);
+    // }, 8000);
+
 
     const filtered = projects.filter((p) =>
         p.projectname.toLowerCase().includes(search.toLowerCase()) ||
@@ -525,18 +550,70 @@ export default function ProjectsView()
         p.techstack.some((t) => t.toLowerCase().includes(search.toLowerCase()))
     );
 
-    const handleSave = (form: Omit<Project, "id"> & { id?: number }) => 
-    {
-        if (form.id) 
+    const handleSave = async (form: Omit<Project, "id"> & { id?: number }) =>  // this function is passed to  button : onSave(form) in ProjectModal whereby the form represents the Project data
+    {    
+        try
         {
-            setProjects((prev) => prev.map((p) => (p.id === form.id ? (form as Project) : p)));
-        } 
-        else 
-        {
-            const newId = Math.max(0, ...projects.map((p) => p.id)) + 1;
-            setProjects((prev) => [...prev, { ...form, id: newId } as Project]);
+            // check if id exist updating project
+            if (form.id)
+            {
+            //     console.log(`this is project id: ${form.id}`)
+            //     console.log(JSON.stringify(form));
+                const response = await fetch(`/api/project/${form.id}`, {
+                    method: "PUT",
+                    body: JSON.stringify(form)
+                });
+    
+                const result = await response.json();
+                // console.log(`this is result from PUT`);
+                // console.log(result);
+                /*
+                { success: true, message: "success on updating project" }*/
+                if (result.success)
+                {
+                    setIsSubmit(true);
+                    setTimeout(()=>{
+                        setIsSubmit(null);
+                        setModal(null);
+                    }, 5000);  
+                };
+            }
+            else 
+            {
+                const response = await fetch("/api/project",
+                    {
+                        method: "POST", 
+                        body:JSON.stringify(form)
+                    }
+                );
+
+                const result = await response.json();
+                console.log('this is result form POST');
+                console.log(result);
+                /*
+                    { success: true, message: "success on updating project" }
+                */
+                if (result.success)
+                {
+                    setIsSubmit(true);
+                    setTimeout(()=>{
+                        setIsSubmit(null);
+                        setModal(null);
+                    }, 5000);
+                };
+            }
         }
-        setModal(null);
+        catch(err)
+        {
+            console.log(`Error: ${err}`);
+            // alert("Error")
+            setIsSubmit(false);
+             setTimeout(()=>{
+                setIsSubmit(false);
+            }, 5000);
+        }
+
+        // setModal(null);
     };
 
     const handleDelete = (id: number) => {
@@ -637,6 +714,7 @@ export default function ProjectsView()
                     project={modal === "add" ? emptyProject() : modal}
                     onSave={handleSave}
                     onClose={() => setModal(null)}
+                    isSubmit={isSubmit}
                 />
             )}
             {deleteTarget && ( // remember deleteTarget can either be: Project : null so when we clicked onDelete in projectCard:Trash Icon we run: setDeleteTarget(): which is a state setter function and updates deleteTarget variable
