@@ -32,5 +32,22 @@ async function getProjects()
     }   
 }
 
+async function fetchAllProjects()
+{
+    try 
+    {
+        const data = await pool.query("SELECT * FROM project;");
+        // console.log('data.rows');
+        // console.log(data.rows);
+        // get projectType
 
-export {getProjects};
+        return data.rows;
+    }
+    catch(err)
+    {
+        console.error(`Database Error: `, err);
+        throw new Error("Failed to fetch revenue data.");
+    } 
+}
+
+export {getProjects, fetchAllProjects};
