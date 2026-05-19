@@ -12,11 +12,8 @@ async function getProjects() {
     return data.rows;
 }
 
-async function addProject()
-{
-}
-// route handler 
 
+// route handler 
 export async function GET()
 {
     try {
