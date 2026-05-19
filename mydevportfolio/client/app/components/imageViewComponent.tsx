@@ -1,15 +1,15 @@
 "use client";
 
-import { useState, useRef, useCallback } from "react";
-import {ImagePlus, Trash2, X, ZoomIn, Download,Upload, Search, LayoutGrid, Rows3,CheckSquare, Square, ImageOff, Copy, Check,} from "lucide-react";
+import { useState, useRef, useCallback, useEffect } from "react";
+import {ImagePlus, Trash2, X, ZoomIn, Download,Upload, XCircle, CheckCircle2,  Search, LayoutGrid, Rows3,CheckSquare, Square, ImageOff, Copy, Check,} from "lucide-react";
 
 /* ─── Types ──────────────────────────────────────────────────────────────── */
 type ImageItem = {
     id: number;
-    name: string;
-    url: string;
-    size: string;
-    uploadedAt: string; // this property is created on default when you upload: created_at
+    imagename: string;
+    imageurl: string;
+    imgsize: string;
+    createdat: string; // this property is created on default when you upload: created_at
     tag: string; // there is also a tag array property for the image uploaded
 };
 
@@ -17,18 +17,18 @@ type ImageItem = {
 const seedImages: ImageItem[] = [
     {
         id: 1,
-        name: "mindbridge.png",
-        url: "https://res.cloudinary.com/dzth2gguw/image/upload/v1778615420/mindbridge_rc0bhb.png",
-        size: "284 KB",
-        uploadedAt: "2025-05-10",
+        imagename: "mindbridge.png",
+        imageurl: "https://res.cloudinary.com/dzth2gguw/image/upload/v1778615420/mindbridge_rc0bhb.png",
+        imgsize: "284 KB",
+        createdat: "2025-05-10",
         tag: "project",
     },
     {
         id: 2,
-        name: "hero-banner.jpg",
-        url: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800",
-        size: "512 KB",
-        uploadedAt: "2025-04-22",
+        imagename: "hero-banner.jpg",
+        imageurl: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800",
+        imgsize: "512 KB",
+        createdat: "2025-04-22",
         tag: "banner",
     }
 ];
@@ -40,7 +40,7 @@ function Lightbox({ image, onClose }: { image: ImageItem; onClose: () => void })
     const [copied, setCopied] = useState(false);
 
     const copyUrl = async () => {
-        await navigator.clipboard.writeText(image.url); // navigator is a clipboard API in javascript that gives access to the clipboard on the user's device. in this we are writing the image.url to the device clipboard.
+        await navigator.clipboard.writeText(image.imageurl); // navigator is a clipboard API in javascript that gives access to the clipboard on the user's device. in this we are writing the image.url to the device clipboard.
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
     };
@@ -57,8 +57,8 @@ function Lightbox({ image, onClose }: { image: ImageItem; onClose: () => void })
             {/* Controls row */}
             <div className="flex items-center justify-between px-1">
                 <div className="flex flex-col">
-                    <span className="text-white font-medium text-sm">{image.name}</span>
-                    <span className="text-white/30 text-xs">{image.size} · {image.uploadedAt}</span>
+                    <span className="text-white font-medium text-sm">{image.imagename}</span>
+                    <span className="text-white/30 text-xs">{image.imgsize} · {image.createdat}</span>
                 </div>
                 <div className="flex items-center gap-2">
                     <button
@@ -69,8 +69,8 @@ function Lightbox({ image, onClose }: { image: ImageItem; onClose: () => void })
                         {copied ? "Copied!" : "Copy URL"}
                     </button>
                     <a
-                        href={image.url}
-                        download={image.name} // instructs to download the resource supplied to the href attribute
+                        href={image.imageurl}
+                        download={image.imagename} // instructs to download the resource supplied to the href attribute
                         target="_blank"
                         rel="noopener noreferrer"
                         className="p-2 rounded-lg bg-white/10 hover:bg-white/15 text-white/60 hover:text-white transition-all border border-white/10"
@@ -89,8 +89,8 @@ function Lightbox({ image, onClose }: { image: ImageItem; onClose: () => void })
             {/* Image */}
             <div className="relative rounded-xl overflow-hidden border border-white/10 bg-white/5 max-h-[78vh]">
                 <img
-                    src={image.url}
-                    alt={image.name}
+                    src={image.imageurl}
+                    alt={image.imagename}
                     className="w-full h-full object-contain max-h-[78vh]"
                 />
             </div>
@@ -144,14 +144,19 @@ function DeleteConfirm({count,onConfirm,onCancel,}: {count: number;onConfirm: ()
 }
 
 /* ─── Add Image Modal ────────────────────────────────────────────────────── */
-function AddImageModal({onAdd,onClose,}: { onAdd:(img:Omit<ImageItem, "id"> & {userFile : File | null})=>void; onClose:()=>void;}) 
+function AddImageModal({onAdd,onClose,successMsg}: { onAdd:(img:Omit<ImageItem, "id"> & {userFile : File | null})=>void; onClose:()=>void; successMsg:Boolean | null}) 
 {
+
+    // in the above we have 2 functions given to the AddImageModal
+    // - onAdd  : the function to be passed to onAdd Prop should have an argument whose type matches: ImageItem(without the id & userFile: File)
+    // -onClose :
     type formType = {
         name: string, 
         url: string, 
         tag: string,
         userFile: File | null
     }
+
     const [form, setForm] = useState<formType> ({ name: "", url: "", tag: "other", userFile: null});
     const [dragging, setDragging] = useState(false);
     const fileRef = useRef<HTMLInputElement>(null);
@@ -184,8 +189,8 @@ function AddImageModal({onAdd,onClose,}: { onAdd:(img:Omit<ImageItem, "id"> & {u
     const canSave = form.name.trim() && form.url.trim();
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4">
-            <div className="w-full max-w-lg bg-[#0f0f0f] border border-white/10 rounded-2xl shadow-2xl overflow-hidden">
+        <div className="static inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4">
+            <div className="w-full max-w-lg bg-[#0f0f0f] border border-white/10 rounded-2xl shadow-2xl overflow-y-auto">
                 {/* Header */}
                 <div className="flex items-center justify-between px-6 py-4 border-b border-white/[0.06]">
                     <div className="flex items-center gap-2.5">
@@ -282,6 +287,32 @@ function AddImageModal({onAdd,onClose,}: { onAdd:(img:Omit<ImageItem, "id"> & {u
                             </select>
                         </div>
                     </div>
+
+                    <div className="px-6 pb-2">
+                        {
+                            successMsg == true &&
+                            (
+                                <div className="flex items-center gap-2.5 px-4 py-3 rounded-lg bg-emerald-500/10 border border-emerald-500/20">
+                                    <CheckCircle2 size={15} className="text-emerald-400 flex-shrink-0" />
+                                    <p className="text-emerald-400 text-sm">
+                                        Success! Image has been <span className="font-semibold">uploaded </span> successfully!
+                                    </p>
+                                </div>
+                            )
+                        }
+                        {
+                            successMsg == false &&
+                            (
+
+                                <div className="flex items-center gap-2.5 px-4 py-3 rounded-lg bg-red-500/10 border border-red-500/20">
+                                <XCircle size={15} className="text-red-400 flex-shrink-0" />
+                                <p className="text-red-400 text-sm">
+                                    Error! Image could not be <span className="font-semibold">uploaded</span>. Please try again.
+                                </p>
+                                </div>
+                            )
+                        }
+                    </div>
                 </div>
 
                 {/* Footer */}
@@ -292,12 +323,13 @@ function AddImageModal({onAdd,onClose,}: { onAdd:(img:Omit<ImageItem, "id"> & {u
                     <button
                         disabled={!canSave} // if canSave is true: negated to false: disabled={false}  : however if canSave is false: negated to true: disabled={true} : cannot submit
                         onClick={() =>
-                            onAdd({ // the funcitongiven to AddImageModal for the prop: onAdd should have: Object of Image type without "id"
-                                name: form.name,
-                                url: form.url,
+                            onAdd({ // the funciton given to AddImageModal for the prop: onAdd should have: Object of Image type without "id" and userFile : type File the arguments are passed here: remember when we set: < AddImageModal onAdd={handleAdd}
+                                // the handleAdd() takes some arguments: basically here we are calling handleAdd with the below arguments
+                                imagename: form.name,
+                                imageurl: form.url,
                                 tag: form.tag,
-                                size: "—",
-                                uploadedAt: new Date().toISOString().split("T")[0],
+                                imgsize: "—",
+                                createdat: new Date().toISOString().split("T")[0],
                                 userFile: form.userFile ? form.userFile : null
                             })
                         }
@@ -351,8 +383,8 @@ function ImageCard({image,selected,onSelect,onView,onDelete,}: {image: ImageItem
             {/* Image */} 
             <div className="h-44 bg-white/5 overflow-hidden" onClick={() => onView(image)}>
                 <img
-                    src={image.url}
-                    alt={image.name} // THIS DISPLAYS THE IMAGE 
+                    src={image.imageurl}
+                    alt={image.imagename} // THIS DISPLAYS THE IMAGE 
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     onError={(e) => {
                         e.currentTarget.style.display = "none";
@@ -363,8 +395,8 @@ function ImageCard({image,selected,onSelect,onView,onDelete,}: {image: ImageItem
             {/* Footer */}
             <div className="px-3 py-2.5 bg-[#0f0f0f] flex items-center justify-between gap-2">
                 <div className="min-w-0">
-                    <p className="text-white/80 text-xs font-medium truncate">{image.name}</p>
-                    <p className="text-white/25 text-[10px] mt-0.5">{image.size} · {image.uploadedAt}</p>
+                    <p className="text-white/80 text-xs font-medium truncate">{image.imagename}</p>
+                    <p className="text-white/25 text-[10px] mt-0.5">{image.imgsize} · {image.createdat}</p>
                 </div>
                     <span className="flex-shrink-0 px-2 py-0.5 rounded bg-violet-500/10 border border-violet-500/20 text-violet-300/80 text-[10px]">
                     {image.tag}
@@ -392,17 +424,17 @@ function ImageRow({image,selected,onSelect,onView,onDelete,}: {image: ImageItem;
 
             {/* Thumbnail */}
             <div className="h-11 w-16 flex-shrink-0 rounded-lg overflow-hidden bg-white/5 border border-white/10 cursor-pointer" onClick={() => onView(image)}>
-                <img src={image.url} alt={image.name} className="h-full w-full object-cover" />
+                <img src={image.imageurl} alt={image.imagename} className="h-full w-full object-cover" />
             </div>
 
             {/* Info */}
             <div className="flex-1 min-w-0">
-                <p className="text-white text-sm font-medium truncate">{image.name}</p>
-                <p className="text-white/30 text-xs mt-0.5">{image.uploadedAt}</p>
+                <p className="text-white text-sm font-medium truncate">{image.imagename}</p>
+                <p className="text-white/30 text-xs mt-0.5">{image.createdat}</p>
             </div>
 
             {/* Meta */}
-            <span className="hidden sm:block text-white/30 text-xs">{image.size}</span>
+            <span className="hidden sm:block text-white/30 text-xs">{image.imgsize}</span>
             <span className="hidden sm:block px-2.5 py-1 rounded bg-violet-500/10 border border-violet-500/20 text-violet-300/80 text-xs">
                 {image.tag}
             </span>
@@ -423,7 +455,7 @@ function ImageRow({image,selected,onSelect,onView,onDelete,}: {image: ImageItem;
 /* ─── Main ImageView ─────────────────────────────────────────────────────── */
 export default function ImageView() 
 {
-    const [images, setImages] = useState<ImageItem[]>(seedImages);
+    const [images, setImages] = useState<ImageItem[]>([]);
     const [search, setSearch] = useState("");
     const [activeTag, setActiveTag] = useState("all");
     const [layout, setLayout] = useState<"grid" | "list">("grid");
@@ -431,11 +463,12 @@ export default function ImageView()
     const [lightbox, setLightbox] = useState<ImageItem | null>(null);
     const [showAdd, setShowAdd] = useState(false);
     const [deleteTarget, setDeleteTarget] = useState<number[] | null>(null);
+    const [successMsg, setSuccessMsg] = useState<true | false  | null>(null);
 
     /* ── Derived ── */
     const filtered = images.filter((img) => {
         const matchTag = activeTag === "all" || img.tag === activeTag;
-        const matchSearch = img.name.toLowerCase().includes(search.toLowerCase());
+        const matchSearch = img.imagename.toLowerCase().includes(search.toLowerCase());
         return matchTag && matchSearch;
     });
 
@@ -469,7 +502,7 @@ export default function ImageView()
     };
 
     /* ── CRUD ── */
-    const handleAdd = async (img: Omit<ImageItem, "id"> & {userFile: File | null}) => {
+    const handleAdd = async (img: Omit<ImageItem, "id"> & {userFile: File | null}) => { // here we are accessing the arguments passed on onAdd in AddImageModal.
         console.log('this is the image added');
         console.log(img);
 
@@ -486,11 +519,11 @@ export default function ImageView()
                 uploadedAt: "2026-05-18" 
             }       
         */
-        formData.append("name", img.name);
+        formData.append("name", img.imagename);
         formData.append("tag", img.tag);
         if (img.userFile && img.userFile instanceof File)
         {
-            formData.append("theFile", img.userFile , img.name);
+            formData.append("theFile", img.userFile , img.imagename);
         }
         else 
         {
@@ -500,21 +533,31 @@ export default function ImageView()
 
         try
         {
-            const result = await fetch("/api/image/", {
+            const response = await fetch("/api/image/", {
                 method: "POST", 
                 body: formData
             })
-            const data = await result.json();
+            const data = await response.json();
             console.log(`this is data from fetch`);
             console.log(data);
+            if (data.success)
+            {
+                setSuccessMsg(true);
+                setTimeout(()=>{
+                    setSuccessMsg(null);
+                    setShowAdd(false);
+                }, 8000);
+            }
         }
         catch(err)
         {
             console.log(`Error: ${err}`);
+            setSuccessMsg(false);
+            setTimeout(()=>{
+                setSuccessMsg(null);
+                setShowAdd(false);
+            }, 8000);
         }
-
-        
-
     };
 
     const handleDelete = (ids: number[]) => {
@@ -528,6 +571,29 @@ export default function ImageView()
     };
 
     const selectedCount = selected.size;
+
+    const getAllImages = useCallback(async ()=>{
+        try
+        {
+            const response = await fetch("/api/image/", {method:"GET"});
+            const data = await response.json();
+            console.log('this is data');
+            console.log(data);
+            if (data.success)
+            {
+                setImages(data.data);
+            }
+        }
+        catch(err)
+        {
+            console.log(`Error: ${err}`);
+        }
+    }, []) ;
+
+    useEffect(()=>{
+        getAllImages();
+    }, []);
+
 
     return (
         <div className="flex flex-col h-full gap-6">
@@ -672,7 +738,7 @@ export default function ImageView()
 
             {/* ── Modals ── */}
             {lightbox && <Lightbox image={lightbox} onClose={() => setLightbox(null)} />}
-            {showAdd && <AddImageModal onAdd={handleAdd} onClose={() => setShowAdd(false)} />} {/**this module for showing the AddImageModal */}
+            {showAdd && <AddImageModal onAdd={handleAdd} onClose={() => setShowAdd(false)}  successMsg={successMsg}/>} {/**this module for showing the AddImageModal */}
             {deleteTarget && (
                 <DeleteConfirm
                     count={deleteTarget.length}
