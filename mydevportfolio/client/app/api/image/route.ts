@@ -31,10 +31,15 @@ this is cloudinary config
 
 async function GET()
 {
-    const data = await pool.query(`SELECT * FROM images;`);
-    if (data.rowCount != 1) return NextResponse.json({success:false, msg:"Unable to fetch Data!"}, {status:500});
-    
-    return NextResponse.json({success:true, msg:"Updated success!", data: data.rows}, {status:200})
+    const data:any = await pool.query(`SELECT * FROM images;`);
+    if (data.rowCount > 0) 
+    {
+        return NextResponse.json({success:true, msg:"Updated success!", data: data.rows}, {status:200})
+    }
+    // below runs if not succes
+    // console.log('data');
+    // console.log(data);
+    return NextResponse.json({success:false, msg:"Unable to fetch Data!"}, {status:500});
 }
 
 async function POST(request:NextRequest)
