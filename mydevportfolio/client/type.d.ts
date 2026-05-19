@@ -1,20 +1,20 @@
 export type Data =  {
-   [key:string]:ProjectData[]
+   [key:string]:DBProjectData[]
 }
 
 
 export interface DBProjectData {
     id: number,
     projectname: string,
-    shortdescription: string,
-    startDate: string,
-    endDate: string,
+    shortdescription: string | null,
     projectdescription: string,
     projectimage: string,
     projecturl: string,
     githuburl: string,
     techstack: string[],
-    projecttype: string
+    projecttype: string,
+    enddate: string | null,
+    startdate : string | null
 }
 
 
