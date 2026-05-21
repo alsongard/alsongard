@@ -10,6 +10,10 @@ async function getProjects()
         const data = await pool.query("SELECT * FROM project;");
         // console.log('data.rows');
         // console.log(data.rows);
+        if (data.rows.length == 0)
+        {
+            return []; // empty array
+        }
         // get projectType
         const groupedProjectData: GroupedData = {};
         data.rows.forEach((project)=>{
@@ -21,8 +25,8 @@ async function getProjects()
             groupedProjectData[project.projecttype].push(project);
 
         })
-        console.log("groupedProjectData:");
-        console.log(groupedProjectData);
+        // console.log("groupedProjectData:");
+        // console.log(groupedProjectData);
         return groupedProjectData;
     }
     catch(err)
