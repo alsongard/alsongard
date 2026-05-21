@@ -1,9 +1,15 @@
 
 import { NextResponse, type NextRequest } from "next/server";
 import { pool } from '@/lib/db';
+import { auth } from "@/auth";
 
 export async function PUT(request:NextRequest, {params}: {params: Promise<{id: string}>})
 {
+    const session:any = await auth;
+    if(!session.user)
+    {
+        return NextResponse.json({success:false, msg:'User not authenticated!'});
+    }
     const {id} = await params;
     const body  = await request.json(); // this has access to the body
     // const myparams = await params;
@@ -73,6 +79,22 @@ export async function PUT(request:NextRequest, {params}: {params: Promise<{id: s
     catch(err)
     {
         console.log(`Error: ${err}`);
-        return Response.json({err}, {status: 500});
+        return NextResponse.json({success:false, msg:`Error: ${err}`}, {status: 500});
+    }
+}
+
+
+
+export async function DELETE(request: NextRequest , {params}: {params: Promise<{id:string}>})
+{
+    const {id}  = await params;
+    try
+    {
+        return NextResponse.json({success: true, msg:`Project has been successful deleted`});
+    }
+    catch(err)
+    {
+        return NextResponse.json({success: false, msg:`Error while deleting project: ${err}`});
+
     }
 }
