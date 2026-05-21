@@ -1,11 +1,14 @@
 import cloudinary from "cloudinary";
 const cloudv2 = cloudinary.v2;
-
+import { auth } from "@/auth";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
 import { NextRequest, NextResponse } from "next/server";
 import { pool } from '@/lib/db';
 import { log } from "console";
+
+
+
 cloudv2.config({
     secure:true,
     api_key: process.env.API_KEY,
@@ -44,6 +47,11 @@ async function GET()
 
 async function POST(request:NextRequest)
 {
+    const session:any = await auth();
+    if (!session.auth)
+    {
+        return NextResponse.json({success:false, msg:"User not authenticated!"})
+    }
     const formData = await request.formData();
     // console.log(`this is formData`)
     // console.log(formData);
@@ -84,8 +92,8 @@ async function POST(request:NextRequest)
         )
        
        
-        console.log('returned result for PostgresDB');
-        console.log(data);
+        // console.log('returned result for PostgresDB');
+        // console.log(data);
 
         if (data.rowCount != 1)
         {
@@ -97,9 +105,8 @@ async function POST(request:NextRequest)
     catch(err)
     {
         console.log(`Error: ${err}`);
-        return NextResponse.json({success:false}, {status:500})
+        return NextResponse.json({success:false, Error: err}, {status:500})
     }
 }
-
 export  {GET, POST};
 
