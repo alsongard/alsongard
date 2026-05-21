@@ -48,7 +48,8 @@ async function GET()
 async function POST(request:NextRequest)
 {
     const session:any = await auth();
-    if (!session.auth)
+    // console.log(session);
+    if (!session.user)
     {
         return NextResponse.json({success:false, msg:"User not authenticated!"})
     }
