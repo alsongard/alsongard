@@ -4,6 +4,7 @@ import { useState } from "react";
 import Sidebar from "@/app/components/sidenavbar"; // adjust path as needed
 import OverviewView from "../../components/overview";
 import ProjectsView from "@/app/components/projectViewComponent";
+import ImageView from "@/app/components/imageViewComponent";
 /* ─── Animated gradient text keyframes ─────────────────────────────────── */
 // Add this to your globals.css (or tailwind.config.js extend.keyframes):
 //
@@ -43,7 +44,7 @@ export default function Dashboard()
                 <div className="relative z-10 h-full px-10 py-8">
                     {activeView == "overview" && <OverviewView/> }
                     {activeView == "projects" && <ProjectsView/>}
-                    {activeView == "image" && <h1>Images is coming soon...</h1>}
+                    {activeView == "image" && <ImageView/>}
                     {activeView == "visitor" && <h1>Visitors is coming soon..</h1>}
                 </div>
             </main>
