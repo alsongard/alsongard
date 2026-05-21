@@ -1,5 +1,6 @@
 import ProjectComponentView from "./projectComponentView";
-import type { DBProjectData } from "@/type";
+import type { DBProjectData, GroupedData } from "@/type";
+import data from "./projectData";
 
 type CategoryProps = {
     projectCategoryName: string,
