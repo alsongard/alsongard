@@ -30,10 +30,7 @@ export default function LoginForm()
     const [googleLoading, setGoogleLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
 
-    const set = (key: keyof typeof form, val: string) => {
-        setError(null);
-        setForm((prev) => ({ ...prev, [key]: val }));
-    };
+    
 
     const handleSubmit = async () => {
         if (!form.username.trim() || !form.password.trim()) 
@@ -106,7 +103,7 @@ export default function LoginForm()
                         type="text"
                         name="username"
                         placeholder="Username"
-                        autoComplete="username"
+                        autoComplete="off"
                         className={`${inputBase}`}
                         //  ${
                         // error && !form.username.trim()
@@ -124,10 +121,8 @@ export default function LoginForm()
                     <input
                         type={showPassword ? "text" : "password"}
                         name="password"
-                        // onChange={(e) => set("password", e.target.value)}
-                        // onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
                         placeholder="Password"
-                        autoComplete="current-password"
+                        autoComplete="off"
                         className={`${inputBase} pr-11 `}
                         // ${
                         // error && !form.password.trim()
