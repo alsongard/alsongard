@@ -24,11 +24,13 @@ export const authConfig = {
             // console.log(`isOnDashboard: ${isOnDashBoard}`);
             if (isOnDashBoard)
             {
+                // console.log(`in auth.config.ts in: isOnDashBoard: ${isOnDashBoard}`);
                 if (isLoggedIn) return true; // if isLoggedIn returns and exits
                 return false; // otherwise false : redirected to signIn page: /login
             }
             else if (isLoggedIn) // isLoggedIn is true
             {
+                // console.log(`in auth.config.ts in: isLoggedIn: ${isLoggedIn}`);
                 return Response.redirect(new URL('/dashboard', nextUrl));
             }
             return false;

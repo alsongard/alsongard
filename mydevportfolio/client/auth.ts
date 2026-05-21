@@ -28,7 +28,7 @@ export const {auth, signIn, signOut} = NextAuth({
             async authorize(credentials) {
                 // console.log('in auth.ts on authorized() function');
                 // console.log("credentials");
-                console.log(credentials);
+                // console.log(credentials);
                 const parsedCredentials  = z // zod is used to check if email and password are given | the format is correct: our case string
                     .object({ email: z.email(), password: z.string().min(6) })
                     .safeParse({
@@ -47,7 +47,7 @@ export const {auth, signIn, signOut} = NextAuth({
                     // console.log(`user: `);
                     // console.log(user);
                     if (!user) return null; // defensive programming
-                    const passwordMatch = await bcrypt.compare(password, user.userpassword); // compares the password
+                    const passwordMatch = await bcrypt.compare(password, user.userpasswd); // compares the password
                     // console.log(`passwordMatch: ${passwordMatch}`);
                     if (passwordMatch) return user; 
                 }
