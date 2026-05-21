@@ -1,7 +1,10 @@
 // this file will be used for querying the database
 import { pool } from '@/lib/db';
 import { log } from 'console';
-import type { NextRequest } from 'next/server';
+import { NextResponse, type NextRequest } from 'next/server';
+import {auth}  from '@/auth';
+
+
 
 
 
@@ -14,8 +17,11 @@ async function getProjects() {
 
 
 // route handler 
-export async function GET()
+export async function GET(request: NextRequest)
 {
+
+    console.log('this is request:');
+    console.log(request)
     try {
         return Response.json(await getProjects());
     }
@@ -28,6 +34,20 @@ export async function GET()
 
 export async function POST(request: NextRequest)
 {
+    const session:any = await auth();
+    // console.log(`this is session:`);
+    // console.log(session);
+    /*
+    this is session:
+        {
+        user: { email: 'your_email@gmail.com' },
+        expires: '2026-06-20T04:39:19.449Z'
+        }
+  */
+    if (!session.user)
+    {
+        return NextResponse.json({success:false, msg:"User Not authenticated"})
+    }
     const body = await request.json();
     console.log("this is body");
     console.log(body); // { name: 'somethingrandom' }
@@ -85,19 +105,6 @@ export async function POST(request: NextRequest)
         {
             return Response.json({"success": true, "message": "success uploading data"}, {status: 201})
         }
-    }
-    catch(err)
-    {
-        console.log(`Error: ${err}`);
-        return Response.json({err}, {status: 500});
-    }
-}
-
-export async function DELETE()
-{
-    try
-    {
-
     }
     catch(err)
     {
