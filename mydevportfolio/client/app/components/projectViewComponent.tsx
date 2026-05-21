@@ -41,6 +41,8 @@ const PROJECT_TYPES = [
     "machine learning / AI",
     "open source",
     "design system",
+    "game development",
+    "deskptop software",
     "other",
 ];
 
@@ -516,7 +518,9 @@ export default function ProjectsView()
         {
             const response = await fetch("/api/project", {method: "GET"});
             const data = await response.json();
-            setProjects(data);
+            // console.log(`this is data`);
+            // console.log(data);
+            setProjects(data.data);
          
         }
         catch(err)
@@ -561,7 +565,8 @@ export default function ProjectsView()
             //     console.log(JSON.stringify(form));
                 const response = await fetch(`/api/project/${form.id}`, {
                     method: "PUT",
-                    body: JSON.stringify(form)
+                    body: JSON.stringify(form),
+                    credentials: "include"
                 });
     
                 const result = await response.json();
@@ -583,13 +588,14 @@ export default function ProjectsView()
                 const response = await fetch("/api/project",
                     {
                         method: "POST", 
-                        body:JSON.stringify(form)
+                        body:JSON.stringify(form),
+                        credentials: "include"
                     }
                 );
 
                 const result = await response.json();
-                console.log('this is result form POST');
-                console.log(result);
+                // console.log('this is result form POST');
+                // console.log(result);
                 /*
                     { success: true, message: "success on updating project" }
                 */
