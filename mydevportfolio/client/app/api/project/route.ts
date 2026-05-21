@@ -10,8 +10,9 @@ import {auth}  from '@/auth';
 
 async function getProjects() {
     const data = await pool.query(`SELECT * FROM project;`)
-    // console.log(`this is data`);
-    // console.log(data);
+    // console.log(`this is data.rows`);
+    // console.log(data.rows);
+    
     return data.rows;
 }
 
@@ -19,16 +20,21 @@ async function getProjects() {
 // route handler 
 export async function GET(request: NextRequest)
 {
-
     console.log('this is request:');
     console.log(request)
-    try {
-        return Response.json(await getProjects());
+    try 
+    {
+        const projects = await getProjects();
+        if (projects.length == 0)
+        {
+            return NextResponse.json({success: true , msg:"No Projects at the moment!", data: []}, {status:200});
+        }
+        return NextResponse.json({success: true, msg:"Projects retrieved successfully!", data: projects}, {status: 200});
     }
     catch(err)
     {
         console.log(err);
-        return Response.json({err}, {status:500})
+        return NextResponse.json({success:false, error: err}, {status:500})
     }
 } 
 
