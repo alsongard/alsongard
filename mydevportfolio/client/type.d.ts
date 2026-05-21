@@ -21,3 +21,8 @@ export interface DBProjectData {
 export type GroupedData = {
     [key:string] : DBProjectData[]
 }
+
+export type User = { 
+    email: string, 
+    password: string
+}
