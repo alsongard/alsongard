@@ -3,15 +3,22 @@ import { NextResponse, type NextRequest } from "next/server";
 import { pool } from '@/lib/db';
 import { auth } from "@/auth";
 
-export async function PUT(request:NextRequest, {params}: {params: Promise<{id: string}>})
+async function PUT(request:NextRequest, {params}: {params: Promise<{id: string}>})
 {
-    const session:any = await auth;
+    // console.log(`this is request`);
+    // console.log(request);
+    const body  = await request.json(); // this has access to the body
+    // console.log(`this is body`);
+    // console.log(body);
+    const session:any = await auth();
+    // console.log(`session in PUT`);
+    // console.log(session);
+
     if(!session.user)
     {
         return NextResponse.json({success:false, msg:'User not authenticated!'});
     }
     const {id} = await params;
-    const body  = await request.json(); // this has access to the body
     // const myparams = await params;
     // console.log(`this is myparams`);  { id: '1' }
     // console.log(myparams); 
@@ -85,7 +92,7 @@ export async function PUT(request:NextRequest, {params}: {params: Promise<{id: s
 
 
 
-export async function DELETE(request: NextRequest , {params}: {params: Promise<{id:string}>})
+async function DELETE(request: NextRequest , {params}: {params: Promise<{id:string}>})
 {
     const {id}  = await params;
     try
@@ -98,3 +105,5 @@ export async function DELETE(request: NextRequest , {params}: {params: Promise<{
 
     }
 }
+
+export {DELETE, PUT};
