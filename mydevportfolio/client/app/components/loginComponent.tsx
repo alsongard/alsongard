@@ -21,7 +21,11 @@ export default function LoginForm()
 {
 
     const searchParams = useSearchParams();
+    // console.log('this is searchParams');
+    // console.log(searchParams);
     const callbackUrl = searchParams.get('callbackUrl') || ('dashboard');
+    // console.log('this is callbackUrl');
+    // console.log(callbackUrl);
     const [errorMessage, formAction, isPending]  = useActionState(authenticate, undefined,);
 
     const [form, setForm] = useState({ username: "", password: "" });
@@ -32,18 +36,18 @@ export default function LoginForm()
 
     
 
-    const handleSubmit = async () => {
-        if (!form.username.trim() || !form.password.trim()) 
-        {
-            setError("Please fill in both fields.");
-            return;
-        }
-        setLoading(true);
-        // TODO: replace with your auth call e.g. signIn("credentials", { ...form })
-        // await new Promise((r) => setTimeout(r, 1400));
-        setLoading(false);
-        // setError("Invalid username or password."); // uncomment to test error state
-    };
+    // const handleSubmit = async () => {
+    //     if (!form.username.trim() || !form.password.trim()) 
+    //     {
+    //         setError("Please fill in both fields.");
+    //         return;
+    //     }
+    //     setLoading(true);
+    //     // TODO: replace with your auth call e.g. signIn("credentials", { ...form })
+    //     // await new Promise((r) => setTimeout(r, 1400));
+    //     setLoading(false);
+    //     // setError("Invalid username or password."); // uncomment to test error state
+    // };
 
     const handleGoogle = async () => {
         setGoogleLoading(true);
@@ -149,8 +153,8 @@ export default function LoginForm()
                 }
 
                 {/* Submit */}
-                <button type="submit"
-                    onClick={handleSubmit}
+                <button 
+                    type="submit"
                     disabled={loading || googleLoading}
                     className="fade-up-4 relative flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-violet-600 hover:bg-violet-500 disabled:opacity-50 disabled:cursor-not-allowed text-white text-sm font-semibold tracking-wide transition-all duration-200 active:scale-[0.98] overflow-hidden group"
                 >
