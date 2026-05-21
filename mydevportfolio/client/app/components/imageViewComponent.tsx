@@ -176,8 +176,8 @@ function AddImageModal({onAdd,onClose,successMsg}: { onAdd:(img:Omit<ImageItem, 
             e.preventDefault();
             setDragging(false);
             const file = e.dataTransfer.files[0];
-            console.log(`this is file from e.datTransfers.files[0]`);
-            console.log(file);
+            // console.log(`this is file from e.datTransfers.files[0]`);
+            // console.log(file);
             if (file && file.type.startsWith("image/")) 
             {
                 handleFile(file);  
@@ -503,8 +503,8 @@ export default function ImageView()
 
     /* ── CRUD ── */
     const handleAdd = async (img: Omit<ImageItem, "id"> & {userFile: File | null}) => { // here we are accessing the arguments passed on onAdd in AddImageModal.
-        console.log('this is the image added');
-        console.log(img);
+        // console.log('this is the image added');
+        // console.log(img);
 
         // setShowAdd(false);
 
@@ -535,11 +535,12 @@ export default function ImageView()
         {
             const response = await fetch("/api/image/", {
                 method: "POST", 
-                body: formData
-            })
+                body: formData, 
+                credentials: "include"
+            });
             const data = await response.json();
-            console.log(`this is data from fetch`);
-            console.log(data);
+            // console.log(`this is data from fetch`);
+            // console.log(data);
             if (data.success)
             {
                 setSuccessMsg(true);
@@ -577,8 +578,8 @@ export default function ImageView()
         {
             const response = await fetch("/api/image/", {method:"GET"});
             const data = await response.json();
-            console.log('this is data');
-            console.log(data);
+            // console.log('this is data');
+            // console.log(data);
             if (data.success)
             {
                 setImages(data.data);
