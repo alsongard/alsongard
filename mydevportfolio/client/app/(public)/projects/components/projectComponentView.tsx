@@ -6,21 +6,12 @@ interface PropTypes {
     item: DBProjectData
 }
 
-/*
- id: 1,
-      projectname: 'Mindbrige Mental Health Platform',
-      projectdescription: 'A full-stack web application designed to bridge the gap between university students and mental health counseling services. The platform facilitates secure booking, chat communication, and support within an educational environment',
-      techstack: [Array],
-      projecturl: 'https://universitystudentmentalhealth.vercel.app/',
-      githuburl: 'https://github.com/alsongard/University_Student_Mental_Health_WebApp_Platform',
-      projecttype: 'web development projects',
-      projectimage: 
-      */
+
 
 function ProjectComponentView(prop:PropTypes)
 {
-    console.log(`this is prop`);
-    console.log(prop.item.projectimage);
+    // console.log(`this is prop`);
+    // console.log(prop.item.projectimage);
     return (
         <div className=" py-[10px] flex flex-row max-slg:flex-col max-slg:h-auto  max-slg:gap-y-[20px]  space-x-[30px] border-white relative h-[300px] shadow-[0px_0px_10px_black] px-[20px]  rounded-md ">
             <a className="cursor-pointer" target="_blank" href={prop.item.githuburl}>
