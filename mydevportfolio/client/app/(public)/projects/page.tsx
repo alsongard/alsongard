@@ -15,6 +15,7 @@ async function ProjectPage()
 	const dbProjectData = await getProjects();
 	console.log('dbProjectData');
 	console.log(dbProjectData); 
+
 	// const projectArray = [data.map((item)=> {return item})];
 	// console.log(`this is projectArray:`)
 	// console.log(projectArray);
@@ -41,9 +42,12 @@ async function ProjectPage()
 				(
 					<div className="w-[90%] mt-[30px] mx-auto">
 						{
-							Object.keys(dbProjectData).map((projectType)=>(
-								<ProjectCategoryView key={projectType} projectCategoryName={projectType} projects={dbProjectData[projectType]}/>
-							))
+							Object.entries(dbProjectData).map(([projectType, projects] )=>{
+								return (
+									<ProjectCategoryView key={projectType} projectCategoryName={projectType} projects={projects}/>
+								)
+							}
+						)
 						}
 					</div>
 				)
