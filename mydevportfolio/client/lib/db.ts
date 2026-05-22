@@ -32,6 +32,8 @@ if (process.env.NODE_ENV !== "production")
 {
     globalForDb.pgPool = pool;
 }
+
+
 console.log('this is pool');
 console.log(pool);
 

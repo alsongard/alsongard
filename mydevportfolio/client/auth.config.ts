@@ -14,8 +14,8 @@ export const authConfig = {
             // console.log(`this is auth`);
             // log(auth);
 
-            // console.log(`this is nextURL:`);
-            // log(nextUrl);
+            // console.log(`this is request:`);
+            // log(request);
 
 
             const isLoggedIn = !!auth?.user; // if auth exist, check user: and if user exists: true [negate twice to get back true (true --> false --> true)]

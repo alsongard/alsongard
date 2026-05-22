@@ -52,8 +52,3 @@ export default function Dashboard()
         </div>
     )
 }
-
-/*
-view projects == edit projects
-add projects
-*/
