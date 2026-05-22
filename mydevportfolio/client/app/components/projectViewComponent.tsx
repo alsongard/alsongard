@@ -6,17 +6,17 @@ import type { DBProjectData } from "@/type";
 import { method } from "lodash";
 /* ─── Types ──────────────────────────────────────────────────────────────── */
 export type Project = {
-  id: number;
-  projectname: string;
-  projectdescription: string;
-  techstack: string[];
-  projecturl: string;
-  githuburl: string;
-  projecttype: string;
-  projectimage: string;
-  shortdescription: string | null;
-  startdate: string | null;
-  enddate: string | null;
+    id: number;
+    projectname: string;
+    projectdescription: string;
+    techstack: string[];
+    projecturl: string;
+    githuburl: string;
+    projecttype: string;
+    projectimage: string;
+    shortdescription: string | null;
+    startdate: string | null;
+    enddate: string | null;
 };
 
 
