@@ -1,4 +1,4 @@
-import user_1 from "../public/images/user_1.jpg"
+import user_1 from "@/public/images/anime_2.jpg"
 import Link from "next/link";
 import Image from "next/image";
 import { FaTwitter, FaXTwitter } from "react-icons/fa6";
@@ -21,7 +21,7 @@ export default function Home() {
 				<div className="w-[450px] h-[450px] flex-none max-slg:w-[200px] max-slg:h-[200px]  relative  p-[5px]">
 					<div className="borderStyle border-[4px] border-dashed border-sky-600 inset-0 rounded-full absolute  h-full w-full"></div>
 					<div className="relative w-full h-full">
-						<Image  preload={true} className="rounded-[100%]" fill={true}   src="/images/anime_2.jpg" alt=""/>
+						<Image  preload={true} className="rounded-[100%]" fill={true}    src={user_1} alt="my_image"/>
 					{/* sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" */}
 					</div>
 				</div>
