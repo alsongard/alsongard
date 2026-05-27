@@ -21,7 +21,7 @@ export default function Home() {
 				<div className="w-[450px] h-[450px] flex-none max-slg:w-[200px] max-slg:h-[200px]  relative  p-[5px]">
 					<div className="borderStyle border-[4px] border-dashed border-sky-600 inset-0 rounded-full absolute  h-full w-full"></div>
 					<div className="relative w-full h-full">
-						<Image  preload={true} className="rounded-[100%]" fill={true}    src={user_1} alt="my_image"/>
+						<Image  preload={true} className="rounded-[100%]" fill={true}  sizes="(max-width: 450px)"  src={user_1} alt="my_image"/>
 					{/* sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" */}
 					</div>
 				</div>
