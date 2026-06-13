@@ -1,6 +1,8 @@
-import { Link } from 'lucide-react';
+import { FaGithub} from "react-icons/fa";
+import {CiGlobe } from 'react-icons/ci'
 import Image from "next/image";
 import type { DBProjectData } from '@/type';
+import { CustomIcon } from '@/app/components/customIcon';
 
 interface PropTypes {
     item: DBProjectData
@@ -32,8 +34,20 @@ function ProjectComponentView(prop:PropTypes)
                     }
                 </div>
                 <div className='flex flex-row gap-x-[5px] items-center'>
-                    <Link color="rgb(56,189,248)" size={17}/> 
-                    <p className='text-sky-400'>{prop.item.projecturl}</p>
+                    <a title='Website Link' href={prop.item.projecturl}> 
+                        <CustomIcon 
+                            icon={CiGlobe}
+                            className="text-blue-300 text-[14px]"
+                        />
+                    </a>
+
+                    <a title="Github Link" href={prop.item.githuburl}>
+                        <CustomIcon
+                            icon={FaGithub}
+                            className="text-blue-300 text-[14px]"
+                        />
+                    </a>
+                    {/* <p className='text-sky-400'>{prop.item.projecturl}</p> */}
                 </div>
             </div>
         </div>
