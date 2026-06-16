@@ -22,6 +22,8 @@ export async function authenticate(
     }   
     catch(err)
     {
+        console.log(`Error: `)
+        console.log(err);
         if (err instanceof AuthError)
         {switch(err.type) {
             case 'CredentialsSignin':

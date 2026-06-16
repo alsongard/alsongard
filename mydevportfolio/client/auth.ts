@@ -11,7 +11,9 @@ async function getUser(email:string)
     // log(`We are in getUser: ${email}`);
     try
     {
-        const data = await pool.query(`SELECT * FROM "users" WHERE email = $1;`, [email])
+        const data = await pool.query(`SELECT * FROM "users" WHERE email = $1;`, [email]);
+        // console.log('this is data:');
+        // console.log(data.rows);
         return data.rows[0]; // select thhe first object in the array of data.rows: [{}]
     }
     catch(err)
@@ -47,7 +49,7 @@ export const {auth, signIn, signOut} = NextAuth({
                     // console.log(`user: `);
                     // console.log(user);
                     if (!user) return null; // defensive programming
-                    const passwordMatch = await bcrypt.compare(password, user.userpasswd); // compares the password
+                    const passwordMatch = await bcrypt.compare(password, user.password); // compares the password
                     // console.log(`passwordMatch: ${passwordMatch}`);
                     if (passwordMatch) return user; 
                 }

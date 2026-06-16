@@ -1,3 +1,4 @@
+// 'use client'
 import ProjectCategoryView from "./components/projectCategoryView";
 import data from "./components/projectData";
 import { FolderOpen, Plus } from "lucide-react";
@@ -13,8 +14,14 @@ async function ProjectPage()
 {
 	// type projectType = string;
 	const dbProjectData = await getProjects();
-	console.log('dbProjectData');
-	console.log(dbProjectData); 
+
+
+	// const dbProjectData = await fetch("/api/project", {method: "GET"});
+	// console.log('dbProjectData');
+	// console.log(dbProjectData); 
+
+	// console.log(`Erro database provider in Chapter 6, you'll need to update the database queries to work with your provider. You r; ${err}`);
+	// alert("An error occured while fetching Projects Data. Try Again!!");
 
 	// const projectArray = [data.map((item)=> {return item})];
 	// console.log(`this is projectArray:`)

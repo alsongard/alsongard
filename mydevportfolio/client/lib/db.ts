@@ -23,7 +23,7 @@ const globalForDb = globalThis as unknown as { // we use globalThis to prevent c
 
 const pool = globalForDb.pgPool ??  new Pool({
     connectionString: process.env.DATABASE_URL_UNPOOLED,
-    ssl: process.env.NODE_ENV === "production" ? {rejectUnauthorized: true}: false,
+    ssl: {rejectUnauthorized: true},
     max: 10,
     idleTimeoutMillis: 60000,
 })

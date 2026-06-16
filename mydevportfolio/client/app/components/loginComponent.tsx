@@ -19,7 +19,6 @@ const Divider = ({ label }: { label: string }) => (
 /* ─── Main Component ─────────────────────────────────────────────────────── */
 export default function LoginForm()
 {
-
     const searchParams = useSearchParams();
     // console.log('this is searchParams');
     // console.log(searchParams);
@@ -144,7 +143,7 @@ export default function LoginForm()
                     </button>
                 </div>
                 
-                <input type="hidden" name="redirectTo" value={callbackUrl}/>
+                {/* <input type="hidden" name="redirectTo" value={callbackUrl}/> */}
                 {/* Error message */}
                 {
                     errorMessage || error && (
