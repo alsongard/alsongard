@@ -18,7 +18,31 @@ PortFolio : https://alsongard.vercel.app/
 
 
 # 💻Tech Stack
-![icon-collection-partial-colors](https://stats.pphat.top/icons?name=react,nextjs,nodejs,express,django,tailwindcss,python,javascript,typescript,csharp,mysql,php,html,css,Java,Kotlin,Markdown,Java,postgresql,mongodb,vercel,render,github&effect=wave)
+
+![react](https://www.readmecodegen.com/api/social-icon?name=react&size=30&showText=true)
+![nextjs](https://www.readmecodegen.com/api/social-icon?name=nextjs&size=30&showText=true)
+![express](https://www.readmecodegen.com/api/social-icon?name=express&size=30&showText=true)
+![nodejs](https://www.readmecodegen.com/api/social-icon?name=nodejs&size=30&showText=true)
+![django](https://www.readmecodegen.com/api/social-icon?name=django&size=30&showText=true)
+![tailwindcss](https://www.readmecodegen.com/api/social-icon?name=tailwindcss&size=30&showText=true)
+![javascript](https://www.readmecodegen.com/api/social-icon?name=javascript&size=30&showText=true)
+![python](https://www.readmecodegen.com/api/social-icon?name=python&size=30&showText=true)
+![typescript](https://www.readmecodegen.com/api/social-icon?name=typescript&size=30&showText=true)
+![php](https://www.readmecodegen.com/api/social-icon?name=php&size=30&showText=true)
+![css](https://www.readmecodegen.com/api/social-icon?name=css3&size=30&showText=true)
+![html](https://www.readmecodegen.com/api/social-icon?name=html5&size=30&showText=true)
+![mysql](https://www.readmecodegen.com/api/social-icon?name=mysql&size=30&showText=true)
+![java](https://www.readmecodegen.com/api/social-icon?name=java&size=30&showText=true)
+![kotlin](https://www.readmecodegen.com/api/social-icon?name=kotlin&size=30&showText=true)
+![cplusplus](https://www.readmecodegen.com/api/social-icon?name=cplusplus&size=30&showText=true)
+![markdown](https://www.readmecodegen.com/api/social-icon?name=markdown&size=30&showText=true)
+![postgresql](https://www.readmecodegen.com/api/social-icon?name=postgresql&size=30&showText=true)
+![mongodb](https://www.readmecodegen.com/api/social-icon?name=mongodb&size=30&showText=true)
+![github](https://www.readmecodegen.com/api/social-icon?name=github&size=30&showText=true)
+![render](https://www.readmecodegen.com/api/social-icon?name=render&size=30&showText=true)
+![vercel](https://www.readmecodegen.com/api/social-icon?name=vercel&size=30&showText=true)
+![docker](https://www.readmecodegen.com/api/social-icon?name=docker&size=30&showText=true)
+![unity](https://www.readmecodegen.com/api/social-icon?name=unity&size=30&showText=true)
 
 
 # 📊GitHub Stats :
