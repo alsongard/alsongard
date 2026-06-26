@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.1.0",
+    "@next/third-parties": "^16.2.9",
     "@vercel/analytics": "^1.6.1",
     "axios": "^1.13.6",
     "bcrypt": "^6.0.0",
@@ -19,7 +20,7 @@
     "dotenv": "^17.3.1",
     "lodash": "^4.17.23",
     "lucide-react": "^0.575.0",
-    "next": "^16.2.5",
+    "next": "^16.2.9",
     "next-auth": "^5.0.0-beta.31",
     "next-themes": "^0.4.6",
     "pg": "^8.20.0",
