@@ -3,28 +3,35 @@ import { pool } from '@/lib/db';
 import { log } from 'console';
 import { NextResponse, type NextRequest } from 'next/server';
 import {auth}  from '@/auth';
+import { tr } from 'zod/v4/locales';
+import type {DBProjectData}  from "@/type"
 
 
 
 
+async function getProjects() : Promise<DBProjectData[]> { 
+    try {
 
-async function getProjects() {
-    const data = await pool.query(`SELECT * FROM project;`)
-    // console.log(`this is data.rows`);
-    // console.log(data.rows);
-    
-    return data.rows;
+        const data = await pool.query(`SELECT * FROM project;`)
+        // console.log(`this is data.rows`);
+        // console.log(data.rows);
+        
+        return data.rows;
+    } catch(err) {
+        console.log(`Error: ${err}`);
+        return [];
+    }
 }
 
 
 // route handler 
 export async function GET(request: NextRequest)
 {
-    console.log('this is request:');
-    console.log(request)
+    // console.log('this is request:');
+    // console.log(request);
     try 
     {
-        const projects = await getProjects();
+        const projects  = await getProjects();
         if (projects.length == 0)
         {
             return NextResponse.json({success: true , msg:"No Projects at the moment!", data: []}, {status:200});
@@ -55,8 +62,8 @@ export async function POST(request: NextRequest)
         return NextResponse.json({success:false, msg:"User Not authenticated"})
     }
     const body = await request.json();
-    console.log("this is body");
-    console.log(body); // { name: 'somethingrandom' }
+    // console.log("this is body");
+    // console.log(body); // { name: 'somethingrandom' }
     const {projectname, projectdescription, techstack, projecturl, githuburl, projecttype, projectimage, shortdescription, startdate, enddate} =  body;
     // console.log(`projectname:${projectname}\nprojectdescription:${projectdescription}\ntechstack:${techstack}\nprojecturl:${projecturl}\ngithuburl:${githuburl}\nprojecttype:${projecttype}\nprojectimage:${projectimage}\nshortdescription:${shortdescription}\nstartdate:${startdate}\nenddate:${enddate}`);
     
@@ -105,8 +112,8 @@ export async function POST(request: NextRequest)
             ]
         );
         
-        console.log(`this is data`);
-        console.log(data);
+        // console.log(`this is data`);
+        // console.log(data);
         if (data.rowCount == 1)
         {
             return Response.json({"success": true, "message": "success uploading data"}, {status: 201})
