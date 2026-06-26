@@ -7,4 +7,4 @@ interface CustomIconProps extends IconBaseProps {
 
 export const CustomIcon: React.FC<
   CustomIconProps & React.HTMLProps<SVGElement>
-> = ({ icon: Icon, size = 30, ...props }) => <Icon size={size} {...props} />;
+> = ({ icon: Icon, size = 25, ...props }) => <Icon size={size} {...props} />;
