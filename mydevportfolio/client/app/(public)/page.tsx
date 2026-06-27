@@ -5,6 +5,7 @@ import { FaTwitter, FaXTwitter } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
 import { BiLogoGmail } from "react-icons/bi";
 import { FaLinkedin } from "react-icons/fa6";
+import GAEventWrapper from "../components/GAEvent";
 
 export const metadata = {
   title: "AlsonGard",
@@ -38,28 +39,37 @@ export default function Home() {
 					{/* <div className='flex flex-row max-sm:flex-col max-sm:items-center max-sm:gap-y-[20px] max-sm:w-[100px] max-sm:rounded-md justify-evenly border-2 mx-auto py-[10px]  w-[500px] border-black dark:border-white rounded-[50px]'> */}
 					<div className="grid grid-cols-4 max-sm:grid-cols-1 max-slg:rounded-md place-items-center gap-y-2  py-[10px] rounded-[50px] border-2 border-white max-slg:grid-cols-2 max-sm:w-[100px] mx-auto">
 						<div className='h-[30px] w-[30px]  rounded-full hover:scale-[1.4]  ease-in-out'>
-							<a href="http://github.com/alsongard"  target="_blank">
-								<FaGithub className='h-[100%] w-[100%] rounded-[100%] hover:text-black max-md:text-[17px] dark:bg-sky-500'/>
-								{/* <FaGithub className='h-[100%] w-[100%] rounded-[100%] hover:bg-black text-blue  bg-slate-400  '/> */}
-							</a>
+							
+							<GAEventWrapper event="external_link" eventName="Github" value="http://github.com/alsongard" >
+								<a href="http://github.com/alsongard"  target="_blank">
+									<FaGithub className='h-[100%] w-[100%] rounded-[100%] hover:text-black max-md:text-[17px] dark:bg-sky-500'/>
+									{/* <FaGithub className='h-[100%] w-[100%] rounded-[100%] hover:bg-black text-blue  bg-slate-400  '/> */}
+								</a>
+							</GAEventWrapper>
 						</div>
 
 						<div className='h-[30px] w-[30px]  rounded-[100%] hover:scale-[1.4] h ease-in-out'>
-							<a href="mailto:alsongadizo@gmail.com" target="_blank">
-								<BiLogoGmail className='h-[100%] w-[100%] rounded-[100%] hover:text-black max-md:text-[17px] dark:bg-sky-500'/>
-							</a>
+							<GAEventWrapper event="external_link" eventName="Email" value="alsongadizo@gmail" >
+								<a href="mailto:alsongadizo@gmail.com" target="_blank">
+									<BiLogoGmail className='h-[100%] w-[100%] rounded-[100%] hover:text-black max-md:text-[17px] dark:bg-sky-500'/>
+								</a>
+							</GAEventWrapper>
 						</div>
 
 						<div className='h-[30px] w-[30px]  rounded-[100%] hover:scale-[1.4] hover:black  ease-in-out'>
-							<a href="https://x.com/alsongadizo" target="_blank">
-								<FaTwitter className='h-[100%] w-[100%] rounded-[100%] max-md:text-[17px]  hover:text-black  dark:bg-sky-500'/>
-							</a>
+							<GAEventWrapper event="external_link" eventName="Twitter" value="x.com/alsongadizo" >
+								<a href="https://x.com/alsongadizo" target="_blank">
+									<FaTwitter className='h-[100%] w-[100%] rounded-[100%] max-md:text-[17px]  hover:text-black  dark:bg-sky-500'/>
+								</a>
+							</GAEventWrapper>
 						</div>
 
 						<div className='h-[30px] w-[30px]  rounded-[100%] hover:scale-[1.4] hover:black  ease-in-out'>
+							<GAEventWrapper event="external_link" eventName="Linkedin" value="linkedin.com/in/alsongard" >
 							<a href="https://www.linkedin.com/in/alsongard" target="_blank">
 								<FaLinkedin className='h-[100%] w-[100%] rounded-[100%] max-md:text-[17px]  hover:text-black  dark:bg-sky-500'/>
 							</a>
+							</GAEventWrapper>
 						</div>
 					</div>
 				</div>
@@ -94,8 +104,16 @@ export default function Home() {
 				<div className='text-center my-[20px]'>
 					<p className='text-[20px] max-md:text-[17px]'>Click To Download My Resume || CV</p>
 					<div className='flex flex-row  justify-center space-x-3'>
-						<button className='my-[10px] bg-sky-500 py-[3.5px] px-[10px] rounded-md text-[20px] hover:text-black hover:scale-[1.1] max-md:text-[17px]'><a href="/files/gard_resume.pdf" download="gard_resume.pdf">RESUME</a></button>
-						<button className='my-[10px] bg-sky-500 py-[3.5px] px-[10px] rounded-md text-[20px] hover:text-black hover:scale-[1.1] max-md:text-[17px]'><a href="/files/gard_cv.pdf" download="gard_cv.pdf">CV</a></button>
+						<button className='my-[10px] bg-sky-500 py-[3.5px] px-[10px] rounded-md text-[20px] hover:text-black hover:scale-[1.1] max-md:text-[17px]'>
+							<GAEventWrapper event="download" eventName="resumeDownload" value="resume" >
+								<a href="/files/gard_resume.pdf" download="gard_resume.pdf">RESUME</a>
+							</GAEventWrapper>
+						</button>
+						<button className='my-[10px] bg-sky-500 py-[3.5px] px-[10px] rounded-md text-[20px] hover:text-black hover:scale-[1.1] max-md:text-[17px]'>
+							<GAEventWrapper event="download" eventName="cvDownload" value="cirrucilum_vitae" >
+								<a href="/files/gard_cv.pdf" download="gard_cv.pdf">CV</a>
+							</GAEventWrapper>
+						</button>
 					</div>
 				</div>
 			</section>
