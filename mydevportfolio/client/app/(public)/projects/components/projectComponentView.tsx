@@ -38,16 +38,15 @@ function ProjectComponentView(prop:PropTypes)
                     }
                 </div>
                 <div className='flex flex-row gap-x-[5px] items-center'
-                    onClick={()=>{
-                            sendGAEvent('event', 'viewed_project', {value: prop.item.projectname})
-                    }}
                 >
                     <a 
                         className="flex items-center gap-x-[5px] bg-[#0d1117] border border-cyan-500/30 shadow-[0_0_0_rgba(34,211,238,0)] hover:shadow-[0_0_16px_rgba(34,211,238,0.45)] hover:border-cyan-400/60 hover:bg-[#11161d] rounded-md py-[5px] px-[10px] transition-all duration-300"
                         // box-shadow horizontalOffset(negative:left, positive:right)_verticalOffset(negative:up,positive:bottom)_blur_spread-color  
                         title='Website Link' 
                         target="_blank"
-                        
+                        onClick={()=>{
+                            sendGAEvent('event', 'viewed_project', {value: prop.item.projecturl})
+                        }}
                         href={prop.item.projecturl}
                     > 
                         <p className="text-sm text-cyan-300">Link</p>
@@ -61,6 +60,10 @@ function ProjectComponentView(prop:PropTypes)
                         className="flex items-center gap-x-[5px] bg-[#0d1117] border border-white/15 shadow-[0_0_0_rgba(255,255,255,0)] hover:shadow-[0_0_16px_rgba(255,255,255,0.15)] hover:border-white/30 hover:bg-[#11161d] rounded-md py-[5px] px-[10px] transition-all duration-300" 
                         title="Github Link" 
                         href={prop.item.githuburl}
+                        target="_blank"
+                        onClick={()=>{
+                            sendGAEvent('event', 'viewed_project', {value: prop.item.githuburl})
+                        }}
                     >
                         <p className="text-sm text-white/70">Github</p>
                         <CustomIcon
