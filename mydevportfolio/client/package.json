@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@google-analytics/data": "^6.1.0",
     "@neondatabase/serverless": "^1.1.0",
     "@next/third-parties": "^16.2.9",
     "@vercel/analytics": "^1.6.1",
