@@ -8,20 +8,20 @@ Here are some ideas to get you started:
 
 
 ## About Me
-Fullstack Developer and Cyber Security Enthusiast  
-I’m looking to collaborate on web development projects, ctf
-Ask me about Web Development Projects, performing reconnaisance on systems using different tools.
+Software Developer and Cyber Security Enthusiast     
+I’m looking to collaborate on web development projects, android development using Kotlin and Android Studio, 2D Game Development, Data Analysis using Python and capture the flags.   
+Ask me about Web Development Projects, Android development, 2D Game Development and  performing reconnaisance on systems using different tools.
+
 How to reach me: alsongadizo@gmail.com  
 PortFolio : https://alsongard.vercel.app/
-
 
 
 
 # 💻Tech Stack
 
 ![react](https://www.readmecodegen.com/api/social-icon?name=react&size=30&showText=true)
-![nextjs](https://www.readmecodegen.com/api/social-icon?name=nextjs&size=30&showText=true)
-![express](https://www.readmecodegen.com/api/social-icon?name=express&size=30&showText=true)
+![nextjs](https://www.readmecodegen.com/api/social-icon?name=nextjs&size=30&showText=true&color=%23ffffff)
+![express](https://www.readmecodegen.com/api/social-icon?name=express&size=30&color=%23ffffff&showText=true)
 ![nodejs](https://www.readmecodegen.com/api/social-icon?name=nodejs&size=30&showText=true)
 ![django](https://www.readmecodegen.com/api/social-icon?name=django&size=30&showText=true)
 ![tailwindcss](https://www.readmecodegen.com/api/social-icon?name=tailwindcss&size=30&showText=true)
@@ -35,34 +35,36 @@ PortFolio : https://alsongard.vercel.app/
 ![java](https://www.readmecodegen.com/api/social-icon?name=java&size=30&showText=true)
 ![kotlin](https://www.readmecodegen.com/api/social-icon?name=kotlin&size=30&showText=true)
 ![cplusplus](https://www.readmecodegen.com/api/social-icon?name=cplusplus&size=30&showText=true)
-![markdown](https://www.readmecodegen.com/api/social-icon?name=markdown&size=30&showText=true)
+![markdown](https://www.readmecodegen.com/api/social-icon?name=markdown&size=30&color=%23ffffff&showText=true)
 ![postgresql](https://www.readmecodegen.com/api/social-icon?name=postgresql&size=30&showText=true)
 ![mongodb](https://www.readmecodegen.com/api/social-icon?name=mongodb&size=30&showText=true)
 ![github](https://www.readmecodegen.com/api/social-icon?name=github&size=30&showText=true)
-![render](https://www.readmecodegen.com/api/social-icon?name=render&size=30&showText=true)
-![vercel](https://www.readmecodegen.com/api/social-icon?name=vercel&size=30&showText=true)
+![render](https://www.readmecodegen.com/api/social-icon?name=render&size=30&color=%23ffffff&showText=true)
+![vercel](https://www.readmecodegen.com/api/social-icon?name=vercel&size=30&color=%23ffffff&showText=true)
 ![docker](https://www.readmecodegen.com/api/social-icon?name=docker&size=30&showText=true)
-![unity](https://www.readmecodegen.com/api/social-icon?name=unity&size=30&showText=true)
+![unity](https://www.readmecodegen.com/api/social-icon?name=unity&size=30&color=%23ffffff&showText=true)
 
 
 # 📊GitHub Stats :
-![](https://github-readme-stats.vercel.app/api?username=alsongard&theme=radical&hide_border=false&include_all_commits=false&count_private=false)<br/>
-![](https://github-readme-streak-stats.herokuapp.com/?user=alsongard&theme=radical&hide_border=false)<br/>
-![](https://github-readme-stats.vercel.app/api/top-langs/?username=alsongard&theme=radical&hide_border=false&include_all_commits=false&count_private=false&layout=compact)
 
----
-[![](https://visitcount.itsvg.in/api?id=alsongard&icon=0&color=0)](https://visitcount.itsvg.in)
+<!-- MY GITHUB STATS -->
+[![GitHub Stats](https://github-stats-extended.vercel.app/api?username=alsongard&custom_title=My%20Stats&show_icons=true&include_all_commits=true&theme=github_dark)](https://github-stats-extended.vercel.app/api?username=alsongard&custom_title=My%20Stats&show_icons=true&include_all_commits=true&theme=github_dark)
 
-
-<br/>
-<br/>
-<br/>
+<!-- PROGRAMMING LANGUAGES -->
+[![GitHub Stats](https://github-stats-extended.vercel.app/api/top-langs?username=alsongard&langs_count=15&theme=github_dark)](https://github-stats-extended.vercel.app/api/top-langs?username=alsongard&langs_count=15&theme=github_dark)
 
 
-## 🏆 GitHub Trophies
-![](https://github-profile-trophy.vercel.app/?username=alsongard&theme=radical&no-frame=false&no-bg=true&margin-w=4)
 
----
-[![](https://visitcount.itsvg.in/api?id=alsongard&icon=0&color=0)](https://visitcount.itsvg.in)
+<div style="display:flex; column-gap:50px; flex-wrap:wrap;">
 
-<!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
+[![GitHub Stats](https://github-stats-extended.vercel.app/api/pin?username=alsongard&repo=alsongard%2FUniversity_Student_Mental_Health_WebApp_Platform&theme=github_dark)](https://github.com/alsongard/University_Student_Mental_Health_WebApp_Platform)
+
+
+[![GitHub Stats](https://github-stats-extended.vercel.app/api/pin?username=alsongard&repo=alsongard%2Fkalidev-track&theme=github_dark)](https://github.com/alsongard/kalidev-track)
+
+
+[![GitHub Stats](https://github-stats-extended.vercel.app/api/pin?username=alsongard&repo=alsongard%2FAir_Quality_Index_Prediction_Machine_Learning_Model&theme=github_dark)](https://github.com/alsongard/Air_Quality_Index_Prediction_Machine_Learning_Model)
+
+[![GitHub Stats](https://github-stats-extended.vercel.app/api/pin?username=alsongard&repo=alsongard%2FNetSentinel-NIDS&theme=github_dark)](https://github.com/alsongard/NetSentinel-NIDS)
+</div>
+
