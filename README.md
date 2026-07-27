@@ -51,7 +51,7 @@ PortFolio : https://alsongard.vercel.app/
 [![GitHub Stats](https://github-stats-extended.vercel.app/api?username=alsongard&custom_title=My%20Stats&show_icons=true&include_all_commits=true&theme=github_dark)](https://github-stats-extended.vercel.app/api?username=alsongard&custom_title=My%20Stats&show_icons=true&include_all_commits=true&theme=github_dark)
 
 <!-- PROGRAMMING LANGUAGES -->
-[![GitHub Stats](https://github-stats-extended.vercel.app/api/top-langs?username=alsongard&langs_count=15&theme=github_dark)](https://github-stats-extended.vercel.app/api/top-langs?username=alsongard&langs_count=15&theme=github_dark)
+[![GitHub Stats](https://github-stats-extended.vercel.app/api/top-langs?username=alsongard&langs_count=7&theme=github_dark)](https://github-stats-extended.vercel.app/api/top-langs?username=alsongard&langs_count=15&theme=github_dark)
 
 
 
