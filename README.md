@@ -21,8 +21,9 @@ PortFolio : https://alsongard.vercel.app/
 
 ![react](https://www.readmecodegen.com/api/social-icon?name=react&size=30&showText=true)
 ![nextjs](https://www.readmecodegen.com/api/social-icon?name=nextjs&size=30&showText=true&color=%23ffffff)
-![express](https://www.readmecodegen.com/api/social-icon?name=express&size=30&color=%23ffffff&showText=true)
 ![nodejs](https://www.readmecodegen.com/api/social-icon?name=nodejs&size=30&showText=true)
+![nestjs](https://www.readmecodegen.com/api/social-icon?name=nestjs&size=30&color=%23ffffff&showText=true)
+![express](https://www.readmecodegen.com/api/social-icon?name=express&size=30&color=%23ffffff&showText=true)
 ![django](https://www.readmecodegen.com/api/social-icon?name=django&size=30&showText=true)
 ![tailwindcss](https://www.readmecodegen.com/api/social-icon?name=tailwindcss&size=30&showText=true)
 ![javascript](https://www.readmecodegen.com/api/social-icon?name=javascript&size=30&showText=true)
@@ -56,14 +57,6 @@ PortFolio : https://alsongard.vercel.app/
 
 
 <div style="display:flex; column-gap:50px; flex-wrap:wrap;">
-
-[![GitHub Stats](https://github-stats-extended.vercel.app/api/pin?username=alsongard&repo=alsongard%2FUniversity_Student_Mental_Health_WebApp_Platform&theme=github_dark)](https://github.com/alsongard/University_Student_Mental_Health_WebApp_Platform)
-
-
-[![GitHub Stats](https://github-stats-extended.vercel.app/api/pin?username=alsongard&repo=alsongard%2Fkalidev-track&theme=github_dark)](https://github.com/alsongard/kalidev-track)
-
-
-[![GitHub Stats](https://github-stats-extended.vercel.app/api/pin?username=alsongard&repo=alsongard%2FAir_Quality_Index_Prediction_Machine_Learning_Model&theme=github_dark)](https://github.com/alsongard/Air_Quality_Index_Prediction_Machine_Learning_Model)
 
 [![GitHub Stats](https://github-stats-extended.vercel.app/api/pin?username=alsongard&repo=alsongard%2FNetSentinel-NIDS&theme=github_dark)](https://github.com/alsongard/NetSentinel-NIDS)
 </div>
