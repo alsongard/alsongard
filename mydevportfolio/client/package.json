@@ -29,6 +29,7 @@
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "react-icons": "^5.6.0",
+    "tech-stack-icons": "^3.7.1",
     "zod": "^4.4.3"
   },
   "devDependencies": {
