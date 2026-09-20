@@ -17,6 +17,8 @@ async function getProjects()
         // get projectType
         const groupedProjectData: GroupedData = {};
         data.rows.forEach((project)=>{
+            // console.log(`this is project`);
+            // console.log(project);
             if (!groupedProjectData[project.projecttype]) // if key does not exist continue on block
             {
                 console.log(`added projecttype : ${project.projecttype}`);
