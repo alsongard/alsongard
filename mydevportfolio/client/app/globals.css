@@ -84,3 +84,122 @@ body
 		opacity: 0;
 	}
 }
+
+.techContainer {
+	position: relative;
+	border: 1.5px solid transparent; /* keep border width reserved */
+	border-radius: 1rem;
+	background-color: #0a0a0a; /* subtle fill so it doesn't blend into pure black */
+	animation: borderColor 6s ease-in-out infinite;
+	box-shadow:
+		0 0 6px 1px rgba(160, 160, 160, 0.15),
+		0 4px 12px -2px rgba(0, 0, 0, 0.6),
+		inset 0 1px 0 rgba(255, 255, 255, 0.03);
+	transition:
+		transform 0.35s ease,
+		box-shadow 0.35s ease,
+		background-color 0.35s ease;
+	will-change: transform, box-shadow;
+}
+
+/* More stops = smoother, more "alive" color cycle */
+@keyframes borderColor {
+	0%   { border-color: #18c6cc79; }
+	25%  { border-color: #17aaa3e0; }
+	50%  { border-color: #0b3d3d; }
+	75%  { border-color: #7a2fe0; }
+	100% { border-color: #7a2fe0; }
+}
+
+/* Hover: lift, brighten shadow, speed up the border animation */
+.techContainer:hover {
+	transform: translateY(-4px) scale(1.05);
+	background-color: #0f0f12;
+	box-shadow:
+		0 0 14px 2px rgba(136, 78, 211, 0.45),
+		0 0 28px 4px rgba(79, 89, 228, 0.25),
+		0 10px 24px -4px rgba(0, 0, 0, 0.8);
+	animation-duration: 2.5s; /* speeds up the border color cycle */
+}
+
+/* Optional: pause and glow on focus for keyboard users */
+.techContainer:focus-visible {
+	outline: none;
+	box-shadow:
+		0 0 16px 3px rgba(136, 78, 211, 0.55),
+		0 0 30px 6px rgba(79, 89, 228, 0.3);
+}
+
+/* Reduced motion: disable animation for accessibility */
+@media (prefers-reduced-motion: reduce) {
+	.techContainer {
+		animation: none;
+		border-color: #884ed3;
+	}
+	.techContainer:hover {
+		animation: none;
+		transform: none;
+	}
+}
+
+
+/* @keyframes movingBorder {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+} */
+
+/* position: relative;
+.skill-category {
+	border-radius: 12px;
+	transition: all 0.3s ease;
+	overflow: hidden;
+}
+
+.skill-category::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: linear-gradient(90deg, #060D79, #380679, #060D79);
+	background-size: 200% 200%;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+	z-index: -1;
+	border-radius: 12px;
+}
+
+.skill-category::after {
+	content: '';
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	right: 2px;
+	bottom: 2px;
+	background: #000000;
+	border-radius: 10px;
+	z-index: -1;
+}
+
+.skill-category:hover::before {
+	opacity: 1;
+	animation: movingBorder 3s ease infinite;
+}
+
+.skill-category:hover {
+	transform: scale(1.05);
+	box-shadow: 0 0 30px rgba(56, 6, 121, 0.6), 0 0 60px rgba(6, 13, 121, 0.3);
+}
+
+.skill-category > div {
+	position: relative;
+	z-index: 1;
+} */
