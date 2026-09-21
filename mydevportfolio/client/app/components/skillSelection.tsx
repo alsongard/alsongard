@@ -49,11 +49,11 @@ export default function SkillsSection() {
                                 {category}
                             </h2>
 
-                            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-x-6 gap-y-12.5">
+                            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-x-[35px] gap-y-12.5">
                                 {techs.map((tech) => (
                                     <div
                                         key={tech.label}
-                                        className="flex flex-col items-center justify-center hover:scale-125 transition-transform duration-200 cursor-pointer group"
+                                        className="techContainer flex flex-col rounded-2xl py-8  items-center justify-center  cursor-pointer"
                                     >
                                         <div className="relative">
                                             <StackIcon name={tech.icon} variant="dark" className="h-10 w-10" />
